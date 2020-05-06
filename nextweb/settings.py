@@ -37,11 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'techbee',
-    'django.contrib.sites',                         #追加
-    'allauth',                                      #追加
-    'allauth.account',                              #追加
-    'allauth.socialaccount',                        #追加
+    'techbee', 
     'allauth.socialaccount.providers.line',
     'rest_framework',
 ]
