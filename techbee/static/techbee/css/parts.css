@@ -1,0 +1,556 @@
+
+.title{
+  text-align: center;
+  vertical-align: bottom;
+  font-family: "Palatino Linotype";
+  color:rgb(56, 56, 56);
+  font-size: 40px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.sticky {
+  position: -webkit-sticky; /* safari対応 */
+  position: sticky;
+  top: -1.3px;
+  z-index: 5;
+  margin-bottom: 2rem;
+}
+.s_box{
+  position: -webkit-sticky; /* safari対応 */
+  position: sticky;
+  top: 0px;
+  z-index: 4;
+  width: 100%;
+  height: 60px;
+  display: grid;
+  grid-template-columns: 1fr 9fr 1fr 1fr;
+  grid-template-rows: 1fr 35px 1fr;
+
+}
+.search_back{
+  grid-column: 2/4;
+  grid-row: 2;
+  width: 100%;
+  height: 35px;
+  background-color: rgb(253, 253, 253);
+  border-radius:32px;
+  -webkit-appearance: none;
+  outline: 0;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+
+.search_form{
+  height: 100%;
+  width:100%;
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 1fr 9fr 1fr 1fr;
+  grid-template-rows: 1fr 35px 1fr;
+}
+
+#search_field{
+  grid-column: 2;
+  grid-row: 2;
+  width: 100%;
+  height: 35px;
+  color:rgb(56, 56, 56);
+  background-color: rgb(240, 240, 240);
+  border:none;
+  border-top-left-radius:32px;
+  border-bottom-left-radius: 32px;
+  -webkit-appearance: none;
+  outline: 0;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10%;
+}
+
+.text_underline{
+  position: relative; /*.text_underline::beforeの親要素*/
+  grid-column: 1/5;
+  grid-row: 3;
+}
+
+.text_underline::before{
+  position: absolute;
+  left: 0px; /*左配置 ここright: 0px;にすると右から左のアニメーション*/
+  bottom: 0px; /*左配置*/
+  width: 0px; /*アニメーションで0pxから100%に*/
+  height: 1px; /*高さ*/
+  content: '';
+  background-color: rgb(56, 56, 56); /*アニメーションの色*/
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+#search_field:focus{
+  border: solid 1px rgba(61, 85, 245,0.5);
+  border-right: none;
+}
+
+#search_field:focus+.text_underline::before{
+  width: 100%;
+}
+
+
+.search button{
+  grid-column: 3;
+  grid-row: 2;
+  height: 35px;
+  width:100%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  color:white;
+  background-color: rgb(56, 56, 56);
+  border:none;
+  border-top-right-radius:32px;
+  border-bottom-right-radius: 32px;
+  outline: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: "Palatino Linotype";
+}
+
+.search button:hover{
+  background-color: rgba(56, 56, 56,0.8);
+
+}
+
+.search{
+  width: 100%;
+  height: 60px;
+  background-color:rgb(253, 253, 253);
+  opacity: 0.9;
+  z-index: 1000px;
+  border-top: solid 0.8px #808080;
+  border-bottom: solid 0.8px #808080;
+}
+.post_parts{
+  z-index: 3;
+  grid-row: 4;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  color:rgb(56, 56, 56);
+}
+.post_part{
+  display: grid;
+  grid-template-columns: 1fr 284px 1fr;
+  grid-template-rows: auto;
+  margin-bottom: 1rem;
+}
+
+.part_cen{
+  grid-column: 2;
+}
+
+.v_box{
+  width: 280px;
+  height: 180px;
+  margin-top : 1rem ;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  border:  solid 2px #808080;
+  overflow: hidden;
+  background-color: rgb(0,0,0);
+}
+.v_box a{
+  text-decoration:none;
+}
+
+.main_video:hover{
+  opacity: 0.7;
+}
+
+.main_video{
+  height: 180px;
+  z-index: 1;
+  outline: 0;
+}
+
+.d_box{
+  display: grid;
+  grid-template-columns: 50px 1fr 3fr;
+  grid-template-rows:auto;
+  font-family: "Palatino Linotype";
+  margin-top:1rem;
+}
+
+.mini_box{
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1;
+  grid-row: 1;
+  height: 50px;
+  width:50px;
+  border-radius: 50%;
+  margin:auto;
+}
+
+.miniphoto{
+  height: 50px;
+}
+
+.miniphoto:hover{
+  opacity: 0.8;
+}
+
+.file_name{
+  font-size: 1rem;
+  font-weight: bold;
+  grid-column: 2/4;
+  grid-row: 1;
+  margin: 5px;
+  text-decoration: none;
+  color:rgb(56, 56, 56);
+}
+
+.file_name:hover{
+  opacity: 0.8;
+}
+
+.namelike{
+  grid-column: 1/4;
+  grid-row: 3;
+  display: flex;
+  justify-content: flex-end;
+  font-weight:lighter;
+  color: #808080;
+  font-size:14px;
+  text-decoration: none;
+}
+
+.namelike:hover{
+  opacity: 0.8;
+}
+
+.relation_category{
+  margin-top: 1rem;
+}
+
+.relation_box{
+  display: grid;
+  grid-template-columns: 1fr 284px 1fr;
+  grid-template-rows: auto;
+  margin-bottom: 1rem;
+}
+.i_box {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 184px auto;
+}
+.a_box{
+  grid-column: 1;
+  grid-row: 1;
+  width: 280px;
+  height: 180px;
+  border: solid 2px #808080;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.c_img{
+  height: 180px;
+}
+
+.filename2{
+  grid-column: 1;
+  grid-row: 2;
+  color: rgb(253, 253, 253);
+  display: block;
+  font-size: 1rem;
+  font-family: "Palatino Linotype",sans-serif;
+}
+
+.filename2:hover{
+  color:rgb(56, 56, 56);
+  opacity: 0.8;
+
+}
+
+.mask{
+  position:absolute;
+  top:0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.8;
+  color:white;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: none;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+.mask p{
+  font-size: 25px;
+}
+
+.anot:hover+.filename2{
+  color:rgb(56, 56, 56);
+  opacity: 0.8;
+}
+
+#currentag {
+  color:rgb(56, 56, 56);
+  border-top: solid 1.3px rgb(56, 56, 56);
+  border-bottom: solid 1.3px  rgb(56, 56, 56);
+
+}
+
+.kind{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: 60px;
+}
+
+.tag{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.anot:hover{
+  color:rgb(56, 56, 56);
+  opacity: 0.8;
+  transition: 0.3s ease-in-out;
+}
+
+.anot:active{
+  text-shadow: none;
+}
+
+.pagination{
+  z-index: 3;
+  grid-row: 5;
+}
+
+@media screen and (max-width:1024px){
+  /*画面幅が1024以下の時*/
+  .post_parts {
+    z-index: 3;
+    grid-row: 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    color: rgb(56, 56, 56);
+  }
+  .kind {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 3rem;
+  }
+  .search {
+    width: 100%;
+    height: 3rem;
+    background-color: rgb(253, 253, 253);
+    opacity: 0.9;
+    z-index: 1000px;
+    border-bottom: solid 0.8px #808080;
+    border-top: solid 0.8px #808080;
+  }
+}
+
+@media screen and (max-width:768px){
+  /*画面幅が768以下の時*/
+  .title {
+      text-align: center;
+      vertical-align: bottom;
+      font-family: "Palatino Linotype";
+      color: rgb(56, 56, 56);
+      font-size: 2rem;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+  }
+  .post_parts {
+    z-index: 3;
+    grid-row: 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: auto;
+    color: rgb(56, 56, 56);
+  }
+  .post_part {
+    display: grid;
+    grid-template-columns: 1fr 200px 1fr;
+    grid-template-rows: auto;
+    margin-bottom: 1rem;
+  }
+
+  .v_box {
+      width: 200px;
+      height: 135px;
+      margin-top: 1rem;
+      z-index: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: solid 2px #808080;
+      overflow: hidden;
+      background-color: rgb(0,0,0);
+    }
+  .main_video {
+    height: 135px;
+    z-index: 1;
+    outline: 0;
+  }
+  .file_name{
+    overflow-wrap: anywhere;
+  }
+  .d_box {
+    display: grid;
+    grid-template-columns: 35px 1fr 3fr;
+    grid-template-rows: auto;
+    font-family: "Palatino Linotype";
+    margin-top: 1rem;
+  }
+  .mini_box {
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1;
+    grid-row: 1;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin: auto;
+  }
+  .miniphoto {
+    height: 35px;
+  }
+  .namelike {
+    grid-column: 1/4;
+    grid-row: 3;
+    display: flex;
+    justify-content: flex-end;
+    font-weight: lighter;
+    color: #808080;
+    font-size: 10px;
+    text-decoration: none;
+  }
+  .tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+  .relation_box {
+    display: grid;
+    grid-template-columns: 1fr 200px 1fr;
+    grid-template-rows: auto;
+    margin-bottom: 1rem;
+  }
+  .i_box {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 135px auto;
+  }
+  .a_box {
+    grid-column: 1;
+    grid-row: 1;
+    width: 200px;
+    height: 135px;
+    border: solid 2px #808080;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+  }
+  .c_img {
+    height: 135px;
+  }
+  .search {
+    width: 100%;
+    height: 2.5rem;
+    background-color: rgb(253, 253, 253);
+    opacity: 0.9;
+    z-index: 1000px;
+    border-top: solid 0.8px #808080;
+    border-bottom: solid 0.8px ;
+  }
+  .kind {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 2.5rem;
+  }
+  .filename2 {
+    grid-column: 1;
+    grid-row: 2;
+    color: rgb(56,56,56);
+    display: block;
+    font-size: 1rem;
+    font-family: "Palatino Linotype",sans-serif;
+  }
+
+}
+
+@media screen and (max-width:480px){
+  /*画面幅が480pxまでの時*/
+  .title {
+      text-align: center;
+      vertical-align: bottom;
+      font-family: "Palatino Linotype";
+      color: rgb(56, 56, 56);
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+  }
+  .post_parts {
+    z-index: 3;
+    grid-row: 4;
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: auto;
+    color: rgb(56, 56, 56);
+  }
+  .tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  .search {
+    width: 100%;
+    height: 2.5rem;
+    background-color: rgb(253, 253, 253);
+    opacity: 0.9;
+    z-index: 1000px;
+    border-top: solid 0.8px #808080;
+    border-bottom: solid 0.8px ;
+  }
+  .kind {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 2.5rem;
+  }
+  .filename2 {
+    grid-column: 1;
+    grid-row: 2;
+    color: rgb(56,56,56);
+    display: block;
+    font-size: 1rem;
+    font-family: "Palatino Linotype",sans-serif;
+  }
+}

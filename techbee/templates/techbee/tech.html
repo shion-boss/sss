@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'techbee/css/tech.css' %}"/>
+<h1 class='title'>{{t_title}}</h1>
+<div class="t_main_box">
+  <div class="t_m_box">
+    <div class="t_movie">
+      <video class="t_main_movie"src={{top.video.url}} poster={{top.image.url}} type="video/mp4" preload="none" controls></video>
+    </div>
+  </div>
+  <h2>{{top.title}}</h2>
+  <p>{{top.text}}</p>
+</div>
+{% if category_len >= 1 %}
+<div class="relation">
+{% if category_f != '' %}
+  <div class="category_f relation_box">
+    <div class="i_box">
+      <a class='anot a_box' href="{% url 'tech' category w category_f.id %}">
+        <img class='c_img'src={{category_f.image.url}} alt="">
+        <div class="maskleft"><i class="fas fa-angle-left"></i></div>
+      </a>
+      <a class='anot filename2'href="{% url 'tech' category w category_f.id %}">{{category_f.title}}</a>
+      <p class=minicate>{{category_f.category.category}}</p>
+    </div>
+  </div>
+{% endif%}
+  <div class="relation_category relation_box">
+    <div class="i_box">
+      <a class='anot a_box'href="{% url 'techseries' category top.category.id%}">
+        <img class='c_img' src={{top.category.image.url}} alt="">
+        <div class="mask">
+          <p>{{category_len}}</p>
+          <p><i class="fas fa-align-justify"></i></p>
+        </div>
+      </a>
+      <a class='anot filename2' href="{% url 'techseries' category top.category.id%}">{{top.category.category}}</a>
+    </div>
+  </div>
+{% if category_l != '' %}
+  <div class="category_l relation_box">
+    <div class="i_box">
+      <a class='anot a_box' href="{% url 'tech' category w category_l.id %}">
+        <img class='c_img' src={{category_l.image.url}} alt="">
+        <div class="maskright"><i class="fas fa-angle-right"></i></div>
+      </a>
+      <a class='anot filename2'href="{% url 'tech' category w category_l.id %}">{{category_l.title}}</a>
+      <p class='minicate'>{{category_l.category.category}}</p>
+    </div>
+  </div>
+{% endif %}
+</div>
+{% endif %}
+<div class="sub_box">
+  <div class="which_box">
+    <div class="w_post anot" {% ifequal w 0%}id='currentw'{%endifequal%}>
+      <a href="{% url 'tech' category 0 0 %}">post</a>
+    </div>
+    <div class="w_post anot"{% ifequal w 1%}id='currentw'{%endifequal%}>
+      <a href="{% url 'tech' category 1 0 %}">series</a>
+    </div>
+  </div>
+  <div class="obj_box">
+    {%ifequal w 0 %}
+    {% for a in page_obj %}
+    <div class="obj">
+      <a href="{% url 'tech' category 0 a.id%}">
+        <div class="t_img_box">
+          <img src="{{a.image.url}}" alt="">
+        </div>
+        <p>{{a.title}}</p>
+        <p>{{a.category.category}}</p>
+      </a>
+    </div>
+    {% endfor %}
+    {% else %}
+    {% for a in page_obj %}
+    <div class="obj">
+      <a href="{% url 'techseries' category a.id %}">
+        <div class="t_img_box">
+          <img src="{{a.image.url}}" alt="">
+          <div class="mask">
+            {% ifequal category 'movie' %}
+            <p>{{a.tube_movie_model_set.all|length}}</p>
+            {%else%}
+            <p>{{a.teaching_movie_model_set.all|length}}</p>
+            {%endifequal%}
+            <p><i class="fas fa-align-justify"></i></p>
+          </div>
+        </div>
+        <p>{{a.category}}</p>
+      </a>
+    </div>
+    {% endfor %}
+    {% endifequal %}
+  </div>
+  <div class="pagination">
+    <div class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1" class='p_a'><i class="fas fa-fast-backward"></i></a>
+            <a href="?page={{ page_obj.previous_page_number }}" class='p_b'><i class="fas fa-step-backward"></i></a>
+        {% endif %}
+
+        <span class="current">
+            {{ page_obj.number }}/{{ page_obj.paginator.num_pages }}
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class='p_c'><i class="fas fa-step-forward"></i></a>
+            <a href="?page={{ page_obj.paginator.num_pages }}" class='p_d'><i class="fas fa-fast-forward"></i></a>
+        {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

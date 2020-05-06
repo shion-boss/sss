@@ -1,0 +1,9 @@
+.waku{
+  grid-area:head;
+  height: 50px;
+  width:100%;
+}
+
+.body_k{
+  grid-column: 3/7;
+}

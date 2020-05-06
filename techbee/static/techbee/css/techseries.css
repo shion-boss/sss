@@ -1,0 +1,122 @@
+
+.obj_box{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: auto;
+}
+
+.obj{
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.obj a{
+  text-decoration: none;
+  color:rgb(56,56,56);
+}
+
+.t_img_box{
+  height: 180px;
+  width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: solid 1px #808080;
+  position: relative;
+}
+
+.t_img_box img{
+  height: 180px;
+}
+@media screen and (max-width:1024px){
+  /*画面幅が1024以下の時*/
+  .obj_box {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: auto;
+  }
+}
+@media screen and (max-width:768px){
+  /*画面幅が768以下の時*/
+  .title {
+      text-align: center;
+      vertical-align: bottom;
+      font-family: "Palatino Linotype";
+      color: rgb(56, 56, 56);
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+  .obj_box {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-template-rows: auto;
+  }
+
+  .t_img_box {
+    grid-column: 2;
+    height: 180px;
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: solid 1px #808080;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .obj a {
+    text-decoration: none;
+    color: rgb(56,56,56);
+    display: grid;
+    grid-template-columns: 1fr 280px 1fr;
+  }
+
+  .obj a p{
+    grid-column: 2;
+  }
+
+
+@media screen and (max-width:480px){
+  /*画面幅が480pxまでの時*/
+  .title {
+      text-align: center;
+      vertical-align: bottom;
+      font-family: "Palatino Linotype";
+      color: rgb(56, 56, 56);
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+  }
+  .obj_box {
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+      grid-template-rows: auto;
+  }
+
+  .t_img_box {
+    grid-column: 2;
+    height: 180px;
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: solid 1px #808080;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .obj a {
+    text-decoration: none;
+    color: rgb(56,56,56);
+    display: grid;
+    grid-template-columns: 1fr 280px 1fr;
+  }
+
+  .obj a p{
+    grid-column: 2;
+  }

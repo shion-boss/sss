@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'techbee/css/footer.css' %}"/>
+<div class="f_main">
+  <h1 class='title'>{{ category }}</h1>
+  {% for f in f_cate %}
+  <div class="t_box">
+    <div class="h_box">
+      <h2>{{ f.header }}</h2>
+    </div>
+    {% if f.img != '' %}
+    <div class="f_img_box">
+      <img src="{{f.img.url}}" alt="">
+    </div>
+    {% endif %}
+    <div class="para_box">
+      <p>{{ f.text}}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

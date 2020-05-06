@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'techbee/css/par2.css' %}"/>
+<h1 class='title'>Parts</h1>
+<div class="search sticky">
+  <div class="kind">
+    <a class="tag anot"{% ifequal search_kind "new" %}id="currentag"{% endifequal %} href="{% url 'partkind' 'new' %}">new</a>
+    <a class="tag anot"{% ifequal search_kind 'like' %}id="currentag"{% endifequal %} href="{% url 'partkind'  'like' %}">like</a>
+    <a class="tag anot"{% ifequal search_kind 'random' %}id="currentag"{% endifequal %} href="{% url 'partkind'  'random' %}">random</a>
+    <a class="tag anot"{% ifequal search_kind 'list' %}id="currentag"{% endifequal %} href="{% url 'partkind'  'list' %}">series</a>
+  </div>
+</div>
+<div class="category_box">
+  <div class="backblack">
+    <div class="main3_box">
+      <img class='category_img' src="{{ list.img.url }}" alt="">
+      <!--<div class="maskl"></div>
+      <!--<div class="maskr"></div>-->
+      <div class="mask2"></div>
+      <p class='category_title'>{{ list.categories }}</p>
+    </div>
+  </div>
+  <div class="part_user3">
+    <a class='anot photo_box'href="{% url 'accountkind' list.user.user_meta.username 'post' %}">
+      <div class="u80_box">
+        <img class='userphoto'src={{list.user.user_meta.photo.url}} alt="">
+      </div>
+    </a>
+    <div class="userinfo">
+      <div class="u_box">
+        <a class='anot accountuser'href="{% url 'accountkind' list.user.user_meta.username 'post' %}">{{list.user.user_meta.username}}</a>
+      </div>
+      <div class="p_box">
+        <p class='userplofile'>{{list.user.user_meta.plofile}}</p>
+      </div>
+    </div>
+    {% if look == 'another'%}
+    <form class="channel_form" action="{% url 'ajaxc' %}" method="POST">
+      {% csrf_token %}
+      <input class='gost' name='username' value={{list.user.user_meta.username}}></input>
+      <button class="anot ctag achannel" {%ifequal channel 1 %}id='channel'{% endifequal %} type='submit'>channel</button>
+    </form>
+    {% else %}
+    <div class="delete_list_box">
+      <input type="checkbox" name="" value="" id='delete_list'>
+      <label for="delete_list" class='anot delete dla'>delete</label>
+      <form class="delete_list" action="{% url 'delete_cate' %}" method="post">
+        {% csrf_token %}
+        <div class="ynpbox">
+          <input type="text" name="list_id" value={{list.id}} class='checknone'>
+          <p>シリーズを削除しますか？</p>
+          <div class="ynbox">
+            <button type="submit" name="button" class='anot delete'>Yes</button>
+            <span class='or'>or</span>
+            <label for="delete_list" class='anot delete dla'>No</label>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="edit_list_box">
+      <input type="checkbox" name="" value="" id='edit_list'>
+      <label for="edit_list" class='anot delete dla'>edit</label>
+      <form class="edit_list" action="{% url 'edit_cate' list.user.user_meta.username list.id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="whiteback">
+          <label class='batu anot atbatu'for='edit_list'><i class="fas fa-times core"></i></label>
+          <div class="whitecen">
+            <div class="filelabel4_box">
+              <input type='file' name='photo' id="myImage" value="{{list.img.url}}">
+              <label for="myImage" class='filelabel4'>
+                <i class="fas fa-camera"></i>
+                <img id="preview" class='a' src="{{list.img.url}}" alt="">
+                <div class="maskk"></div>
+              </label>
+            </div>
+            <div class="filename_box">
+              <label for="filelistname" class='listnamelabel'>series</label>
+              <input type="text" name="seriesname" value="{{list.categories}}" class='filelistname' maxlength="20" placeholder='半角全角20文字以内'>
+            </div>
+            <div class="esave_box">
+              <button type="submit" name="button" class='anot etag esave'>SAVE</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    {% endif %}
+  </div>
+  <div class="post_part3_box">
+    {% for a in page_obj %}
+    <div class="post_part3">
+      <div class="part_cen3">
+        <a href="{% url 'part' a.user.user_meta.username a.id %}">
+          <div class="v_box3">
+            <img class="main_video3" src="{{a.image.url}}" alt="">
+          </div>
+        </a>
+        <div class="d_box3">
+          <a  href="{% url 'accountkind' a.user.user_meta.username 'post' %}">
+            <div class="mini3_box">
+              <img class='miniphoto3'src={{a.user.user_meta.photo.url}} alt="">
+            </div>
+          </a>
+          <a class='file_name3' href="{% url 'part' a.user.user_meta.username a.id %}">{{ a.file_name }}</a>
+          <a class="namelike3" href="{% url 'accountkind' a.user.user_meta.username 'post' %}">{{ a.user.user_meta.username}}・like.{{ a.like_count }}・{{ a.post_time|date:"Y/m/j H:i"}}</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<div class="pagination">
+  <div class="step-links">
+      {% if page_obj.has_previous %}
+          <a href="?page=1" class='p_a'><i class="fas fa-fast-backward"></i></a>
+          <a href="?page={{ page_obj.previous_page_number }}" class='p_b'><i class="fas fa-step-backward"></i></a>
+      {% endif %}
+
+      <span class="current">
+          {{ page_obj.number }}/{{ page_obj.paginator.num_pages }}
+      </span>
+
+      {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.next_page_number }}" class='p_c'><i class="fas fa-step-forward"></i></a>
+          <a href="?page={{ page_obj.paginator.num_pages }}" class='p_d'><i class="fas fa-fast-forward"></i></a>
+      {% endif %}
+  </div>
+</div>
+<span id="id_div_ajax_response"></span>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script>
+  $(".channel_form").submit( function(event) {
+      event.preventDefault();
+      var form = $(this);
+      $.ajax({
+        url: "{% url 'ajaxc' %}",
+        method: form.prop("method"),
+        data: form.serialize(),
+        timeout: 10000,
+        dataType: "text",
+      })
+      .done( function(data) {
+        $("#id_div_ajax_response").text(data);
+        if (data == '登録完了'){
+          $('.achannel').addClass('channel');
+        }else{
+          $('.achannel').removeClass("channel");
+          $('.achannel').removeAttr('id');
+        }
+      })
+    });
+</script>
+<script type="text/javascript">
+  $('#myImage').on('change', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $("#preview").attr('src', e.target.result);
+        $('#preview').removeClass("a");
+        $('#preview').removeClass("b");
+
+    }
+    reader.readAsDataURL(e.target.files[0]);
+});
+
+</script>
+{% endblock %}

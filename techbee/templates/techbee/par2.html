@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'techbee/css/par2.css' %}"/>
+<h1 class='title'>Parts</h1>
+<div class="search sticky">
+  <div class="kind">
+    <a class="tag anot"{% ifequal search_kind "new" %}id="currentag"{% endifequal %} href="{% url 'partkind' 'new' %}">new</a>
+    <a class="tag anot"{% ifequal search_kind 'like' %}id="currentag"{% endifequal %} href="{% url 'partkind'  'like' %}">like</a>
+    <a class="tag anot"{% ifequal search_kind 'random' %}id="currentag"{% endifequal %} href="{% url 'partkind'  'random' %}">random</a>
+    <a class="tag anot"{% ifequal search_kind 'list' %}id="currentag"{% endifequal %} href="{% url 'partkind'  'list' %}">series</a>
+  </div>
+</div>
+<div class="v_box">
+  <video class="main_video"src={{part.video.url}} poster={{part.image.url}} type="video/mp4" preload="none" controls></video>
+</div>
+<div class="video_box">
+  <h2 class='filename'>{{part.file_name}}</h2>
+  <p class='likepost'>like.{{part.like_count}}・{{part.post_time|date:"Y/m/j H:i"}}</p>
+  {% if look == 'another'%}
+  {% if user_like > 0 %}
+  <form class="like_form" action="{% url 'ajax' %}" method="POST">
+    {% csrf_token %}
+    <input class='gost' name='part_id' value={{part.id}}></input>
+    <button class="anot atag alike" {%ifequal liked 1 %}id='liked'{% endifequal %} type='submit'>like</button>
+  </form>
+  {% endif %}
+  <form class="favorite_form" action="{% url 'ajaxf' %}" method="POST">
+    {% csrf_token %}
+    <input class='gost' name='part_id' value={{part.id}}></input>
+    <button class="anot ftag afavorite" {%ifequal favorite 1 %}id='favorite'{% endifequal %} type='submit'>favorite</button>
+  </form>
+  {% else %}
+  <a href="{% url 'toukoedit' part.user.user_meta.username part.id %}" class='anot etag'>edit</a>
+  <div class="delete_list_box2">
+    <input type="checkbox" name="" value="" id='delete_list'>
+    <label for="delete_list" class='anot delete de'>delete</label>
+    <div class="delete_list">
+      <div class="ynpbox">
+        <input type="text" name="list_id" value={{list.id}} class='checknone'>
+        <p>パーツを削除しますか？</p>
+        <div class="ynbox">
+          <a href="{% url 'delete_part' part.user.user_meta.username part.id %}" class='anot delete'>Yes</a>
+          <span class='or'>or</span>
+          <label for="delete_list" class='anot delete dla'>No</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>
+<div class="part_user">
+  <a class='anot photo_box'href="{% url 'accountkind' part.user.user_meta.username 'post' %}">
+    <div class="u80_box">
+      <img class='userphoto'src={{part.user.user_meta.photo.url}} alt="">
+    </div>
+  </a>
+  <div class="userinfo">
+    <div class="u_box">
+      <a class='anot accountuser'href="{% url 'accountkind' part.user.user_meta.username 'post' %}">{{part.user.user_meta.username}}</a>
+    </div>
+    <div class="p_box">
+      <p class='userplofile'>{{part.user.user_meta.plofile}}</p>
+    </div>
+  </div>
+  {% if look == 'another'%}
+  <form class="channel_form" action="{% url 'ajaxc' %}" method="POST">
+    {% csrf_token %}
+    <input class='gost' name='username' value={{part.user.user_meta.username}}></input>
+    <button class="anot ctag achannel" {%ifequal channel 1 %}id='channel'{% endifequal %} type='submit'>channel</button>
+  </form>
+  {% endif %}
+</div>
+<div class="html_box">
+  <h2>HTML</h2>
+  <div class="parapara">
+    {% for a in para %}
+    <span>{{ forloop.counter }}</span>
+    {% endfor %}
+  </div>
+  <div class="html_code">
+    <p>{{ part.html_code }}</p>
+  </div>
+</div>
+<div class="css_box">
+  <h2>CSS</h2>
+  <div class="paraparac">
+    {% for a in parac %}
+    <span>{{ forloop.counter }}</span>
+    {% endfor %}
+  </div>
+  <div class="css_code">
+    <p>{{ part.css_code }}</p>
+  </div>
+</div>
+{% if category_len >= 1 %}
+<div class="relation">
+{% if category_f != '' %}
+  <div class="category_f relation_box">
+    <div class="i_box">
+      <a class='anot a_box' href="{% url 'part' category_f.user.user_meta.username category_f.id %}">
+        <img class='c_img'src={{category_f.image.url}} alt="">
+        <div class="maskleft"><i class="fas fa-angle-left"></i></div>
+      </a>
+      <a class='anot filename2'href="{% url 'part' category_f.user.user_meta.username category_f.id %}">{{category_f.file_name}}</a>
+      <p class=minicate>{{category_f.categories.categories}}</p>
+    </div>
+  </div>
+{% endif%}
+  <div class="relation_category relation_box">
+    <div class="i_box">
+      <a class='anot a_box'href="{% url 'partslist' part.user.user_meta.username part.categories.id %}">
+        <img class='c_img' src={{part.categories.img.url}} alt="">
+        <div class="mask">
+          <p>{{category_len}}</p>
+          <p><i class="fas fa-align-justify"></i></p>
+        </div>
+      </a>
+      <a class='anot filename2' href="{% url 'partslist' part.user.user_meta.username part.categories.id %}">{{part.categories.categories}}</a>
+    </div>
+  </div>
+{% if category_l != '' %}
+  <div class="category_l relation_box">
+    <div class="i_box">
+      <a class='anot a_box' href="{% url 'part' category_l.user.user_meta.username category_l.id %}">
+        <img class='c_img' src={{category_l.image.url}} alt="">
+        <div class="maskright"><i class="fas fa-angle-right"></i></div>
+      </a>
+      <a class='anot filename2'href="{% url 'part' category_l.user.user_meta.username category_l.id %}">{{category_l.file_name}}</a>
+      <p class='minicate'>{{category_l.categories.categories}}</p>
+    </div>
+  </div>
+{% endif %}
+</div>
+{% endif %}
+
+<span id="id_div_ajax_response"></span>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script>
+  $(".like_form").submit( function(event) {
+      event.preventDefault();
+      var form = $(this);
+      $.ajax({
+        url: "{% url 'ajax' %}",
+        method: form.prop("method"),
+        data: form.serialize(),
+        timeout: 10000,
+        dataType: "text",
+      })
+      .done( function(data) {
+        $("#id_div_ajax_response").text(data);
+        if (data == 'Success to like'){
+          $('.alike').addClass('liked');
+        }else if (data=='Success to unlike'){
+          $('.alike').removeClass("liked");
+          $('.alike').removeAttr('id');
+        }else{
+          $('.alike').addClass('s');
+        }
+      })
+    });
+</script>
+<script>
+  $(".favorite_form").submit( function(event) {
+      event.preventDefault();
+      var form = $(this);
+      $.ajax({
+        url: "{% url 'ajaxf' %}",
+        method: form.prop("method"),
+        data: form.serialize(),
+        timeout: 10000,
+        dataType: "text",
+      })
+      .done( function(data) {
+        $("#id_div_ajax_response").text(data);
+        if (data == 'Success to favorite'){
+          $('.afavorite').addClass('favorite');
+        }else{
+          $('.afavorite').removeClass("favorite");
+          $('.afavorite').removeAttr('id');
+        }
+      })
+    });
+</script>
+<script>
+  $(".channel_form").submit( function(event) {
+      event.preventDefault();
+      var form = $(this);
+      $.ajax({
+        url: "{% url 'ajaxc' %}",
+        method: form.prop("method"),
+        data: form.serialize(),
+        timeout: 10000,
+        dataType: "text",
+      })
+      .done( function(data) {
+        $("#id_div_ajax_response").text(data);
+        if (data == '登録完了'){
+          $('.achannel').addClass('channel');
+        }else{
+          $('.achannel').removeClass("channel");
+          $('.achannel').removeAttr('id');
+        }
+      })
+    });
+</script>
+{% endblock %}

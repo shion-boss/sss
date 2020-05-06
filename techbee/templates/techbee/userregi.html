@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'techbee/css/userregi.css' %}"/>
+    <title></title>
+  </head>
+  <body>
+    <div class="form_box">
+      <div class="techbee_img_box">
+        <img src="/media/media/defo.jpg" alt="">
+      </div>
+      <form class="regi_form" action="{% url 'userregi' introducer %}" method="post">
+        {% csrf_token %}
+        {% if m == False %}
+        <label for="u_input" class='username_label'>
+          <p class='username_p'>username</p>
+        </label>
+        <input type="text" placeholder="半角英数字と＿(アンダースコア)のみ使用可能" name="username" required pattern="^[0-9A-Za-z-_]+$" value="" id='u_input'>
+        {% endif %}
+        <div class="under_input"></div>
+        <div class="radio_box radmar">
+          <input type='radio' name="position" value="member" id='member' checked>
+          <label for="member">member ¥5,000/month</label>
+        </div>
+        <div class="radio_box">
+          <input type="radio" name="position" value="supporter" id='supporter'>
+          <label for="supporter">supporter ¥10,000/month</label>
+        </div>
+        <div {% if m %}class="pay2_button"{% else %}class='pay_button'{% endif %}id='pay_button'>
+          <script src="https://checkout.pay.jp/" class="payjp-button" data-key="pk_test_d5c8ab22ce0ab45993ba495d"></script>
+        </div>
+        <input type="text" name="dummy" style="display:none;">
+      </form>
+    </div>
+  </body>
+</html>

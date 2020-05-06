@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'techbee/css/par2.css' %}"/>
+<h1 class='title'>Parts/edit</h1>
+<div class="search sticky">
+  <div class="kind">
+    <a class="tag anot"{% ifequal search_kind "new" %}id="currentag"{% endifequal %} href="{% url 'partkind' 'new' %}">new</a>
+    <a class="tag anot"{% ifequal search_kind 'like' %}id="currentag"{% endifequal %} href="{% url 'partkind'  'like' %}">like</a>
+    <a class="tag anot"{% ifequal search_kind 'random' %}id="currentag"{% endifequal %} href="{% url 'partkind'  'random' %}">random</a>
+    <a class="tag anot"{% ifequal search_kind 'list' %}id="currentag"{% endifequal %} href="{% url 'partkind'  'list' %}">series</a>
+  </div>
+</div>
+<div class="v_box">
+  <video class="main_video"src={{part.video.url}} poster={{part.image.url}} type="video/mp4" preload="none" controls></video>
+</div>
+<form class="edit_form" action="{% url 'editsave' part.user.user_meta.username part.id %}" method="post">
+  {% csrf_token %}
+  <div class="save_box">
+    <button type="submit" name="button" class='anot save'>SAVE</button>
+  </div>
+  <input type="checkbox" id='seriesnew'name="" value="">
+  <div class="new_cate">
+    <div class="seriesnewbutton">
+      <label for="seriesnew" class='newseries'>new series<i class="fas fa-plus-circle ten"></i></label>
+    </div>
+    <input type="text" id='newseries' name="newseries_edit" value="">
+    <span class="cp_sl06_highlight"></span>
+    <span class="cp_sl06_selectbar2"></span>
+  </div>
+  <div class="cp_ipselect" >
+    <div class="seriesnewbutton">
+      <label for="seriesnew" class='newseries'>series<i class="fas fa-plus-circle"></i></label>
+    </div>
+    <select class="cp_sl06" name='categories_edit'>
+      <option value="" hidden disabled selected>{{part.categories.categories}}</option>
+      <option value="" ></option>
+      {% for r in rrr %}
+      <option  value="{{r.categories}}">{{r.categories}}</option>
+      {% endfor %}
+    </select>
+    <span class="cp_sl06_highlight"></span>
+    <span class="cp_sl06_selectbar"></span>
+  </div>
+  <div class="video_box">
+    <div class="f_box">
+      <label for="filename_edit" class='newseries'>filename</label>
+      <input type="text" name="filename_edit" id='filename_edit' class='filename_edit' value={{part.file_name}} maxlength="30">
+      <span class="cp_sl06_selectbar3"></span>
+    </div>
+  </div>
+  <div class="edit_box">
+    <h2>HTML/edit</h2>
+    <textarea name="html_edit" class='code html_edit' rows="40">{{part.html_code}}</textarea>
+  </div>
+  <div class="edit_box2">
+    <h2>CSS/edit</h2>
+    <textarea name="css_edit" class='css_edit code' rows="40">{{ part.css_code }}</textarea>
+  </div>
+</form>
+
+{% if category_len >= 1 %}
+<div class="relation">
+{% if category_f != '' %}
+  <div class="category_f relation_box">
+    <div class="i_box">
+      <a class='anot a_box' href="{% url 'part' category_f.user.user_meta.username category_f.id %}">
+        <img class='c_img'src={{category_f.image.url}} alt="">
+        <div class="maskleft"><i class="fas fa-angle-left"></i></div>
+      </a>
+      <a class='anot filename2'href="{% url 'part' category_f.user.user_meta.username category_f.id %}">{{category_f.file_name}}</a>
+      <p class=minicate>{{category_f.categories.categories}}</p>
+    </div>
+  </div>
+{% endif%}
+  <div class="relation_category relation_box">
+    <div class="i_box">
+      <a class='anot a_box'href="{% url 'partslist' part.user.user_meta.username part.categories.id %}">
+        <img class='c_img' src={{part.categories.img.url}} alt="">
+        <div class="mask">
+          <p>{{category_len}}</p>
+          <p><i class="fas fa-align-justify"></i></p>
+        </div>
+      </a>
+      <a class='anot filename2' href="{% url 'partslist' part.user.user_meta.username part.categories.id %}">{{part.categories.categories}}</a>
+    </div>
+  </div>
+{% if category_l != '' %}
+  <div class="category_l relation_box">
+    <div class="i_box">
+      <a class='anot a_box' href="{% url 'part' category_l.user.user_meta.username category_l.id %}">
+        <img class='c_img' src={{category_l.image.url}} alt="">
+        <div class="maskright"><i class="fas fa-angle-right"></i></div>
+      </a>
+      <a class='anot filename2'href="{% url 'part' category_l.user.user_meta.username category_l.id %}">{{category_l.file_name}}</a>
+      <p class='minicate'>{{category_l.categories.categories}}</p>
+    </div>
+  </div>
+{% endif %}
+</div>
+{% endif %}
+{% endblock %}

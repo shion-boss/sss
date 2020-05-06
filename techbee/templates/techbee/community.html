@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'techbee/css/community.css' %}"/>
+<h1 class='title'>community</h1>
+<div class="event_box">
+  {% for e in page_obj %}
+  <a href="{% url 'community_event' e.id %}" class='notdeco'>
+    <div class="event">
+      <div class="in_box">
+        <img class='event_img' src={{e.img.url}} alt="">
+      </div>
+      <div class="grid_e_box">
+        <p class='event_name'><i class="far fa-bookmark padd"></i>{{e.event_name}}</p>
+        <p class='event_date'><i class="far fa-calendar-alt padd"></i>{{e.event_date}}</p>
+        <p class='event_time'><i class="far fa-clock pa"></i>{{e.event_time}}</p>
+        <p class='event_venue'><i class="far fa-compass pa"></i>{{e.event_venue}}</p>
+      </div>
+      <p class='event_dis'>{{e.event_dis}}</p>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+<div class="pagination">
+  <div class="step-links">
+      {% if page_obj.has_previous %}
+          <a href="?page=1" class='p_a'><i class="fas fa-fast-backward"></i></a>
+          <a href="?page={{ page_obj.previous_page_number }}" class='p_b'><i class="fas fa-step-backward"></i></a>
+      {% endif %}
+
+      <span class="current">
+          {{ page_obj.number }}/{{ page_obj.paginator.num_pages }}
+      </span>
+
+      {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.next_page_number }}" class='p_c'><i class="fas fa-step-forward"></i></a>
+          <a href="?page={{ page_obj.paginator.num_pages }}" class='p_d'><i class="fas fa-fast-forward"></i></a>
+      {% endif %}
+  </div>
+</div>
+{% endblock %}

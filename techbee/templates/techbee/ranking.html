@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bee_tag %}
+{% block body %}
+<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'techbee/css/ranking.css' %}"/>
+<h1 class='title'>Ranking</h1>
+{% for a in aaa|slice:":10" %}
+<div class="rank_user">
+  {% if forloop.counter == 1 %}
+  <p class='rank' id='one'>No.{{ forloop.counter }}</p>
+  {% elif forloop.counter == 2 %}
+  <p class='rank' id='two'>No.{{ forloop.counter }}</p>
+  {% elif forloop.counter == 3 %}
+  <p class='rank' id='three'>No.{{ forloop.counter }}</p>
+  {% else%}
+  <p class='rank'>No.{{ forloop.counter }}</p>
+  {% endif %}
+  <a class="photocen" href="{% url 'accountkind' a.username 'post'%}">
+    <div class="u10_box">
+      <img class='userphoto' src={{a.photo.url}} alt="">
+    </div>
+  </a>
+  <a class="anot" href="{% url 'accountkind' a.username 'post'%}">{{a.username}}</a>
+  <p class='point'>{{a.point}}pt</p>
+</div>
+{% endfor %}
+<div class="rank_box10">
+{% for a in page_obj %}
+{% if page_obj.number == 1 %}
+  <div class="rank_user10">
+    <a class="photocen10" href="{% url 'accountkind' a.username 'post'%}">
+      <div class="u10_box">
+        <img class='userphoto' src={{a.photo.url}} alt="">
+      </div>
+    </a>
+    <a class="anot username" href="{% url 'accountkind' a.username 'post'%}">{{a.username}}</a>
+    <div class="rankpoint">
+      <p class='rank10'>No.{{ forloop.counter|add:10}}</p>
+      <p class='point10'>{{a.point}}pt</p>
+    </div>
+  </div>
+{% else %}
+<div class="rank_user10">
+  <a class="photocen10" href="{% url 'accountkind' a.username 'post'%}">
+    <div class="u10_box">
+      <img class='userphoto' src={{a.photo.url}} alt="">
+    </div>
+  </a>
+  <a class="anot username" href="{% url 'accountkind' a.username 'post'%}">{{a.username}}</a>
+  <div class="rankpoint">
+    <p class='rank10'>No.{{ page_obj.previous_page_number|multiplie:24|add:forloop.counter|add:10}}</p>
+    <p class='point10'>{{a.point}}pt</p>
+  </div>
+</div>
+{% endif  %}
+{% endfor %}
+</div>
+<div class="pagination">
+  <div class="step-links">
+      {% if page_obj.has_previous %}
+          <a href="?page=1" class='p_a'><i class="fas fa-fast-backward"></i></a>
+          <a href="?page={{ page_obj.previous_page_number }}" class='p_b'><i class="fas fa-step-backward"></i></a>
+      {% endif %}
+
+      <span class="current">
+          {{ page_obj.number }}/{{ page_obj.paginator.num_pages }}
+      </span>
+
+      {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.next_page_number }}" class='p_c'><i class="fas fa-step-forward"></i></a>
+          <a href="?page={{ page_obj.paginator.num_pages }}" class='p_d'><i class="fas fa-fast-forward"></i></a>
+      {% endif %}
+  </div>
+</div>
+{% endblock %}

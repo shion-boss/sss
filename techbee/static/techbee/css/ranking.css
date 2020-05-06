@@ -1,0 +1,343 @@
+.title{
+  text-align: center;
+  vertical-align: bottom;
+  font-family: "Palatino Linotype";
+  color:rgb(56, 56, 56);
+  font-size: 40px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.rank_user{
+  display: grid;
+  grid-template-columns:1fr 110px 110px 3fr 110px 1fr;
+  grid-template-rows: 110px 1fr;
+  font-family: "Palatino Linotype",sans-serif;
+  color:rgb(56, 56, 56);
+  font-weight: bold;
+  padding: 1rem 0;
+  border-top:solid 0.8px #808080;
+
+}
+.rank_user .anot{
+  font-size: 25px;
+  text-shadow:1px 2px 3px #808080;
+  grid-column: 3;
+  grid-row: 2;
+  text-align: center;
+
+}
+
+.rank_user a:hover{
+  color:rgb(56, 56, 56);
+  opacity: 0.8;
+  transition: 0.3s ease-in-out;
+  text-shadow:1px 2px 3px #808080;
+}
+
+.rank_user .anot:active{
+  text-shadow: none;
+}
+.photocen{
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.u10_box{
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+  border: solid 2px rgb(56, 56, 56);
+  padding: 0 auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userphoto{
+  height: 110px;
+}
+
+.photocen:hover + .anot{
+  color:rgb(56, 56, 56);
+  opacity: 0.8;
+  transition: 0.3s ease-in-out;
+  text-shadow:1px 2px 3px #808080;
+}
+
+.point{
+  grid-column: 4;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content:flex-end;
+  font-size: 120px;
+}
+
+.rank{
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content:flex-start;
+  font-size: 30px;
+  font-family: 'Fredericka the Great', cursive;
+}
+
+#one{
+  grid-row: 1;
+  color: #EB4B33;
+  font-size: 35px;
+}
+
+#two{
+  grid-row: 1;
+  color: #Ea2;
+  font-size: 30px;
+}
+
+#three{
+  grid-row: 1;
+  color: #EB4;
+  font-size: 30px;
+}
+
+.rank_box10{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  border-top: solid 0.8px #808080;
+  padding-top: 1rem;
+}
+
+.rank_user10{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 1rem;
+}
+
+.rank_user10 .photocen10{
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rank_user10 .username{
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rankpoint{
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.rank10{
+  grid-column: 1;
+  font-size: 20px;
+  font-family: 'Fredericka the Great', cursive;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.point10{
+  grid-column: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-size: 20px;
+  font-family: "Palatino Linotype",sans-serif;
+}
+
+.photocen10:hover+.username{
+  color:rgb(56, 56, 56);
+  opacity: 0.8;
+  transition: 0.3s ease-in-out;
+  text-shadow:1px 2px 3px #808080;
+}
+
+@media screen and (max-width:768px){
+  /*画面幅が768以下の時*/
+  .title {
+      text-align: center;
+      vertical-align: bottom;
+      font-family: "Palatino Linotype";
+      color: rgb(56, 56, 56);
+      font-size: 2rem;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+  }
+  .rank_user {
+    display: grid;
+    grid-template-columns: 1fr 70px 70px 2fr 70px 1fr;
+    grid-template-rows: 70px 1fr;
+    font-family: "Palatino Linotype",sans-serif;
+    color: rgb(56, 56, 56);
+    font-weight: bold;
+    padding: 1rem 0;
+    border-top: solid 0.8px #808080;
+  }
+  .userphoto {
+    height: 70px;
+  }
+  .u10_box {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: solid 2px rgb(56, 56, 56);
+    padding: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .rank_user .anot {
+    font-size: 1rem;
+    text-shadow: 1px 2px 3px #808080;
+    grid-column: 3;
+    grid-row: 2;
+    text-align: center;
+  }
+  .point {
+    grid-column: 4;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 4rem;
+  }
+  .rank {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 1.5rem;
+    font-family: 'Fredericka the Great', cursive;
+    padding-left: 10px;
+  }
+  #one {
+    grid-row: 1;
+    color: #EB4B33;
+    font-size: 1.8rem;
+  }
+  #two {
+    grid-row: 1;
+    color: #Ea2;
+    font-size: 1.7rem;
+  }
+  #three {
+    grid-row: 1;
+    color: #EB4;
+    font-size: 1.6rem;
+  }
+  .rank_box10 {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    border-top: solid 0.8px #808080;
+    padding-top: 1rem;
+  }
+  .rank_user10 {
+    display: grid;
+    grid-template-columns: 1fr 120px 1fr;
+    margin-bottom: 1rem;
+  }
+
+}
+
+@media screen and (max-width:480px){
+  /*画面幅が480pxまでの時*/
+  .title {
+      text-align: center;
+      vertical-align: bottom;
+      font-family: "Palatino Linotype";
+      color: rgb(56, 56, 56);
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+  }
+  .rank_user {
+    display: grid;
+    grid-template-columns: 0 70px 70px 1fr 70px 0;
+    grid-template-rows: 70px 1fr;
+    font-family: "Palatino Linotype",sans-serif;
+    color: rgb(56, 56, 56);
+    font-weight: bold;
+    padding: 1rem 0;
+    border-top: solid 0.8px #808080;
+  }
+  .userphoto {
+    height: 70px;
+  }
+  .u10_box {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: solid 2px rgb(56, 56, 56);
+    padding: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .rank_user .anot {
+    font-size: 1rem;
+    text-shadow: 1px 2px 3px #808080;
+    grid-column: 3;
+    grid-row: 2;
+    text-align: center;
+  }
+  .point {
+    grid-column: 4;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 2.5rem;
+  }
+  .rank {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 1.5rem;
+    font-family: 'Fredericka the Great', cursive;
+    padding-left: 10px;
+  }
+  #one {
+    grid-row: 1;
+    color: #EB4B33;
+    font-size: 1.8rem;
+  }
+  #two {
+    grid-row: 1;
+    color: #Ea2;
+    font-size: 1.7rem;
+  }
+  #three {
+    grid-row: 1;
+    color: #EB4;
+    font-size: 1.6rem;
+  }
+  .rank_box10 {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border-top: solid 0.8px #808080;
+    padding-top: 1rem;
+  }
+  .rank_user10 {
+    display: grid;
+    grid-template-columns: 1fr 120px 1fr;
+    margin-bottom: 1rem;
+  }
+
+}

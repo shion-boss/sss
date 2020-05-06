@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+  <link rel="stylesheet" type="text/css" href="{% static 'techbee/css/parts.css' %}"/>
+  <h1 class='title'>Parts</h1>
+  <div class="search sticky">
+    <div class="kind">
+      <a class="tag anot"{% ifequal search_kind "new" %}id="currentag"{% endifequal %} href="{% url 'partkind' 'new' %}">new</a>
+      <a class="tag anot"{% ifequal search_kind 'like' %}id="currentag"{% endifequal %} href="{% url 'partkind'  'like' %}">like</a>
+      <a class="tag anot"{% ifequal search_kind 'random' %}id="currentag"{% endifequal %} href="{% url 'partkind'  'random' %}">random</a>
+      <a class="tag anot"{% ifequal search_kind 'list' %}id="currentag"{% endifequal %} href="{% url 'partkind'  'list' %}">series</a>
+    </div>
+  </div>
+  <div class="post_parts">
+  {% if search_kind != 'list' %}
+    {% for a in page_obj %}
+    <div class="post_part">
+      <div class="part_cen">
+        <a href="{% url 'part' a.user.user_meta.username a.id %}">
+          <div class="v_box">
+            <img class="main_video" src="{{a.image.url}}" alt="">
+          </div>
+        </a>
+        <div class="d_box">
+          <a  href="{% url 'accountkind' a.user.user_meta.username 'post' %}">
+            <div class="mini_box">
+              <img class='miniphoto'src={{a.user.user_meta.photo.url}} alt="">
+            </div>
+          </a>
+          <a class='file_name' href="{% url 'part' a.user.user_meta.username a.id %}">{{ a.file_name }}</a>
+          <a class="namelike" href="{% url 'accountkind' a.user.user_meta.username 'post' %}">{{ a.user.user_meta.username}}・like.{{ a.like_count }}・{{ a.post_time|date:"Y/m/j H:i"}}</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  {% else %}
+    {% for a in page_obj %}
+    <div class="relation_category relation_box">
+      <div class="i_box">
+        <a class='anot a_box'href="{% url 'partslist' a.user.user_meta.username a.id %}">
+          <img class='c_img' src={{a.img.url}} alt="">
+          <div class="mask">
+            <p>{{ a.parts_model_set.all|length}}</p>
+            <p><i class="fas fa-align-justify"></i></p>
+          </div>
+        </a>
+        <a class='anot filename2' href="{% url 'partslist' a.user.user_meta.username a.id %}">{{a.categories}}</a>
+        <a class="namelike" href="{% url 'accountkind' a.user.user_meta.username 'post' %}">{{ a.user.user_meta.username}}</a>
+      </div>
+    </div>
+    {% endfor %}
+  {% endif%}
+  </div>
+  <div class="pagination">
+    <div class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1" class='p_a'><i class="fas fa-fast-backward"></i></a>
+            <a href="?page={{ page_obj.previous_page_number }}" class='p_b'><i class="fas fa-step-backward"></i></a>
+        {% endif %}
+
+        <span class="current">
+            {{ page_obj.number }}/{{ page_obj.paginator.num_pages }}
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class='p_c'><i class="fas fa-step-forward"></i></a>
+            <a href="?page={{ page_obj.paginator.num_pages }}" class='p_d'><i class="fas fa-fast-forward"></i></a>
+        {% endif %}
+    </div>
+  </div>
+{% endblock %}

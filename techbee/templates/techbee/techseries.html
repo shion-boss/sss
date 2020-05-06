@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'techbee/css/par2.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'techbee/css/techseries.css' %}"/>
+<h1 class='title'>{{t_title}}</h1>
+<div class="category_box">
+  <div class="backblack">
+    <div class="main3_box">
+      <img class='category_img' src="{{ c_model.image.url }}" alt="">
+      <!--<div class="maskl"></div>
+      <!--<div class="maskr"></div>-->
+      <div class="mask2"></div>
+      <p class='category_title'>{{ c_model.category }}</p>
+    </div>
+  </div>
+</div>
+<div class="obj_box">
+  {% for a in page_obj %}
+  <div class="obj">
+    <a href="{% url 'tech' category 0 a.id%}">
+      <div class="t_img_box">
+        <img src="{{a.image.url}}" alt="">
+      </div>
+      <p>{{a.title}}</p>
+      <p>{{a.category.category}}</p>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+<div class="pagination">
+  <div class="step-links">
+      {% if page_obj.has_previous %}
+          <a href="?page=1" class='p_a'><i class="fas fa-fast-backward"></i></a>
+          <a href="?page={{ page_obj.previous_page_number }}" class='p_b'><i class="fas fa-step-backward"></i></a>
+      {% endif %}
+
+      <span class="current">
+          {{ page_obj.number }}/{{ page_obj.paginator.num_pages }}
+      </span>
+
+      {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.next_page_number }}" class='p_c'><i class="fas fa-step-forward"></i></a>
+          <a href="?page={{ page_obj.paginator.num_pages }}" class='p_d'><i class="fas fa-fast-forward"></i></a>
+      {% endif %}
+  </div>
+</div>
+{%endblock%}
