@@ -55,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
+    'django.contrib.sites.middleware.CurrentSiteMiddleware',  
 ]
 
 ROOT_URLCONF = 'nextweb.urls'
