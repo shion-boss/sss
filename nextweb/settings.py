@@ -183,9 +183,6 @@ ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-DEBUG = False
-if not DEBUG:
-    SECRET_KEY = os.environ['SECRET_KEY']
 
 try:
     from .local_settings import *
