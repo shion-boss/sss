@@ -20,8 +20,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'bklw7@pfms0u=+d2%jpg(gp%--+=!l0#n%m70+7=d#9gx_#=_z'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -186,6 +184,8 @@ ALLOWED_HOSTS = ['*']
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEBUG = False
+if not DEBUG:
+    SECRET_KEY = os.environ['SECRET_KEY']
 
 try:
     from .local_settings import *
