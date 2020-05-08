@@ -18,7 +18,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
-SECRET_KEY = 'bklw7@pfms0u=+d2%jpg(gp%--+=!l0#n%m70+7=d#9gx_#=_z'
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -94,12 +93,7 @@ WSGI_APPLICATION = 'nextweb.wsgi.application'
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'name',
-    }
-}
+
 
 
 # Password validation
@@ -192,3 +186,8 @@ except ImportError:
 
 db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
 DATABASES['default'].update(db_from_env)
+
+if not DEBUG:
+    SECRET_KEY = os.environ['SECRET_KEY'] # 追加
+    import django_heroku
+    django_heroku.settings(locals())
