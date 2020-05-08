@@ -1,1 +1,1 @@
-"web: gunicorn nextweb.wsgi" 
+web: gunicorn nextweb.wsgi
