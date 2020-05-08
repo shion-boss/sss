@@ -1,1 +1,1 @@
-web: gunicorn nextweb.wsgi --log-file -
+web: gunicorn nextweb.wsgi
