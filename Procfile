@@ -1,1 +1,1 @@
-'web: gunicorn sss.nextweb.wsgi' 
+"web: gunicorn nextweb.wsgi --log-file -" 
