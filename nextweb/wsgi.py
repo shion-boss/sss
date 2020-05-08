@@ -15,14 +15,10 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nextweb.settings')
 
 application = get_wsgi_application()
 
-from whitenoise.django import DjangoWhiteNoise
-application = DjangoWhiteNoise(application)
 
 import threading
 import requests
 import time
-
-
 def awake():
     while True:
         try:
