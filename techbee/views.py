@@ -343,7 +343,7 @@ def userregi_view(request,introducer):
             meta.save()
 
         #QRコード###################################
-        face = Image.open('media/media/qrbee.jpg')
+        face = Image.open('static/base/qrbee.jpg')
         qr_big = qrcode.QRCode(
             error_correction=qrcode.constants.ERROR_CORRECT_H
         )
@@ -626,12 +626,13 @@ def accountkind_view(request,username,kind):
         meta=user_meta.objects.get(username=username)
         afi=afirieito_model.objects.filter(introducer=user.user_meta.username)
         member_list=[]
-        for a in afi:
-            member=user_meta.objects.get(user=a.user)
-            member_list.append(member)
-        page_obj = paginate_query(request, member_list, settings.PAGE_PER_ITEM)
-        params['page_obj']= page_obj
-        params['site_name']=settings.SITE_NAME
+        if len(afi) != 0:
+            for a in afi:
+                member=user_meta.objects.get(user=a.user)
+                member_list.append(member)
+                page_obj = paginate_query(request, member_list, settings.PAGE_PER_ITEM)
+                params['page_obj']= page_obj
+                params['site_name']=settings.SITE_NAME
     return render(request,'techbee/account.html',params)
 
 def metapost_view(request):
@@ -739,12 +740,16 @@ def community2_view(request,id):
 
 @login_required
 def footer_view(request,category):
-    fc_model=footer_cat_model.objects.get(footer_cat=category)
-    f_cate=footer_model.objects.filter(footer_cat=fc_model)
-    params={
-        'category':category,
-        'f_cate':f_cate,
-    }
+    try:
+        fc_model=footer_cat_model.objects.get(footer_cat=category)
+    except:
+        pass
+    else:
+        f_cate=footer_model.objects.filter(footer_cat=fc_model)
+        params={
+            'category':category,
+            'f_cate':f_cate,
+        }
     return render(request,'techbee/footer.html',params)
 
 @login_required

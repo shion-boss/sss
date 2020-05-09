@@ -10,7 +10,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class user_meta(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     username=models.CharField(max_length=20)
-    photo=models.ImageField(upload_to='media/', default='media/defo.jpg')
+    photo=models.ImageField(upload_to='static/', default='static/base/defo.jpg')
     name=models.CharField(max_length=20)
     plofile=models.TextField(max_length=220,default='')
     point=models.IntegerField(default=0)
@@ -23,7 +23,7 @@ class user_meta(models.Model):
 class categories_model(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     categories=models.CharField(max_length=30)
-    img=models.ImageField(upload_to='media/', default='media/defo.jpg')
+    img=models.ImageField(upload_to='static/', default='static/base/defo.jpg')
     post_time=models.DateTimeField(default=timezone.datetime.now)
 
 
@@ -31,8 +31,8 @@ class parts_model(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     categories=models.ForeignKey(categories_model,on_delete=models.SET_NULL,blank=True,null=True)
     file_name=models.CharField(max_length=30)
-    video=models.FileField(upload_to='media/',default='')
-    image = models.ImageField(upload_to='media/', null=True, blank=True)
+    video=models.FileField(upload_to='static/',default='')
+    image = models.ImageField(upload_to='static/', null=True, blank=True)
     html_code=models.TextField(max_length=2000)
     css_code=models.TextField(max_length=2000)
     like_count=models.IntegerField(default=0)
@@ -58,7 +58,7 @@ class afirieito_model(models.Model):
     introducer=models.CharField(max_length=20)
 
 class event_model(models.Model):
-    img=models.ImageField(upload_to='media/', default='media/defo.jpg')
+    img=models.ImageField(upload_to='static/', default='static/base/defo.jpg')
     event_name=models.CharField(max_length=15)
     event_date=models.CharField(max_length=15)
     event_time=models.CharField(max_length=15)
@@ -69,7 +69,7 @@ class event_model(models.Model):
 class event_img_model(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     event=models.ForeignKey(event_model,on_delete=models.CASCADE)
-    img=models.ImageField(upload_to='media/',blank=True,null=True)
+    img=models.ImageField(upload_to='static/',blank=True,null=True)
 
 class footer_cat_model(models.Model):
     footer_cat=models.CharField(max_length=20)
@@ -80,7 +80,7 @@ class footer_cat_model(models.Model):
 class footer_model(models.Model):
     footer_cat=models.ForeignKey(footer_cat_model,on_delete=models.SET_NULL,blank=True,null=True)
     header=models.CharField(max_length=30)
-    img=models.ImageField(upload_to='media/', null=True, blank=True)
+    img=models.ImageField(upload_to='static/', null=True, blank=True)
     text=models.TextField(max_length=1000)
 
     def __str__(self):
@@ -88,7 +88,7 @@ class footer_model(models.Model):
 
 class tech_tube_model(models.Model):
     category=models.CharField(max_length=30)
-    image = models.ImageField(upload_to='media/', null=True, blank=True)
+    image = models.ImageField(upload_to='static/', null=True, blank=True)
 
     def __str__(self):
         return self.category
@@ -96,8 +96,8 @@ class tech_tube_model(models.Model):
 class tube_movie_model(models.Model):
     category=models.ForeignKey(tech_tube_model,on_delete=models.SET_NULL,blank=True,null=True)
     title=models.CharField(max_length=30)
-    video=models.FileField(upload_to='media/',default='')
-    image = models.ImageField(upload_to='media/', null=True, blank=True)
+    video=models.FileField(upload_to='static/',default='')
+    image = models.ImageField(upload_to='static/', null=True, blank=True)
     text=models.TextField(max_length=2000)
     post_time=models.DateTimeField(default=timezone.datetime.now)
 
@@ -106,7 +106,7 @@ class tube_movie_model(models.Model):
 
 class tech_teaching_model(models.Model):
     category=models.CharField(max_length=30)
-    image = models.ImageField(upload_to='media/', null=True, blank=True)
+    image = models.ImageField(upload_to='static/', null=True, blank=True)
 
     def __str__(self):
         return self.category
@@ -114,8 +114,8 @@ class tech_teaching_model(models.Model):
 class teaching_movie_model(models.Model):
     category=models.ForeignKey(tech_teaching_model,on_delete=models.SET_NULL,blank=True,null=True)
     title=models.CharField(max_length=30)
-    video=models.FileField(upload_to='media/',default='')
-    image = models.ImageField(upload_to='media/', null=True, blank=True)
+    video=models.FileField(upload_to='static/',default='')
+    image = models.ImageField(upload_to='static/', null=True, blank=True)
     text=models.TextField(max_length=2000)
     post_time=models.DateTimeField(default=timezone.datetime.now)
 
@@ -124,7 +124,7 @@ class teaching_movie_model(models.Model):
 
 class tech_bee_model(models.Model):
     category=models.CharField(max_length=30)
-    image = models.ImageField(upload_to='media/', null=True, blank=True)
+    image = models.ImageField(upload_to='static/', null=True, blank=True)
 
     def __str__(self):
         return self.category
@@ -132,7 +132,7 @@ class tech_bee_model(models.Model):
 class bee_model(models.Model):
     category=models.ForeignKey(tech_bee_model,on_delete=models.SET_NULL,blank=True,null=True)
     title=models.CharField(max_length=30)
-    image = models.ImageField(upload_to='media/', null=True, blank=True)
+    image = models.ImageField(upload_to='static/', null=True, blank=True)
     text=models.TextField(max_length=2000)
     post_time=models.DateTimeField(default=timezone.datetime.now)
 
