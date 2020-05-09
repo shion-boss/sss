@@ -740,10 +740,10 @@ def community2_view(request,id):
 
 @login_required
 def footer_view(request,category):
-        params={
-            'category':category,
-            'f_cate':'',
-        }
+    params={
+        'category':category,
+        'f_cate':'',
+    }
     try:
         fc_model=footer_cat_model.objects.get(footer_cat=category)
     except:
