@@ -740,16 +740,17 @@ def community2_view(request,id):
 
 @login_required
 def footer_view(request,category):
+        params={
+            'category':category,
+            'f_cate':'',
+        }
     try:
         fc_model=footer_cat_model.objects.get(footer_cat=category)
     except:
         pass
     else:
         f_cate=footer_model.objects.filter(footer_cat=fc_model)
-        params={
-            'category':category,
-            'f_cate':f_cate,
-        }
+        params['f_cate']=f_cate
     return render(request,'techbee/footer.html',params)
 
 @login_required

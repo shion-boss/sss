@@ -707,6 +707,7 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
     z-index: 3;
     transition: transform 0.3s ease-in;
     background-color: rgba(255,255,255,0.9);
+    opacity: 0;
   }
   body{
     grid-template-columns: 0 2rem 1fr 2rem;
@@ -734,6 +735,8 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
 
   #hum:checked~.header{
     transform: translateX(0);
+    background-color: rgba(255,255,255,0.9);
+    opacity: 1;
   }
 
   #hum:checked~.hum_label2{
@@ -813,8 +816,8 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
     transform: translateX(-100%);
     z-index: 3;
     transition: transform 0.3s ease-in;
-    background-color: rgba(255,255,255);
-    opacity: 0.9;
+    background-color: rgba(255,255,255,0.9);
+    opacity: 1;
   }
   body{
     grid-template-columns: 0 2rem 1fr 2rem;
@@ -1071,8 +1074,8 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
 
   #hum:checked~.header{
     transform: translateX(0);
-    background-color: rgb(255,255,255);
-    opacity: 0.9;
+    background-color: rgba(255,255,255,0.9);
+    opacity: 1;
   }
 
   #hum:checked~.hum_label2{
