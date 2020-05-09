@@ -163,11 +163,8 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
-
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
-#MEDIA_URL = '/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_URL = '/r/'
 
 
 import dj_database_url
