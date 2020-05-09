@@ -347,7 +347,7 @@ def userregi_view(request,introducer):
         qr_big = qrcode.QRCode(
             error_correction=qrcode.constants.ERROR_CORRECT_H
         )
-        qr_big.add_data('http://127.0.0.1:8000/techbee/afirieito/'+str(username)+'/')
+        qr_big.add_data('https://shielded-gorge-23393.herokuapp.com/techbee/afirieito/'+str(username)+'/')
         qr_big.make()
         img_qr_big = qr_big.make_image().convert('RGB')
         pos = ((img_qr_big.size[0] - face.size[0]) // 2, (img_qr_big.size[1] - face.size[1]) // 2)
@@ -626,13 +626,12 @@ def accountkind_view(request,username,kind):
         meta=user_meta.objects.get(username=username)
         afi=afirieito_model.objects.filter(introducer=user.user_meta.username)
         member_list=[]
-        if len(afi) != 0:
-            for a in afi:
-                member=user_meta.objects.get(user=a.user)
-                member_list.append(member)
-                page_obj = paginate_query(request, member_list, settings.PAGE_PER_ITEM)
-                params['page_obj']= page_obj
-                params['site_name']=settings.SITE_NAME
+        for a in afi:
+            member=user_meta.objects.get(user=a.user)
+            member_list.append(member)
+            page_obj = paginate_query(request, member_list, settings.PAGE_PER_ITEM)
+        params['page_obj']= page_obj
+        params['site_name']=settings.SITE_NAME
     return render(request,'techbee/account.html',params)
 
 def metapost_view(request):
