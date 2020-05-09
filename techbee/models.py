@@ -10,7 +10,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class user_meta(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     username=models.CharField(max_length=20)
-    photo=models.ImageField(upload_to='static/', default='static/base/defo.jpg')
+    photo=models.ImageField(default='static/base/defo.jpg')
     name=models.CharField(max_length=20)
     plofile=models.TextField(max_length=220,default='')
     point=models.IntegerField(default=0)
