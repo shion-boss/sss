@@ -343,7 +343,7 @@ def userregi_view(request,introducer):
             meta.save()
 
         #QRコード###################################
-        face = Image.open('static/base/qrbee.jpg')
+        face = Image.open('techbee/static/base/qrbee.jpg')
         qr_big = qrcode.QRCode(
             error_correction=qrcode.constants.ERROR_CORRECT_H
         )
