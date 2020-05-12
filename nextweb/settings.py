@@ -37,8 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
     'techbee',
     'django.contrib.sites',
@@ -47,6 +45,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.line',
     'rest_framework',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 
@@ -200,4 +200,4 @@ CLOUDINARY_STORAGE = {
 }
 
 MEDIA_URL = '/media/'
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+#DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
