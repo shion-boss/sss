@@ -12,7 +12,7 @@ from cloudinary.models import CloudinaryField
 class user_meta(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     username=models.CharField(max_length=20)
-    photo=CloudinaryField('image', default='static/base/defo.jpg')
+    photo=CloudinaryField('image',null=True, blank=True)
     name=models.CharField(max_length=20)
     plofile=models.TextField(max_length=220,default='')
     point=models.IntegerField(default=0)
@@ -25,7 +25,7 @@ class user_meta(models.Model):
 class categories_model(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     categories=models.CharField(max_length=30)
-    img=CloudinaryField('image', default='static/base/defo.jpg')
+    img=CloudinaryField('image',null=True, blank=True)
     post_time=models.DateTimeField(default=timezone.datetime.now)
 
 
@@ -60,7 +60,7 @@ class afirieito_model(models.Model):
     introducer=models.CharField(max_length=20)
 
 class event_model(models.Model):
-    img=CloudinaryField('image', default='static/base/defo.jpg')
+    img=CloudinaryField('image',null=True, blank=True)
     event_name=models.CharField(max_length=15)
     event_date=models.CharField(max_length=15)
     event_time=models.CharField(max_length=15)
