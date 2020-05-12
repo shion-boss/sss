@@ -167,7 +167,6 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
 
 
 import dj_database_url
@@ -198,4 +197,5 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': 'bX5NeUe9ypGq-rqaFCc2rT-WFZE'
 }
 
+MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
