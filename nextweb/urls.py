@@ -17,15 +17,20 @@ from django.contrib import admin
 from django.urls import path,include
 from techbee.urls import router
 
+from django.conf import settings
+from django.conf.urls.static import static
+from django.views.static import serve  #追加
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('techbee/',include("techbee.urls")),
     path('auth/', include('allauth.urls')),
     path('oauth/', include('social_django.urls', namespace='social')),
     path('api/',include(router.urls)),
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ]
 
-from django.conf import settings  # 追加
-from django.conf.urls.static import static # 追加
+#from django.conf import settings  # 追加
+#from django.conf.urls.static import static # 追加
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
