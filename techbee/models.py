@@ -33,7 +33,7 @@ class parts_model(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     categories=models.ForeignKey(categories_model,on_delete=models.SET_NULL,blank=True,null=True)
     file_name=models.CharField(max_length=30)
-    video=CloudinaryField("video",default='')
+    video=CloudinaryField("video")
     image =CloudinaryField('image', null=True, blank=True)
     html_code=models.TextField(max_length=2000)
     css_code=models.TextField(max_length=2000)
@@ -98,7 +98,7 @@ class tech_tube_model(models.Model):
 class tube_movie_model(models.Model):
     category=models.ForeignKey(tech_tube_model,on_delete=models.SET_NULL,blank=True,null=True)
     title=models.CharField(max_length=30)
-    video=CloudinaryField("video",default='')
+    video=CloudinaryField("video")
     image =CloudinaryField('image', null=True, blank=True)
     text=models.TextField(max_length=2000)
     post_time=models.DateTimeField(default=timezone.datetime.now)
@@ -116,7 +116,7 @@ class tech_teaching_model(models.Model):
 class teaching_movie_model(models.Model):
     category=models.ForeignKey(tech_teaching_model,on_delete=models.SET_NULL,blank=True,null=True)
     title=models.CharField(max_length=30)
-    video=CloudinaryField("video",default='')
+    video=CloudinaryField("video")
     image =CloudinaryField('image', null=True, blank=True)
     text=models.TextField(max_length=2000)
     post_time=models.DateTimeField(default=timezone.datetime.now)
