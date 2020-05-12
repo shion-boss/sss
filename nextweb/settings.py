@@ -193,11 +193,11 @@ if not DEBUG:
     import django_heroku
     django_heroku.settings(locals())
 
-#CLOUDINARY_STORAGE = {
-#    'CLOUD_NAME': 'technext',
-#    'API_KEY': '162635864826637',
-#    'API_SECRET': 'bX5NeUe9ypGq-rqaFCc2rT-WFZE'
-#}
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'technext',
+    'API_KEY': '162635864826637',
+    'API_SECRET': 'bX5NeUe9ypGq-rqaFCc2rT-WFZE'
+}
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
