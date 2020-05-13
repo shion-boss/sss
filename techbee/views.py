@@ -823,7 +823,36 @@ def touko_view(request):
         }
         return render(request,'techbee/statusveri.html',params)
     login_bonus(user)
-    return redirect('index')
+    if request.method=='POST':
+        try:
+            newseries=request.POST['newseries']
+        except:
+            newseries=''
+        try:
+            categories=request.POST['categories']
+        except:
+            categories=''
+        filename=request.POST['filename']
+        image=request.FILES['tokoImage']
+        video=request.FILES['tokoVideo']
+        htmlcode=request.POST['htmlcode']
+        csscode=request.POST['csscode']
+        if newseries != '':
+            try:
+                cate=categories_model.objects.get(user=user,categories=newseries)
+            except:
+                categories_model(user=user,categories=newseries).save()
+                cate=categories_model.objects.get(user=user,categories=newseries)
+                parts_model(user=user,categories=cate,file_name=filename,image=image,video=video,html_code=htmlcode,css_code=csscode).save()
+            else:
+                parts_model(user=user,categories=cate,file_name=filename,image=image,video=video,html_code=htmlcode,css_code=csscode).save()
+        elif categories != '':
+            cate=categories_model.objects.get(user=user,categories=categories)
+            parts_model(user=user,categories=cate,file_name=filename,image=image,video=video,html_code=htmlcode,css_code=csscode).save()
+        else:
+            parts_model(user=user,categories=None,file_name=filename,image=image,video=video,html_code=htmlcode,css_code=csscode).save()
+        
+    return redirect('accountkind',user.user_meta.username,'post')
 
 '''
 def touko_view(request):
