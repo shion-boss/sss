@@ -33,7 +33,7 @@ class parts_model(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     categories=models.ForeignKey(categories_model,on_delete=models.SET_NULL,blank=True,null=True)
     file_name=models.CharField(max_length=30)
-    video=CloudinaryField('video')
+    video = CloudinaryField("video", blank=True, null=True,)
     image =CloudinaryField('image', null=True, blank=True)
     html_code=models.TextField(max_length=2000)
     css_code=models.TextField(max_length=2000)
