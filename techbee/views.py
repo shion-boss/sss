@@ -851,8 +851,8 @@ def touko_view(request):
             parts_model(user=user,categories=cate,file_name=filename,image=image,video=video,html_code=htmlcode,css_code=csscode).save()
         else:
             parts_model(user=user,categories=None,file_name=filename,image=image,video=video,html_code=htmlcode,css_code=csscode).save()
-        
-    return redirect('accountkind',user.user_meta.username,'post')
+
+    return redirect('index')
 
 '''
 def touko_view(request):
