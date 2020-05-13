@@ -811,6 +811,18 @@ def ranking_view(request):
     return render(request,'techbee/ranking.html',params)
 
 def touko_view(request):
+    user=request.user
+    try:
+        user.user_meta.username
+    except:
+        return redirect(to='loginselect')
+    if status_veri(user)==True:
+        a=afirieito_model.objects.get(user=user)
+        params={
+            'a':a,
+        }
+        return render(request,'techbee/statusveri.html',params)
+    login_bonus(user)
     return redirect('index')
 
 '''
