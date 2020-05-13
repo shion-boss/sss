@@ -811,6 +811,10 @@ def ranking_view(request):
     return render(request,'techbee/ranking.html',params)
 
 def touko_view(request):
+    return redirect('index')
+
+'''
+def touko_view(request):
     user=request.user
     try:
         user.user_meta.username
@@ -898,6 +902,7 @@ def touko_view(request):
         else:
             params['category_len']=0
     return render(request,'techbee/par2.html',params)
+'''
 
 def editsave_view(request,username,id):
     user=request.user
