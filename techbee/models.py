@@ -35,7 +35,7 @@ class parts_model(models.Model):
     file_name=models.CharField(max_length=30)
     image =CloudinaryField('image', null=True, blank=True)
     codepen=models.TextField(max_length=500)
-    text=models.TextField(max_length=2000)
+    text=models.TextField(max_length=3000)
     like_count=models.IntegerField(default=0)
     post_time=models.DateTimeField(default=timezone.datetime.now)
 
