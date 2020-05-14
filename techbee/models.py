@@ -26,8 +26,7 @@ class user_meta(models.Model):
 class categories_model(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     categories=models.CharField(max_length=30)
-    img=models.ImageField(null=True, blank=True)
-#    img=CloudinaryField('image',null=True, blank=True)
+    img=CloudinaryField('image',null=True, blank=True)
     post_time=models.DateTimeField(default=timezone.datetime.now)
 
 
