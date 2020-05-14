@@ -22,6 +22,9 @@ import datetime
 from django.utils.timezone import localtime
 from django.core.signals import request_started
 from django.core import signals
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 def status_veri(user):
     payjp.api_key ='sk_test_f0d6fe8a9725200cda316d56'
@@ -837,20 +840,7 @@ def touko_view(request):
         video=request.FILES['tokoVideo']
         htmlcode=request.POST['htmlcode']
         csscode=request.POST['csscode']
-        if newseries != '':
-            try:
-                cate=categories_model.objects.get(user=user,categories=newseries)
-            except:
-                categories_model(user=user,categories=newseries).save()
-                cate=categories_model.objects.get(user=user,categories=newseries)
-                parts_model(user=user,categories=cate,file_name=filename,image=image,video=video,html_code=htmlcode,css_code=csscode).save()
-            else:
-                parts_model(user=user,categories=cate,file_name=filename,image=image,video=video,html_code=htmlcode,css_code=csscode).save()
-        elif categories != '':
-            cate=categories_model.objects.get(user=user,categories=categories)
-            parts_model(user=user,categories=cate,file_name=filename,image=image,video=video,html_code=htmlcode,css_code=csscode).save()
-        else:
-            parts_model(user=user,categories=None,file_name=filename,image=image,video=video,html_code=htmlcode,css_code=csscode).save()
+        cloudinary.uploader.upload_large(video, resource_type = "video")
 
     return redirect('index')
 
