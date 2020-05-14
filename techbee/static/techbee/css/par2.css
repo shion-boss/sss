@@ -911,6 +911,9 @@ button:focus{
 .html_edit{
   grid-column: 2;
   grid-row: 2;
+}
+
+.html_edit p{
   line-break:strict;
   white-space: pre-wrap;
 }
