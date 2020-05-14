@@ -366,7 +366,7 @@ button:focus{
   grid-column: 2;
 }
 
-.html_code{
+.html_code p{
   line-break:strict;
   white-space: pre-wrap;
 }
