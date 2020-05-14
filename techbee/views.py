@@ -899,8 +899,7 @@ def editsave_view(request,username,id):
         except:
             categories=''
         filename=request.POST['filename_edit']
-        htmlcode=request.POST['html_edit']
-        csscode=request.POST['css_edit']
+        text=request.POST['text']
         part_edit=parts_model.objects.get(id=id)
         if newseries != '':
             try:
@@ -910,27 +909,23 @@ def editsave_view(request,username,id):
                 cate=categories_model.objects.get(user=user,categories=newseries)
                 part_edit.categories=cate
                 part_edit.file_name=filename
-                part_edit.html_code=htmlcode
-                part_edit.css_code=csscode
+                part_edit.text=text
                 part_edit.save()
             else:
                 part_edit.categories=cate
                 part_edit.file_name=filename
-                part_edit.html_code=htmlcode
-                part_edit.css_code=csscode
+                part_edit.text=text
                 part_edit.save()
         elif categories != '':
             cate=categories_model.objects.get(user=user,categories=categories)
             part_edit.categories=cate
             part_edit.file_name=filename
-            part_edit.html_code=htmlcode
-            part_edit.css_code=csscode
+            part_edit.text=text
             part_edit.save()
         else:
             part_edit.categories=None
             part_edit.file_name=filename
-            part_edit.html_code=htmlcode
-            part_edit.css_code=csscode
+            part_edit.text=text
             part_edit.save()
         newpart=parts_model.objects.filter(user=user).order_by('-post_time')
         part=parts_model.objects.get(id=id)
@@ -939,10 +934,6 @@ def editsave_view(request,username,id):
         favorite=favorite_model.objects.filter(user=user,part_id=newpart[0].id)
         channel=channel_model.objects.filter(user=user,username=user)
         catelist=categories_model.objects.filter(user=user)
-        count = part.html_code.count(os.linesep)
-        paracount=int(count)+5
-        count = part.css_code.count(os.linesep)
-        paraccount=int(count)+5
         openuser='userself'
         params={
             'look':openuser,
@@ -954,8 +945,6 @@ def editsave_view(request,username,id):
             'liked':len(like),
             'favorite':len(favorite),
             'channel':len(channel),
-            'para':range(paracount),
-            'parac':range(paraccount),
             'res':'',
             'rrr':catelist,
         }
