@@ -499,7 +499,7 @@ def parts_part_view(request,username,id):
         else:
             params['category_len']=0
     return render(request,'techbee/par2.html',params)
-    
+
 @login_required
 def parts_list_view(request,username,categories_id):
     user=request.user
@@ -560,7 +560,7 @@ def accountkind_view(request,username,kind):
         'look':openuser,
         'account_current':request.path,
         'username':username,
-        'topPhoto':meta.photo.url,
+        'topPhoto':meta.photo,
         'name':meta.name,
         'plofile':meta.plofile,
         'point':meta.point,
@@ -627,7 +627,7 @@ def accountkind_view(request,username,kind):
         for a in afi:
             member=user_meta.objects.get(user=a.user)
             member_list.append(member)
-            page_obj = paginate_query(request, member_list, settings.PAGE_PER_ITEM)
+        page_obj = paginate_query(request, member_list, settings.PAGE_PER_ITEM)
         params['page_obj']= page_obj
         params['site_name']=settings.SITE_NAME
     return render(request,'techbee/account.html',params)

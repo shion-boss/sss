@@ -199,7 +199,7 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': 'ZxJk80fPYKuAiCKXVXxtEXHtqyo'
 }
 
-
+#SECRET_KEY = 'y7ev8kz%pl--%mc3a=94w6ey1)_v_j-&azaj80*!-6s4#)yqna'
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
