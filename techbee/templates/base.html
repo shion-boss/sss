@@ -158,8 +158,8 @@
         event.preventDefault();
         var $form = $(this);
         $.ajax({
-           url: $form.attr('action'),
-           type: $form.attr('method'),
+           url: $form.attr('touko'),
+           type: $form.attr('submit'),
            data: $form.serialize(),
         });
       });
