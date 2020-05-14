@@ -32,7 +32,7 @@ class categories_model(models.Model):
 
 class parts_model(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
-    categories=models.ForeignKey(categories_model,on_delete=models.CASCADE,blank=True,null=True)
+    categories=models.ForeignKey(categories_model,on_delete=models.SET_NULL,blank=True,null=True)
     file_name=models.CharField(max_length=30)
     image =CloudinaryField('image', null=True, blank=True)
     codepen=models.TextField(max_length=500,default='',null=True, blank=True)
