@@ -259,6 +259,7 @@ button:focus{
   grid-template-columns:1rem 80px 1fr 1rem 10rem;
   grid-template-rows:1rem auto;
   border-bottom: solid 0.8px #808080;
+  padding-bottom: 1rem;
 }
 
 .photo_box{
@@ -1367,6 +1368,7 @@ button:focus{
     grid-template-columns: 1rem 1fr 1rem;
     grid-template-rows: 1rem auto;
     border-bottom: solid 0.8px #808080;
+    padding-bottom: 1rem;
   }
   .a_box {
     grid-column: 1;
@@ -1530,6 +1532,7 @@ button:focus{
     grid-template-columns: 1fr 80px 1fr;
     grid-template-rows: 1rem auto;
     border-bottom: solid 0.8px #808080;
+    padding-bottom: 1rem:
   }
   .photo_box {
     grid-column: 2;
@@ -1693,6 +1696,7 @@ button:focus{
     grid-template-columns: 1rem 1fr 1rem;
     grid-template-rows: 1rem auto;
     border-bottom: solid 0.8px #808080;
+    padding-bottom: 1rem;
   }
   .relation_box {
     display: grid;
