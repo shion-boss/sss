@@ -153,18 +153,5 @@
         reader.readAsDataURL(e.target.files[0]);
     });
     </script>
-    <script>
-      $('touko_form').submit(function(event) {
-        event.preventDefault();
-        var $form = $(this);
-        $.ajax({
-          url: $(".touko_form").attr("action"),
-          type: 'POST',
-          data: new FormData($(".touko_form").get(0)),
-          processData: false,
-          contentType: false,
-        });
-      });
-    </script>
   </body>
 </html>
