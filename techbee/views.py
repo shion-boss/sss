@@ -292,10 +292,21 @@ def userregi_view(request,introducer):
         afirieito_model(user=user,introducer=introducer).save()
     payjp.api_key ='sk_test_f0d6fe8a9725200cda316d56'
     if request.method=='POST':
+        #QRコード###################################
+        face = Image.open('techbee/static/base/qrbee.jpg')
+        qr_big = qrcode.QRCode(
+            error_correction=qrcode.constants.ERROR_CORRECT_H
+        )
+        qr_big.add_data('https://shielded-gorge-23393.herokuapp.com/techbee/afirieito/'+str(username)+'/')
+        qr_big.make()
+        img_qr_big = qr_big.make_image().convert('RGB')
+        pos = ((img_qr_big.size[0] - face.size[0]) // 2, (img_qr_big.size[1] - face.size[1]) // 2)
+        img_qr_big.paste(face, pos)
+        ############################################
         position=request.POST['position']
         try:
             username=request.POST['username']
-            qrname=username+'.png'
+            qrname=img_qr_big
         except:
             username=user.user_meta.username
             customer = payjp.Customer.retrieve(username)
@@ -345,19 +356,6 @@ def userregi_view(request,introducer):
             meta.position=position
             meta.save()
 
-        #QRコード###################################
-        face = Image.open('techbee/static/base/qrbee.jpg')
-        qr_big = qrcode.QRCode(
-            error_correction=qrcode.constants.ERROR_CORRECT_H
-        )
-        qr_big.add_data('https://shielded-gorge-23393.herokuapp.com/techbee/afirieito/'+str(username)+'/')
-        qr_big.make()
-        img_qr_big = qr_big.make_image().convert('RGB')
-        pos = ((img_qr_big.size[0] - face.size[0]) // 2, (img_qr_big.size[1] - face.size[1]) // 2)
-        img_qr_big.paste(face, pos)
-        stream='techbee/static/'+username+'.png'
-        img_qr_big.save(stream)
-        ############################################
         return redirect(to='loginselect')
     try:
         user.user_meta
