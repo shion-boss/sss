@@ -12,7 +12,8 @@
   </div>
 </div>
 <div class="v_box">
-  <video class="main_video"src={{part.video.url}} poster={{part.image.url}} type="video/mp4" preload="none" controls></video>
+  <!-- codepen -->
+  {{ part.codepen | safe}}
 </div>
 <div class="video_box">
   <h2 class='filename'>{{part.file_name}}</h2>
@@ -79,18 +80,7 @@
     {% endfor %}
   </div>
   <div class="html_code">
-    <p>{{ part.html_code }}</p>
-  </div>
-</div>
-<div class="css_box">
-  <h2>CSS</h2>
-  <div class="paraparac">
-    {% for a in parac %}
-    <span>{{ forloop.counter }}</span>
-    {% endfor %}
-  </div>
-  <div class="css_code">
-    <p>{{ part.css_code }}</p>
+    <p>{{ part.text }}</p>
   </div>
 </div>
 {% if category_len >= 1 %}
