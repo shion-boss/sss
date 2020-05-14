@@ -461,10 +461,6 @@ def parts_part_view(request,username,id):
         except:
             return render(request,'404.html')
 
-        count = part.html_code.count(os.linesep)
-        paracount=int(count)+5
-        count = part.css_code.count(os.linesep)
-        paraccount=int(count)+5
         if username == user.user_meta.username:
             openuser='userself'
         else:
@@ -480,8 +476,6 @@ def parts_part_view(request,username,id):
             'liked':len(like),
             'favorite':len(favorite),
             'channel':len(channel),
-            'para':range(paracount),
-            'parac':range(paraccount),
             'res':'',
             'rrr':catelist,
         }
@@ -505,6 +499,7 @@ def parts_part_view(request,username,id):
         else:
             params['category_len']=0
     return render(request,'techbee/par2.html',params)
+    
 @login_required
 def parts_list_view(request,username,categories_id):
     user=request.user
