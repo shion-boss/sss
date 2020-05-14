@@ -296,7 +296,7 @@ def userregi_view(request,introducer):
         try:
             username=request.POST['username']
             #QRコード###################################
-            face = Image.open('https://res.cloudinary.com/hm9k6tunn/image/upload/v1589484062/sieskubl59gpirqps5d5.png')
+            face = Image.open('techbee/static/base/qrbee.jpg')
             qr_big = qrcode.QRCode(
                 error_correction=qrcode.constants.ERROR_CORRECT_H
             )
