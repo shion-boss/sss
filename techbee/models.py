@@ -6,6 +6,7 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 import cloudinary
 from cloudinary.models import CloudinaryField
+import cloudinary.api
 
 # Create your models here.
 
