@@ -158,11 +158,12 @@
         event.preventDefault();
         var $form = $(this);
         $.ajax({
-           url: $form.attr('touko'),
-           type: $form.attr('submit'),
-           data: $form.serialize(),
+          url: $(".touko_form").attr("action"),
+          type: 'POST',
+          data: new FormData($(".touko_form").get(0)),
+          processData: false,
+          contentType: false,
         });
-      });
     </script>
   </body>
 </html>
