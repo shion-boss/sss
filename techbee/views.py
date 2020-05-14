@@ -305,10 +305,10 @@ def userregi_view(request,introducer):
             img_qr_big = qr_big.make_image().convert('RGB')
             pos = ((img_qr_big.size[0] - face.size[0]) // 2, (img_qr_big.size[1] - face.size[1]) // 2)
             img_qr_big.paste(face, pos)
-            stream='techbee/static/'+username+'.png'
+            stream=username+'.png'
             img_qr_big.save(stream)
             ############################################
-            qrname='techbee/static/'+username+'.png'
+            qrname=username+'.png'
         except:
             username=user.user_meta.username
             customer = payjp.Customer.retrieve(username)
