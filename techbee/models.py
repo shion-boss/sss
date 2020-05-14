@@ -19,7 +19,7 @@ class user_meta(models.Model):
     point=models.IntegerField(default=0)
     like_point=models.IntegerField(default=0)
     give_like=models.IntegerField(default=1,validators=[MinValueValidator(1), MaxValueValidator(10)])
-    qrcode=CloudinaryField('qrcode',null=True, blank=True)
+    qrcode=CloudinaryField('image',null=True, blank=True)
     position=models.CharField(max_length=10,default='',blank=True,null=True)
     last_login=models.DateTimeField(default=timezone.datetime.now)
 
