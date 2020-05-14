@@ -911,7 +911,6 @@ button:focus{
 .html_edit{
   grid-column: 2;
   grid-row: 2;
-  background-color: rgba(255, 209, 199,0.6);
   line-break:strict;
   white-space: pre-wrap;
 }
