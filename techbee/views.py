@@ -1233,7 +1233,7 @@ def channel_ajax_view(request):
         else:
             channel.delete()
             res='Success to unchannel'
-        video='/static/ログイン.mp4'
+        video=request.FILES['video']
         cloudinary.uploader.upload_large(video, resource_type = "video")
     return HttpResponse(res)
 
