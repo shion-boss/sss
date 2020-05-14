@@ -813,6 +813,8 @@ def ranking_view(request):
     }
     return render(request,'techbee/ranking.html',params)
 
+
+
 def touko_view(request):
     user=request.user
     try:
@@ -837,55 +839,22 @@ def touko_view(request):
             categories=''
         filename=request.POST['filename']
         image=request.FILES['tokoImage']
-        video=request.FILES['tokoVideo']
-        htmlcode=request.POST['htmlcode']
-        csscode=request.POST['csscode']
-        cloudinary.uploader.upload_large(video, resource_type = "video")
-
-    return redirect('index')
-
-'''
-def touko_view(request):
-    user=request.user
-    try:
-        user.user_meta.username
-    except:
-        return redirect(to='loginselect')
-    if status_veri(user)==True:
-        a=afirieito_model.objects.get(user=user)
-        params={
-            'a':a,
-        }
-        return render(request,'techbee/statusveri.html',params)
-    login_bonus(user)
-    if request.method=='POST':
-        try:
-            newseries=request.POST['newseries']
-        except:
-            newseries=''
-        try:
-            categories=request.POST['categories']
-        except:
-            categories=''
-        filename=request.POST['filename']
-        image=request.FILES['tokoImage']
-        video=request.FILES['tokoVideo']
-        htmlcode=request.POST['htmlcode']
-        csscode=request.POST['csscode']
+        codepen=request.POST['codepen']
+        text=request.POST['text']
         if newseries != '':
             try:
                 cate=categories_model.objects.get(user=user,categories=newseries)
             except:
                 categories_model(user=user,categories=newseries).save()
                 cate=categories_model.objects.get(user=user,categories=newseries)
-                parts_model(user=user,categories=cate,file_name=filename,image=image,video=video,html_code=htmlcode,css_code=csscode).save()
+                parts_model(user=user,categories=cate,file_name=filename,image=image,codepen=codepen,text=text).save()
             else:
-                parts_model(user=user,categories=cate,file_name=filename,image=image,video=video,html_code=htmlcode,css_code=csscode).save()
+                parts_model(user=user,categories=cate,file_name=filename,image=image,codepen=codepen,text=text).save()
         elif categories != '':
             cate=categories_model.objects.get(user=user,categories=categories)
-            parts_model(user=user,categories=cate,file_name=filename,image=image,video=video,html_code=htmlcode,css_code=csscode).save()
+            parts_model(user=user,categories=cate,file_name=filename,image=image,codepen=codepen,text=text).save()
         else:
-            parts_model(user=user,categories=None,file_name=filename,image=image,video=video,html_code=htmlcode,css_code=csscode).save()
+            parts_model(user=user,categories=None,file_name=filename,image=image,codepen=codepen,text=text).save()
         newpart=parts_model.objects.filter(user=user).order_by('-post_time')
         part=parts_model.objects.get(id=newpart[0].id)
         obj=parts_model.objects.all().order_by('-post_time')
@@ -893,10 +862,6 @@ def touko_view(request):
         favorite=favorite_model.objects.filter(user=user,part_id=newpart[0].id)
         channel=channel_model.objects.filter(user=user,username=user)
         catelist=categories_model.objects.filter(user=user)
-        count = part.html_code.count(os.linesep)
-        paracount=int(count)+5
-        count = part.css_code.count(os.linesep)
-        paraccount=int(count)+5
         openuser='userself'
         params={
             'look':openuser,
@@ -908,8 +873,6 @@ def touko_view(request):
             'liked':len(like),
             'favorite':len(favorite),
             'channel':len(channel),
-            'para':range(paracount),
-            'parac':range(paraccount),
             'res':'',
             'rrr':catelist,
         }
@@ -933,7 +896,7 @@ def touko_view(request):
         else:
             params['category_len']=0
     return render(request,'techbee/par2.html',params)
-'''
+
 
 def editsave_view(request,username,id):
     user=request.user
