@@ -51,7 +51,6 @@
   {% if look == 'another'%}
   <form class="channel_form" action="{% url 'ajaxc' %}" method="POST">
     {% csrf_token %}
-    <input type="file" name="video" value="/static/ログイン.mp4">
     <input class='gost' name='username' value={{username}}></input>
     <button class="anot ctag achannel" {%ifequal channel 1 %}id='channel'{% endifequal %} type='submit'>channel</button>
   </form>
