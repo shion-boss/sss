@@ -362,9 +362,8 @@ button:focus{
 }
 
 .html_code{
-  margin-left: 1rem;
+  padding: 1rem;
   grid-column: 2;
-  background-color: rgba(255, 209, 199,0.6);
   line-break:strict;
   white-space: pre-wrap;
 }
@@ -706,7 +705,7 @@ button:focus{
   display: grid;
   grid-template-columns:1rem 80px 1fr 1rem 10rem;
   grid-template-rows:1rem auto;
-  border-bottom: solid 0.8px #808080;
+  padding-bottom: 1rem;
 }
 
 .delete_list_box{
