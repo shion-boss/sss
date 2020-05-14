@@ -344,7 +344,6 @@ button:focus{
   grid-row: 7;
   padding-bottom: 1rem;
   margin: 1rem;
-  border-bottom: solid 0.8px #808080;
   display: grid;
   grid-template-columns: 1rem 1fr;
 }
