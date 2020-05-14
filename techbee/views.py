@@ -11,7 +11,6 @@ import requests
 from django.contrib.auth.decorators import login_required
 import os
 from django.utils import timezone
-import qrcode
 from PIL import Image
 import payjp
 from django.core.paginator import Paginator
@@ -295,20 +294,6 @@ def userregi_view(request,introducer):
         position=request.POST['position']
         try:
             username=request.POST['username']
-            #QRコード###################################
-            face = Image.open('techbee/static/base/qrbee.jpg')
-            qr_big = qrcode.QRCode(
-                error_correction=qrcode.constants.ERROR_CORRECT_H
-            )
-            qr_big.add_data('https://shielded-gorge-23393.herokuapp.com/techbee/afirieito/'+str(username)+'/')
-            qr_big.make()
-            img_qr_big = qr_big.make_image().convert('RGB')
-            pos = ((img_qr_big.size[0] - face.size[0]) // 2, (img_qr_big.size[1] - face.size[1]) // 2)
-            img_qr_big.paste(face, pos)
-            stream=username+'.png'
-            img_qr_big.save(stream)
-            ############################################
-            qrname=username+'.png'
         except:
             username=user.user_meta.username
             customer = payjp.Customer.retrieve(username)
@@ -353,7 +338,7 @@ def userregi_view(request,introducer):
         try:
             meta=user_meta.objects.get(user=user)
         except:
-            user_meta(user=user,username=username,qrcode=qrname,position=position).save()
+            user_meta(user=user,username=username,position=position).save()
         else:
             meta.position=position
             meta.save()
@@ -569,7 +554,6 @@ def accountkind_view(request,username,kind):
         'channel':len(channel),
         'meta_form':meta_form(),
         'rrr':catelist,
-        'qrcode':user.user_meta.qrcode,
         'mmm':'',
         'page_obj':'',
         'site_name':'',
@@ -1011,10 +995,6 @@ def toukoedit_view(request,username,id):
     login_bonus(user)
     part=parts_model.objects.get(id=id)
     catelist=categories_model.objects.filter(user=user)
-    count = part.html_code.count(os.linesep)
-    paracount=int(count)+10
-    count = part.css_code.count(os.linesep)
-    paraccount=int(count)+10
     if username == user.user_meta.username:
         openuser='userself'
     else:
@@ -1026,8 +1006,6 @@ def toukoedit_view(request,username,id):
         'category_len':'',
         'category_f':'',
         'category_l':'',
-        'para':range(paracount),
-        'parac':range(paraccount),
         'rrr':catelist,
     }
     if part.categories != None:
