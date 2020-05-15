@@ -18,7 +18,7 @@ class user_meta(models.Model):
     plofile=models.TextField(max_length=220,default='',null=True, blank=True)
     point=models.IntegerField(default=0)
     like_point=models.IntegerField(default=0)
-    give_like=models.IntegerField(default=1,validators=[MinValueValidator(1), MaxValueValidator(10)])
+    give_like=models.IntegerField(default=1)#,validators=[MinValueValidator(1), MaxValueValidator(10)])
     position=models.CharField(max_length=10,default='',blank=True,null=True)
     last_login=models.DateTimeField(default=timezone.datetime.now)
 
