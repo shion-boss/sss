@@ -15,6 +15,7 @@
       <form class="regi_form" action="{% url 'userregi' introducer %}" method="post">
         {% csrf_token %}
         {% if m == False %}
+        <input type="file" name="image" value="">
         <label for="u_input" class='username_label'>
           <p class='username_p'>username</p>
         </label>
