@@ -338,7 +338,7 @@ def userregi_view(request,introducer):
         try:
             meta=user_meta.objects.get(user=user)
         except:
-            user_meta(user=user).save()
+            user_meta(user=user,username=username,photo='/techbee/static/base/defo.jpg',position=position).save()
             return redirect(to='index')
         else:
             meta.position=position
