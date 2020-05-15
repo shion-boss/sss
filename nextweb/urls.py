@@ -32,10 +32,7 @@ urlpatterns = [
 ]
 
 
-from django.conf.urls import handler500
 
-# 自作の 500 エラーハンドラー。
-handler500 = views.my_error_handler
 #from django.conf import settings  # 追加
 #from django.conf.urls.static import static # 追加
 
