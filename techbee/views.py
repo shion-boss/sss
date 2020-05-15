@@ -31,7 +31,10 @@ def my_error_handler(request, *args, **kw):
     from django.views import debug
     from django.http import HttpResponse
     error_html = debug.technical_500_response(request, *sys.exc_info()).content
-    return HttpResponse(error_html)
+    params={
+        'e':error_html
+    }
+    return render(request,'techbee/500.html',params)
 
 
 def status_veri(user):

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block body %}
+<section>
+    <div>
+        <label>500 <br>お探しのページが見つかりませんでした。<br><a class="hover-under" href="{% url 'index' %}">トップページへ戻る</a></label>
+    </div>
+    <div class="">
+      {{ e }}
+
+    </div>
+</section>
+{% endblock %}
