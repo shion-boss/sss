@@ -34,7 +34,6 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
   grid-column: 2;
   grid-row: 1;
   width: 100%;
-  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,8 +41,8 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
 }
 
 .techbee_img_box img{
-  height: 40vw;
-  width: 40vw;
+  height: 30vh;
+  width: 30vh;
 }
 
 .regi_form{
