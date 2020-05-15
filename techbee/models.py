@@ -14,12 +14,12 @@ class user_meta(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     username=models.CharField(max_length=20)
     photo=CloudinaryField('image',null=True, blank=True)
-    name=models.CharField(max_length=20,argument=None,null=True, blank=True)
-    plofile=models.TextField(max_length=220,argument=None,null=True, blank=True)
+    name=models.CharField(max_length=20,null=True, blank=True)
+    plofile=models.TextField(max_length=220,null=True, blank=True)
     point=models.IntegerField(default=0)
     like_point=models.IntegerField(default=0)
     give_like=models.IntegerField(default=1,validators=[MinValueValidator(1), MaxValueValidator(10)])
-    position=models.CharField(max_length=10,argument=None,blank=True,null=True)
+    position=models.CharField(max_length=10,blank=True,null=True)
     last_login=models.DateTimeField(default=timezone.datetime.now)
 
 class categories_model(models.Model):
