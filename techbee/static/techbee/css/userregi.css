@@ -177,7 +177,7 @@ label{
     transform: translate(-50%,-50%);
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: 1fr 1fr 1fr;
     background-color: white;
     border-radius: 10px;
     width: 70%;
@@ -196,7 +196,7 @@ label{
     transform: translate(-50%,-50%);
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: 1fr 1fr 1fr;
     background-color: white;
     border-radius: 10px;
     width: 100%;
