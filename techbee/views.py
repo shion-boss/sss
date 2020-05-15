@@ -319,7 +319,6 @@ def userregi_view(request,introducer):
                     'introducer':introducer,
                 }
                 return render(request,'techbee/errorpayjp.html',params)
-            return redirect('index')
         customer = payjp.Customer.retrieve(username)
         try:
             user.user_meta.position
@@ -336,6 +335,7 @@ def userregi_view(request,introducer):
                 plan= position,
                 customer= username
                 )
+        return redirect('index')
         try:
             meta=user_meta.objects.get(user=user)
         except:
