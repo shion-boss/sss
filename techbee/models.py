@@ -15,7 +15,7 @@ class user_meta(models.Model):
     username=models.CharField(max_length=20)
     photo=CloudinaryField('image',argument=None,null=True, blank=True)
     name=models.CharField(max_length=20,argument=None,null=True, blank=True)
-    plofile=models.TextField(max_length=220,argument=None,,null=True, blank=True)
+    plofile=models.TextField(max_length=220,argument=None,null=True, blank=True)
     point=models.IntegerField(default=0)
     like_point=models.IntegerField(default=0)
     give_like=models.IntegerField(default=1,validators=[MinValueValidator(1), MaxValueValidator(10)])
