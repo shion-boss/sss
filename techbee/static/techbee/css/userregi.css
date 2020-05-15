@@ -42,7 +42,8 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
 }
 
 .techbee_img_box img{
-  height: 500px;
+  height: 50vw;
+  width: 50vw;
 }
 
 .regi_form{
@@ -69,6 +70,8 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
   text-align: center;
   border-radius: 0;
 }
+
+
 #u_input::placeholder {
   color: #808080;
   font-size: 12px;
@@ -181,9 +184,6 @@ label{
     width: 70%;
     height: 90%;
   }
-  .techbee_img_box img {
-    height: 480px;
-  }
 }
 @media screen and (max-width:480px){
   /*画面幅が480pxまでの時*/
@@ -200,18 +200,6 @@ label{
     height: 100%;
     border-radius: 0;
     padding: 2rem 1rem;
-  }
-  .techbee_img_box img {
-    height: 300px;
-  }
-  .techbee_img_box {
-    grid-column: 2;
-    grid-row: 1;
-    width: 100%;
-    height:330px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
 }
