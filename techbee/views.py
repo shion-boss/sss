@@ -335,12 +335,11 @@ def userregi_view(request,introducer):
                 plan= position,
                 customer= username
                 )
-
         try:
             meta=user_meta.objects.get(user=user)
         except:
-            user_meta(user=user,username=username,position=position).save()
             return redirect(to='index')
+            user_meta(user=user,username=username,position=position).save()
         else:
             meta.position=position
             meta.save()
