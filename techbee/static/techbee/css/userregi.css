@@ -20,7 +20,7 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
   left:50%;
   transform: translate(-50%,-50%);
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1rem 1fr 1rem;
   grid-template-rows: auto;
   background-color: white;
   border-radius: 10px;
@@ -135,6 +135,7 @@ label{
   left:50%;
   transform: translate(-50%,0px);
   transition: all 0.3s ease-in-out;
+  margin: 0 2rem;
 }
 
 #u_input:focus+.under_input{
