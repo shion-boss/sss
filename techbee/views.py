@@ -290,6 +290,7 @@ def userregi_view(request,introducer):
     except:
         afirieito_model(user=user,introducer=introducer).save()
     payjp.api_key ='sk_test_f0d6fe8a9725200cda316d56'
+    return redirect('index')
     if request.method=='POST':
         position=request.POST['position']
         try:
