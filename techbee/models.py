@@ -13,7 +13,7 @@ from cloudinary.models import CloudinaryField
 class user_meta(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     username=models.CharField(max_length=20)
-    photo=CloudinaryField('image',argument=None,null=True, blank=True)
+    photo=CloudinaryField('image',null=True, blank=True)
     name=models.CharField(max_length=20,argument=None,null=True, blank=True)
     plofile=models.TextField(max_length=220,argument=None,null=True, blank=True)
     point=models.IntegerField(default=0)
