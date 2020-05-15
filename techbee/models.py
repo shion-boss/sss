@@ -19,7 +19,7 @@ class user_meta(models.Model):
     point=models.IntegerField(default=0)
     like_point=models.IntegerField(default=0)
     give_like=models.IntegerField(default=1,validators=[MinValueValidator(1), MaxValueValidator(10)])
-    position=models.CharField(max_length=10,argument=None,,blank=True,null=True)
+    position=models.CharField(max_length=10,argument=None,blank=True,null=True)
     last_login=models.DateTimeField(default=timezone.datetime.now)
 
 class categories_model(models.Model):
