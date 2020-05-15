@@ -33,17 +33,8 @@ def my_error_handler(request, *args, **kw,template_name=ERROR_500_TEMPLATE_NAME)
     error_html = debug.technical_500_response(request, *sys.exc_info()).content
     try:
         template = loader.get_template(template_name)
-    except TemplateDoesNotExist:
-        if template_name != ERROR_500_TEMPLATE_NAME:
-            # Reraise if it's a missing custom template.
-            raise
-        return HttpResponseServerError(
-            ERROR_PAGE_TEMPLATE % {'title': 'Server Error (500)', 'details': ''},
-            content_type='text/html',
-        )
-    return HttpResponseServerError(template.render())
     params={
-        'e':error_html
+        'e':template
     }
     return render(request,'techbee/500.html',params)
 
