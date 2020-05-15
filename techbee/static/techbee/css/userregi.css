@@ -198,10 +198,10 @@ label{
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     background-color: white;
-    border-radius: 10px;
     width: 100%;
     height: 100%;
     padding: 2rem 1rem;
+    box-sizing: border-box;
   }
   .techbee_img_box img {
     height: 300px;
