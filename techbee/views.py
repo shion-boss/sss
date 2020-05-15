@@ -309,7 +309,6 @@ def userregi_view(request,introducer):
                 customer.card=request.POST['payjp-token']
                 customer.save()
         else:
-            return redirect('index')
             try:
                 payjp.Customer.create(
                     id= username,
@@ -320,6 +319,7 @@ def userregi_view(request,introducer):
                     'introducer':introducer,
                 }
                 return render(request,'techbee/errorpayjp.html',params)
+            return redirect('index')
         customer = payjp.Customer.retrieve(username)
         try:
             user.user_meta.position
