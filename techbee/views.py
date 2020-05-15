@@ -291,8 +291,6 @@ def userregi_view(request,introducer):
         afirieito_model(user=user,introducer=introducer).save()
     payjp.api_key ='sk_test_f0d6fe8a9725200cda316d56'
     if request.method=='POST':
-        user_meta(user=request.user,username='username',photo=request.FILES['image'],position=request.POST['position']).save()
-        return redirect(to='index')
         position=request.POST['position']
         try:
             username=request.POST['username']
@@ -340,7 +338,7 @@ def userregi_view(request,introducer):
         try:
             meta=user_meta.objects.get(user=user)
         except:
-            user_meta(user=request.user,username='username',photo=request.FILES['image'],position=request.POST['position']).save()
+            user_meta(user=user,username=username,position=position).save()
             return redirect(to='index')
         else:
             meta.position=position
