@@ -14,7 +14,7 @@ class user_meta(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     username=models.CharField(max_length=20)
     photo=CloudinaryField('image',null=True, blank=True)
-    name=models.CharField(max_length=20)
+    name=models.CharField(max_length=20,default='')
     plofile=models.TextField(max_length=220,default='')
     point=models.IntegerField(default=0)
     like_point=models.IntegerField(default=0)

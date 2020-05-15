@@ -318,7 +318,7 @@ def userregi_view(request,introducer):
                 params={
                     'introducer':introducer,
                 }
-                #return render(request,'techbee/errorpayjp.html',params)
+                return render(request,'techbee/errorpayjp.html',params)
         customer = payjp.Customer.retrieve(username)
         try:
             user.user_meta.position
