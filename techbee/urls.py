@@ -29,6 +29,7 @@ urlpatterns = [
     path("ajaxf/",views.favorite_ajax_view,name='ajaxf'),
     path("ajaxc/",views.channel_ajax_view,name='ajaxc'),
     path('404/',views.error404_view,name='error404'),
+    path('500/',views.my_error_handler,name='error500'),
 ]
 
 from django.conf.urls import handler500
