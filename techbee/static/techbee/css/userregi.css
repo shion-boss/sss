@@ -42,8 +42,8 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
 }
 
 .techbee_img_box img{
-  height: 50vw;
-  width: 50vw;
+  height: 40vw;
+  width: 40vw;
 }
 
 .regi_form{
