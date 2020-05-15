@@ -33,7 +33,7 @@ def my_error_handler(request, *args, **kw):
     error_html = debug.technical_500_response(request, *sys.exc_info()).content
     return HttpResponse(error_html)
 
-    
+
 def status_veri(user):
     payjp.api_key ='sk_test_f0d6fe8a9725200cda316d56'
     try:
