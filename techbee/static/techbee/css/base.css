@@ -8,7 +8,7 @@ body{
   display: grid;
   grid-template-columns: 200px 2rem 1fr 2rem;
   grid-template-rows:auto;
-  background-color:  rgb(253, 253, 253);
+  background-color:  white;
   overflow-x: hidden;
 
 }
@@ -146,7 +146,7 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
   grid-column: 2/4;
   display: grid;
   grid-template-rows: auto;
-  background-color: rgb(253, 253, 253);
+  background-color: white;
   z-index: 1;
 }
 
@@ -230,7 +230,7 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
   height: 80%;
   width:40%;
   border-radius: 20px;
-  background-color: rgb(253,253,253);
+  background-color: white;
   transition: 1s;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -327,7 +327,7 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
   transform: translate(-50%,-50%);
   z-index: 100;
   font-size: 30px;
-  color: rgba(253, 253, 253, 0.83);
+  color: rgba(255, 255, 255, 0.8);
   text-shadow: none;
   transition: 0.5s ease-in-out;
 }
@@ -346,7 +346,7 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
 
 
 .postbb{
-  background-color:  rgb(253,253,253);
+  background-color:  white;
   border: none;
   text-shadow: 1px 2px 3px #808080;
   font-size: 25px;
@@ -419,7 +419,7 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
   font-family: "Palatino Linotype";
   color: rgb(56,56,56);
   font-weight: bold;
-  background-color: rgba(253, 253, 253);
+  background-color: white;
   border-bottom: solid 1px rgb(56,56,56);
   text-align:left;
   caret-color: rgb(56,56,56);
@@ -439,7 +439,7 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
   font-family: "Palatino Linotype";
   color: rgb(56,56,56);
   font-weight: bold;
-  background-color: rgba(253, 253, 253);
+  background-color: white;
   border-bottom: solid 1px rgb(56,56,56);
   text-align:left;
   caret-color: rgb(56,56,56);
@@ -718,7 +718,7 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
     grid-column: 2/5;
     display: grid;
     grid-template-rows: auto;
-    background-color: rgb(253, 253, 253);
+    background-color: white;
     z-index: 1;
 }
   .hum_label{
@@ -787,7 +787,7 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
     height: 95%;
     width: 60%;
     border-radius: 20px;
-    background-color: rgb(253,253,253);
+    background-color: white;
     transition: 1s;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -900,7 +900,7 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
     height: 80%;
     width: 80%;
     border-radius: 10px;
-    background-color: rgb(253,253,253);
+    background-color: white;
     transition: 1s;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -908,7 +908,7 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
     position: relative;
   }
   .postbb {
-    background-color: rgb(253,253,253);
+    background-color: white;
     border: none;
     text-shadow: 1px 2px 3px #808080;
     font-size: 1.5rem;
@@ -949,7 +949,7 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
     grid-column: 2/5;
     display: grid;
     grid-template-rows: auto;
-    background-color: rgb(253, 253, 253);
+    background-color: white;
     z-index: 1;
   }
 
@@ -1032,7 +1032,7 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
     height: 100%;
     width: 100%;
     border-radius: 0;
-    background-color: rgb(253,253,253);
+    background-color: white;
     transition: 1s;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -1103,7 +1103,7 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
     grid-column: 2/5;
     display: grid;
     grid-template-rows: auto;
-    background-color: rgb(253, 253, 253);
+    background-color: rgb(255, 255, 255);
     z-index: 1;
   }
 

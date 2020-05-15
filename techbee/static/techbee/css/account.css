@@ -114,7 +114,7 @@
   font-size: 25px;
   text-shadow:1px 2px 3px #808080;
   margin-bottom: 1rem;
-  background-color:rgb(253, 253, 253);
+  background-color:white;
 }
 
 .kind_another{
@@ -128,7 +128,7 @@
   font-size: 25px;
   text-shadow:1px 2px 3px #808080;
   margin-bottom: 1rem;
-  background-color:rgb(253, 253, 253);
+  background-color:white;
 }
 
 .kind a{
@@ -313,7 +313,7 @@
 .filename2{
   grid-column: 1;
   grid-row: 2;
-  color: rgb(253, 253, 253);
+  color: white;
   display: block;
   font-size: 1rem;
   font-family: "Palatino Linotype",sans-serif;
@@ -440,7 +440,7 @@
   font-size: 25px;
   cursor: pointer;
   decoration: none;
-  background-color:rgb(253, 253, 253);
+  background-color:white;
   border: none;
 }
 
@@ -540,7 +540,7 @@ button:focus{
   height: 80%;
   width:40%;
   border-radius: 20px;
-  background-color: rgb(253,253,253);
+  background-color: white;
   transition: 0.1s ease-in;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -644,7 +644,7 @@ button:focus{
   transform: translate(-50%,-50%);
   z-index: 100;
   font-size: 30px;
-  color: rgba(253, 253, 253, 0.83);
+  color:rgba(255,255,255,0.8);
   text-shadow: none;
   transition: 0.1s ease-in;
 }
@@ -676,8 +676,8 @@ button:focus{
   font-size: 45px;
   font-family: "Palatino Linotype",sans-serif;
   text-shadow: 1px 2px 3px #808080;
-  color: rgb(253,253,253);
-  background-color: rgba(253, 253, 253);
+  color:white;
+  background-color: white;
   border-bottom: solid 1px rgb(56,56,56);
   text-align: center;
   caret-color: rgb(56,56,56);
@@ -724,7 +724,7 @@ button:focus{
 }
 
 .postb{
-  background-color:  rgb(253,253,253);
+  background-color: white;
   border: none;
   text-shadow: 1px 2px 3px #808080;
   font-size: 25px;
@@ -815,7 +815,7 @@ button:focus{
   font-size: 25px;
   cursor: pointer;
   decoration: none;
-  background-color:rgb(253, 253, 253);
+  background-color:white;
   border: none;
   display: flex;
   align-items: flex-end;
@@ -852,7 +852,7 @@ button:focus{
   box-sizing: border-box;
   border: none;
   outline: none;
-  background-color: rgb(253,253,253);
+  background-color:white;
   text-align: center;
   line-height: 20px;
   height: 20px;
@@ -866,9 +866,9 @@ button:focus{
   height: 50px;
   box-sizing: border-box;
   border: none;
-  background-color: rgb(253,253,253);
+  background-color: white;
   position: relative;
-  border-bottom: solid 1px rgb(253,253,253);
+  border-bottom: solid 1px white;
   box-sizing: border-box;
 }
 
@@ -936,7 +936,7 @@ button:focus{
     height: 90%;
     width: 55%;
     border-radius: 20px;
-    background-color: rgb(253,253,253);
+    background-color: white;
     transition: 0.1s ease-in;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -1065,7 +1065,7 @@ button:focus{
     font-size: 1rem;
     text-shadow: 1px 2px 3px #808080;
     margin-bottom: 1rem;
-    background-color: rgb(253, 253, 253);
+    background-color: white;
   }
   .rank_box10 {
     display: grid;
@@ -1140,7 +1140,7 @@ button:focus{
     height: 68%;
     width: 80%;
     border-radius: 10px;
-    background-color: rgb(253,253,253);
+    background-color: white;
     transition: 0.1s ease-in;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -1186,7 +1186,7 @@ button:focus{
     font-family: "Palatino Linotype",sans-serif;
     text-shadow: 1px 2px 3px #808080;
     color: rgb(56,56,56);
-    background-color: rgba(253, 253, 253);
+    background-color: white;
     border-bottom: solid 1px rgb(56,56,56);
     text-align: center;
     caret-color: rgb(56,56,56);
@@ -1199,7 +1199,7 @@ button:focus{
     font-size: 1.2rem;
     cursor: pointer;
     decoration: none;
-    background-color: rgb(253, 253, 253);
+    background-color: white;
     border: none;
   }
   .kind_another {
@@ -1213,7 +1213,7 @@ button:focus{
     font-size: 1.2rem;
     text-shadow: 1px 2px 3px #808080;
     margin-bottom: 1rem;
-    background-color: rgb(253, 253, 253);
+    background-color: white;
   }
   .relation_box {
     display: grid;
@@ -1329,7 +1329,7 @@ button:focus{
     font-size: 1rem;
     text-shadow: 1px 2px 3px #808080;
     margin-bottom: 1rem;
-    background-color: rgb(253, 253, 253);
+    background-color: white;
   }
   .rank_box10 {
     display: grid;
@@ -1404,7 +1404,7 @@ button:focus{
     height: 100%;
     width: 100%;
     border-radius: 0;
-    background-color: rgb(253,253,253);
+    background-color: white;
     transition: 0.1s ease-in;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -1450,7 +1450,7 @@ button:focus{
     font-family: "Palatino Linotype",sans-serif;
     text-shadow: 1px 2px 3px #808080;
     color: rgb(56,56,56);
-    background-color: rgba(253, 253, 253);
+    background-color: white;
     border-bottom: solid 1px rgb(56,56,56);
     text-align: center;
     caret-color: rgb(56,56,56);
@@ -1463,7 +1463,7 @@ button:focus{
     font-size: 1.2rem;
     cursor: pointer;
     decoration: none;
-    background-color: rgb(253, 253, 253);
+    background-color: white;
     border: none;
   }
   .kind_another {
@@ -1477,6 +1477,6 @@ button:focus{
     font-size: 1.2rem;
     text-shadow: 1px 2px 3px #808080;
     margin-bottom: 1rem;
-    background-color: rgb(253, 253, 253);
+    background-color: white;
   }
 }
