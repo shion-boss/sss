@@ -26,13 +26,11 @@ import cloudinary.uploader
 import cloudinary.api
 
 
-def my_error_handler(request, *args, **kw,template_name=ERROR_500_TEMPLATE_NAME):
+def my_error_handler(request, *args, **kw):
     import sys
     from django.views import debug
     from django.http import HttpResponse
     error_html = debug.technical_500_response(request, *sys.exc_info()).content
-    try:
-        template = loader.get_template(template_name)
     params={
         'e':template
     }
