@@ -102,9 +102,10 @@ label{
   color:rgba(56,56,56,0.8);
   opacity: 0.8;
 }
-
 .radio_box input{
   margin: auto 0 auto auto;
+  cursor: pointer;
+  height: 2rem;
 }
 
 .radio_box input:checked~label{
@@ -115,10 +116,6 @@ label{
   text-shadow: none;
 }
 
-.radio_box input{
-  cursor: pointer;
-  height: 2rem;
-}
 
 .radio_box label{
   cursor: pointer;
