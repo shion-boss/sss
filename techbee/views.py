@@ -338,10 +338,7 @@ def userregi_view(request,introducer):
         try:
             meta=user_meta.objects.get(user=user)
         except:
-            met=user_meta()
-            met.user=user
-            met.username=username
-            met.position=position
+            met=user_meta(user=user,username=username,position=position)
             met.save()
             #return redirect(to='index')
         else:
