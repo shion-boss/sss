@@ -32,10 +32,6 @@ urlpatterns = [
     path('500/',views.my_error_handler,name='error500'),
 ]
 
-from django.conf.urls import handler500
-
-# 自作の 500 エラーハンドラー。
-handler500 = views.my_error_handler
 ###############################################
 #API
 from rest_framework import routers

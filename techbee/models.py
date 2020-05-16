@@ -11,7 +11,7 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 
 class user_meta(models.Model):
-    user=models.OneToOneField(User,on_delete=models.CASCADE)
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
     username=models.CharField(max_length=20)
     photo=CloudinaryField('image',null=True, blank=True)
     name=models.CharField(max_length=20,null=True, blank=True)
