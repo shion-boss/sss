@@ -19,11 +19,25 @@ a {
 
 .top-wrapper {
   width: 100%;
-  height: 900px;
-  background-image: url(/static/uchuu.jpg);
-  background-size: cover;
+  height: 800px;
+  overflow: hidden;
   padding: 0 200px;
   position: relative;
+}
+
+/* ----- 背景用の動画ファイル ----- */
+#bg-video{
+ position: absolute;
+ right: -40px;
+ bottom: 0;
+ min-width: 120%;
+ min-height: 800px;
+ width: 120%;
+
+ z-index: 100;
+
+ background-size: cover;
+ opacity: 0.7;
 }
 
 .tw-mes {
@@ -34,18 +48,23 @@ a {
   transform: translateY(-65%);
   left: 50%;
   transform: translateX(-50%);
+  position: relative;
+  z-index: 10000000;
 }
 
 .tw-mes h1 {
+
   font-size: 4rem;
   color: white;
   letter-spacing: 3px;
-  text-shadow: 1px 2px 3px white;
+  text-shadow: 5px 7px 4px  rgb(80, 80,80);
   border-bottom: 2px solid white;
+
 }
 
 .tw-mes h1 span {
   color: #EB4B33;
+
 }
 
 .tw-mes p {
@@ -53,7 +72,7 @@ a {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
-  text-shadow: 1px 2px 3px #808080;
+  text-shadow: 5px 7px 4px rgb(80, 80,80);
 }
 
 .tech-movie {
@@ -74,8 +93,14 @@ a {
 .tm-toparea h1 {
   font-family: "Palatino Linotype";
   margin: 0;
-  color: white;
-  text-shadow: 1px 2px 3px #808080;
+  color: rgb(244, 242, 243);
+  text-shadow: 1px 2px 3px rgb(80, 80,80);
+}
+
+.tm-toparea h1:hover {
+  color: rgb(56, 56, 56);
+  opacity: 0.8;
+  transition: ease-in-out 0.3s;
 }
 
 .tm-toparea span {
@@ -126,7 +151,6 @@ a {
 
 .tm-bot-r-title {
   width: 90%;
-  height: 4rem;
   margin-right: 10%;
   padding: 1rem 1.5rem;
   background-color: white;
@@ -137,13 +161,30 @@ a {
   font-weight: bold;
   color: rgb(56, 56, 56);
   text-align: left;
-
+  position: relative;
+  display: inline-block;
   line-height: 2rem;
+  padding: 0 10px;
+}
+
+.tm-bot-r-title a::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #EB4B33;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: 1.2s;
+}
+.tm-bot-r-title a:hover::after {
+  transform: scale(1, 1);
 }
 
 .tm-bot-r-txt {
   width: 90%;
-  height: 5rem;
   margin-left: 10%;
   padding: 1rem 1.5rem;
   background-color: white;
@@ -158,6 +199,26 @@ a {
 .tm-bot-r-txt a {
   font-weight: bold;
   color: rgb(56, 56, 56);
+  position: relative;
+  display: inline-block;
+  padding: 0 2px;
+}
+
+.tm-bot-r-txt a::after {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #EB4B33;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: .6s;
+}
+
+.tm-bot-r-txt a:hover::after {
+  transform: scale(1, 1);
 }
 
 .tm-bot-r-day p {
@@ -165,8 +226,14 @@ a {
   width: 90%;
   font-size: 1rem;
   font-weight: bold;
-  color: #EB4B33;
+  color: rgb(80, 80,80);
   text-align: right;
+}
+
+.tm-bot-r-day a {
+  width: 60%;
+  float: right;
+  margin: 40px 35px 0 0;
 }
 
 .tech-bee {
@@ -182,11 +249,17 @@ a {
   font-family: "Palatino Linotype";
   margin: 0;
   color: white;
-  text-shadow: 1px 2px 3px #808080;
+  text-shadow: 1px 2px 3px rgb(80, 80,80);
 }
 
 .tb-toparea span {
   color: #EB4B33;
+}
+
+.tb-toparea h1:hover {
+  color: rgb(56, 56, 56);
+  opacity: 0.8;
+  transition: ease-in-out 0.3s;
 }
 
 .tb-toparea p {
@@ -210,64 +283,119 @@ a {
   background-color: rgb(56, 56, 56);/*線の色*/
 }
 
-.tb-bottomarea {
-  width: 100%;
-  margin: 4rem 0;
-  text-align: left;
+
+
+.slider-wrapper {
+  overflow: hidden;
 }
 
-.tb-bot-content {
-  margin: 30px 0;
-  width: 33.3%;
-  float: left;
+.slider {
   position: relative;
+  left: -2.5vw; /* (100vw - SlideWidth) / 2 */
+  overflow: visible !important;
 }
 
-.tb-bot-left img {
-  width: 17rem;
-  height: 23rem;
-  object-fit: cover;
-  border-radius: 2px;
-  box-shadow:0px 0px 8px 3px #ccc;
+.slide {
+  width: 29vw !important;
+  height: 43.5vw;
+  padding-top: 10px;
 }
 
-.tb-bot-left p {
+.slide a {
+  position: relative;
+  width: 20vw;
+  height: 35vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px;
+  background-color: rgb(244, 242, 243);
+  color: rgb(80, 80,80);
+  display: block;
+}
+
+
+
+.slide:hover .slider-h{
+    opacity: 0.7;
+    background: white;
+    transition: 0.5s;
+}
+
+.slide:hover #ghjk {
+  position: absolute;
+  top:-1px;
+  opacity: 0.5;
+  transition: 0.5s;
+  box-shadow:0px 0px 7px 7px #ccc;
+
+}
+
+.slide:hover #bgt {
+  opacity: 0;
+  transition: 0.8s;
+}
+
+#bgt {
+  position: absolute;
+  top: 87%;
+  transform: translateY(-13%);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.slider-h {
+  width: 45%;
+  padding: 15px 10px;
+  background-color: white;
+  color: rgb(80,80,80);
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateY(-75%);
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.slider-h h1, .slider-h h2, .slider-h h3 {
   margin: 0;
-  color: rgb(56, 56, 56);
+  border-bottom: 2px solid #EB4B33;
 }
 
-.tb-bot-left h1 {
-  margin: 0;
-  color: rgb(56, 56, 56);
-  font-size: 1.5rem;
+.slider-h h1 {
+  font-size: 1.6rem;
+  width: 100%;
 }
 
-.circle{
-  display: inline-block;
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  background: #EB4B33;
-  text-align:center;
-  line-height: 110px;
-  font-weight: bold;
-  color: white;
+.slider-h h2 {
+  font-size: 1.4rem;
+  width: 85%;
+}
+
+.slider-h h3 {
   font-size: 1.2rem;
-  opacity: 0.9;
-  transform: rotate(-15deg);
-  position: absolute;
-  top: -65px;
-  left: 14.5rem;
+  width: 70%;
 }
 
-.tb-bot-right h1 {
-  font-size: 1.5rem;
-  color: rgb(56, 56, 56);
-  transform: rotate(90deg);
-  position: absolute;
-  top: 5rem;
-  left: 15.5rem;
+.slide a {
+
 }
+
+.slide a p {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  width: 60%;
+  background: white;
+  padding: 10px 0;
+  border-radius: 3px;
+  text-shadow: 3px 4px 7px #EB4B33;
+  box-shadow:0px 0px 3px 3px #ccc;
+
+}
+
+
 
 .tech-teacher {
   padding: 1rem 3.8rem;
@@ -282,11 +410,17 @@ a {
   font-family: "Palatino Linotype";
   margin: 0;
   color: white;
-  text-shadow: 1px 2px 3px #808080;
+  text-shadow: 1px 2px 3px rgb(80, 80,80);
 }
 
 .tt-toparea span {
   color: #EB4B33;
+}
+
+.tt-toparea h1:hover {
+  color: rgb(56, 56, 56);
+  opacity: 0.8;
+  transition: ease-in-out 0.3s;
 }
 
 .tt-toparea p {
@@ -321,8 +455,8 @@ a {
   width: 35%;
   float: left;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 47%;
+  transform: translateY(-53%);
 }
 
 .tt-bot-left h1 {
@@ -399,6 +533,10 @@ a {
   font-family:comfortaa;font-weight:bold
 }
 
+.fot a {
+  background-color: white;
+}
+
 .fot:before, .fot:after {
   content:'';
   display:block;
@@ -452,7 +590,7 @@ a {
 
 .tt-bot-right {
   position: relative;
-  margin-bobttom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .tt-bot-rl img {
@@ -462,6 +600,7 @@ a {
 }
 
 .tt-bot-rr {
+  padding: 7px;
   height: 5rem;
   width: 75%;
   background-color: white;
@@ -473,14 +612,217 @@ a {
 }
 
 .tt-bot-rr a {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: rgb(56, 56, 56);
   font-weight: bold;
+  position: relative;
+  display: inline-block;
+}
+
+.tt-bot-rr a::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #EB4B33;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: 1s;
+}
+
+.tt-bot-rr a:hover::after {
+  transform: scale(1, 1);
 }
 
 .tt-bot-rr-day p {
-  margin: 0;
+  margin: 10px 0 0 0;
   text-align: right;
   font-weight: bold;
   color: #EB4B33;
+}
+
+/** VARIABLES
+===================================*/
+/** RESET AND LAYOUT
+===================================*/
+.bx-wrapper {
+  position: relative;
+
+  padding: 0;
+  *zoom: 1;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  margin: 7rem 0;
+  border: none;
+}
+.bx-wrapper img {
+  width: 100%;
+  max-height: 400px;
+  display: block;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow:0px 0px 3px 3px #ccc;
+}
+.bxslider {
+  margin: 0;
+  padding: 0;
+}
+ul.bxslider {
+  list-style: none;
+}
+.bx-viewport {
+  /*fix other elements on the page moving (on Chrome)*/
+  -webkit-transform: translatez(0);
+}
+/** THEME
+===================================*/
+.bx-wrapper {
+  -moz-box-shadow: 0 0 5px #ccc;
+  -webkit-box-shadow: 0 0 5px #ccc;
+  box-shadow: none;
+  border: none;
+  background: rgb(244, 242, 243);
+}
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+}
+/* LOADER */
+.bx-wrapper .bx-loading {
+  min-height: 50px;
+  background: url('bx_loader.gif') center center no-repeat white;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+/* PAGER */
+.bx-wrapper .bx-pager {
+  text-align: center;
+  font-size: .85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: white;
+  padding-top: 20px;
+}
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: white;
+  text-indent: -9999px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  outline: 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active,
+.bx-wrapper .bx-pager.bx-default-pager a:focus {
+  background: #000;
+}
+.bx-wrapper .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+  display: inline-block;
+  vertical-align: bottom;
+  *zoom: 1;
+  *display: inline;
+}
+.bx-wrapper .bx-pager-item {
+  font-size: 0;
+  line-height: 0;
+}
+/* DIRECTION CONTROLS (NEXT / PREV) */
+.bx-wrapper .bx-prev {
+  left: 10px;
+  background: url('controls.png') no-repeat 0 -32px;
+}
+.bx-wrapper .bx-prev:hover,
+.bx-wrapper .bx-prev:focus {
+  background-position: 0 0;
+}
+.bx-wrapper .bx-next {
+  right: 10px;
+  background: url('controls.png') no-repeat -43px -32px;
+}
+.bx-wrapper .bx-next:hover,
+.bx-wrapper .bx-next:focus {
+  background-position: -43px 0;
+}
+.bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  top: 43%;
+  margin-top: -16px;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  z-index: 9999;
+}
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+/* AUTO CONTROLS (START / STOP) */
+.bx-wrapper .bx-controls-auto {
+  text-align: center;
+}
+.bx-wrapper .bx-controls-auto .bx-start {
+  display: block;
+  text-indent: -9999px;
+  width: 10px;
+  height: 11px;
+  outline: 0;
+  background: url('controls.png') -86px -11px no-repeat;
+  margin: 0 3px;
+}
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active,
+.bx-wrapper .bx-controls-auto .bx-start:focus {
+  background-position: -86px 0;
+}
+.bx-wrapper .bx-controls-auto .bx-stop {
+  display: block;
+  text-indent: -9999px;
+  width: 9px;
+  height: 11px;
+  outline: 0;
+  background: url('controls.png') -86px -44px no-repeat;
+  margin: 0 3px;
+}
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active,
+.bx-wrapper .bx-controls-auto .bx-stop:focus {
+  background-position: -86px -33px;
+}
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+  text-align: left;
+  width: 80%;
+}
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+  right: 0;
+  width: 35px;
+}
+/* IMAGE CAPTIONS */
+.bx-wrapper .bx-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: white;
+
+  width: 100%;
+}
+.bx-wrapper .bx-caption span {
+  color: #fff;
+  font-family: Arial;
+  display: block;
+  font-size: .85em;
+  padding: 10px;
 }
