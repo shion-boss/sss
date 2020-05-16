@@ -77,7 +77,7 @@ def login_bonus(user):
     if (login_date.day != now.day) or (login_month != now_month):
         meta=user_meta.objects.get(user=user)
         meta.last_login=datetime.date.today()
-        meta.like_point += 16
+        meta.like_point += 33
         afi=afirieito_model.objects.filter(introducer=user.user_meta.username)
         afi_list=0
         for a in afi:
