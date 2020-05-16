@@ -10,7 +10,7 @@
 
   #bg-video {
     display: none;
-    background: url('uchuu-ddg.png') no-repeat;
+    background: url('/static/uchuu-ddg.png') no-repeat;
   }
 
   .tw-mes h1 {
