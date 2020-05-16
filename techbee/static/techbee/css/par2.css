@@ -872,9 +872,6 @@ button:focus{
   opacity: 0.8;
 }
 
-.edit_form{
-  grid-row: 5;
-}
 
 .code{
   height: 100%;
@@ -976,7 +973,8 @@ button:focus{
 }
 
 .edit_form{
-  margin-top: 2rem;
+  grid-row: 5;
+  margin: 2rem;
 }
 
 .save_box{
