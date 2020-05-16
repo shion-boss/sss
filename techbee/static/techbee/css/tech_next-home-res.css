@@ -3,7 +3,7 @@
 
   .top-wrapper {
     padding: 0;
-    background-image: url(uchuu-ddg.png);
+    background-image: url('/static/uchuu-ddg.png');
     background-position: center;
 
   }
@@ -151,7 +151,7 @@
 
   .top-wrapper {
     padding: 0;
-    background-image: url(uchuu-ddg.png);
+    background-image: url('/static/uchuu-ddg.png');
     background-position: center;
 
   }
