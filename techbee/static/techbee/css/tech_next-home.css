@@ -308,7 +308,7 @@ a {
   margin-left: auto;
   margin-right: auto;
   padding: 0px;
-  background-color: rgb(244, 242, 243);
+  background-color: rgb(253, 253, 253);
   color: rgb(80, 80,80);
   display: block;
 }
@@ -683,7 +683,7 @@ ul.bxslider {
   -webkit-box-shadow: 0 0 5px #ccc;
   box-shadow: none;
   border: none;
-  background: rgb(244, 242, 243);
+  background: rgb(253, 253, 253);
 }
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
