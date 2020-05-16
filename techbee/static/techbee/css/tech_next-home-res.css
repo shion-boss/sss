@@ -1,0 +1,284 @@
+@media screen and (max-width: 1025px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
+
+
+  .top-wrapper {
+    padding: 0;
+    background-image: url(uchuu-ddg.png);
+    background-position: center;
+
+  }
+
+  #bg-video {
+    display: none;
+    background: url('uchuu-ddg.png') no-repeat;
+  }
+
+  .tw-mes h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .tw-mes p {
+    font-size: 1rem;
+  }
+
+  .tech-movie {
+    padding: 0;
+    text-align: center;
+    margin: 4rem 0;
+  }
+
+  .tm-bottomarea {
+    position: static;
+  }
+
+  .tm-bot-left {
+    padding: 0 10px;
+  }
+
+  .tm-bot-left img {
+    width: 100%;
+    height: 250px;
+  }
+
+  .tm-bot-right {
+    width: 100%;
+    padding: 0 20px;
+    position: static;
+    transform: none;
+    margin-top: 10px;
+  }
+
+  .tm-bot-r-title {
+    width: 100%;
+    margin: 0;
+    padding: 0 10px;
+  }
+
+  .tm-bot-r-title a {
+    font-size: 1rem;
+  }
+
+  .tm-bot-r-txt {
+    width: 100%;
+    margin: 0;
+    padding: 0 10px;
+  }
+
+  .tm-bot-r-txt p {
+    font-size: 0.8rem;
+  }
+
+  .tm-bot-r-day {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .tm-bot-r-day a {
+    width: 50%;
+    float: none;
+    margin: 0 auto;
+  }
+
+
+  #bgt {
+    display: none;
+  }
+
+
+
+  .tm-underber {
+    width: 90%;
+  }
+
+  .tech-teacher {
+    width: 100%;
+    padding: 0 20px 20px 20px;
+    text-align: center;
+  }
+
+  .tt-bottomarea {
+    padding: 0;
+
+  }
+
+  .tt-bot-left {
+    width: 100%;
+    float: none;
+    position: static;
+    transform: none;
+  }
+
+  .tt-bot-rights {
+    width: 100%;
+    padding: 0;
+    float: none;
+    margin: 100px 0;
+  }
+
+  .tt-bot-right {
+    width: 100%;
+    position: static;
+  }
+
+  .tt-bot-rl img {
+    width: 100%;
+    height: 500px;
+  }
+
+  .tt-bot-rr {
+    width: 100%;
+    padding: 0;
+    margin: 10px;
+    height: auto;
+    position: static;
+    transform: none;
+  }
+
+  .fot {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+}
+
+
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
+  body {
+    padding: 0;
+  }
+
+  .top-wrapper {
+    padding: 0;
+    background-image: url(uchuu-ddg.png);
+    background-position: center;
+
+  }
+
+  #bg-video {
+    display: none;
+  }
+
+  .tw-mes h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .tw-mes p {
+    font-size: 1rem;
+  }
+
+  .tech-movie {
+    padding: 0;
+    text-align: center;
+  }
+
+  .tm-bottomarea {
+    position: static;
+  }
+
+  .tm-bot-left {
+    padding: 0 10px;
+  }
+
+  .tm-bot-left img {
+    width: 100%;
+    height: 250px;
+  }
+
+  .tm-bot-right {
+    width: 100%;
+    padding: 0 20px;
+    position: static;
+    transform: none;
+    margin-top: 10px;
+  }
+
+  .tm-bot-r-title {
+    width: 100%;
+    margin: 0;
+    padding: 0 10px;
+  }
+
+  .tm-bot-r-title a {
+    font-size: 1rem;
+  }
+
+  .tm-bot-r-txt {
+    width: 100%;
+    margin: 0;
+    padding: 0 10px;
+  }
+
+  .tm-bot-r-txt p {
+    font-size: 0.8rem;
+  }
+
+  .tm-bot-r-day {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .tm-bot-r-day a {
+    width: 100%;
+    float: none;
+    margin: 0;
+  }
+
+  #bgt {
+    display: none;
+  }
+
+
+
+  .tm-underber {
+    width: 90%;
+  }
+
+  .tech-teacher {
+    width: 100%;
+    padding: 0 20px 20px 20px;
+    text-align: center;
+  }
+
+  .tt-bottomarea {
+    padding: 0;
+
+  }
+
+  .tt-bot-left {
+    width: 100%;
+    float: none;
+    position: static;
+    transform: none;
+  }
+
+  .tt-bot-rights {
+    width: 100%;
+    padding: 0;
+    float: none;
+    margin: 20px 0;
+  }
+
+  .tt-bot-right {
+    width: 100%;
+    position: static;
+  }
+
+  .tt-bot-rl img {
+    width: 100%;
+
+  }
+
+  .tt-bot-rr {
+    width: 100%;
+    padding: 0;
+    margin: 10px;
+    height: auto;
+    position: static;
+    transform: none;
+  }
+
+
+}
