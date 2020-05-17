@@ -729,7 +729,7 @@ def community2_view(request,id):
         }
         return render(request,'techbee/community2.html',params)
 
-@login_required
+
 def footer_view(request,category):
     params={
         'category':category,
