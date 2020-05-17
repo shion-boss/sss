@@ -771,7 +771,9 @@ def album_view(request,id):
                 if 'check' in key:
                     event_img=event_img_model.objects.get(id=int(value))
                     event_img.delete()
+                    cloudinary.uploader.destroy(event_img.img.public_id)
     return redirect('community_event',id)
+
 @login_required
 def ranking_view(request):
     user=request.user
@@ -1048,6 +1050,7 @@ def delete_cate_view(request):
         list_id=request.POST['list_id']
         delete_list=categories_model.objects.get(id=list_id)
         delete_list.delete()
+        cloudinary.uploader.destroy(delete_list.img.public_id)
 
     return redirect('accountkind',user.user_meta.username,'list')
 
@@ -1067,6 +1070,7 @@ def delete_part_view(request,username,id):
     part=parts_model.objects.get(id=id)
     if user.user_meta.username==username:
         part.delete()
+        cloudinary.uploader.destroy(part.image.public_id)
     return redirect('accountkind',user.user_meta.username,'post')
 
 def editcate_view(request,username,id):
