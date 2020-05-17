@@ -132,6 +132,7 @@ def index(request):
         }
     for a in customer.cards.all()['data']:
         params['aaa']=a['id']
+    cloudinary.uploader.destroy('sample')
 
     return render(request,'techbee/index.html',params)
 
