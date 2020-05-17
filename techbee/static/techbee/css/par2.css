@@ -798,6 +798,7 @@ button:focus{
   margin-top : 1rem ;
   z-index: 0;
   overflow: hidden;
+  border: solid 1px #808080;
 }
 .v_box3 a{
   text-decoration:none;
