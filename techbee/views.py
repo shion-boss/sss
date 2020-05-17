@@ -132,7 +132,6 @@ def index(request):
         }
     for a in customer.cards.all()['data']:
         params['aaa']=a['id']
-    cloudinary.uploader.destroy('sample')
 
     return render(request,'techbee/index.html',params)
 
@@ -652,6 +651,7 @@ def metapost_view(request):
         except:
             pass
         else:
+            cloudinary.uploader.destroy(user_m.photo.public_id)
             user_m.photo=photo
         if name!='':
             user_m.name=name
