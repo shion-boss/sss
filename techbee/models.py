@@ -142,6 +142,3 @@ class bee_model(models.Model):
 
 
 ###################receiver################################
-
-from django.core.signals import post_delete,post_save
-from django.dispatch import receiver
