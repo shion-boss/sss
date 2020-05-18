@@ -954,7 +954,7 @@ button:focus{
   }
   .post_part {
     display: grid;
-    grid-template-columns: 0 33vw 0;
+    grid-template-columns:1fr 33vw 1fr;
     grid-template-rows: auto;
     margin-bottom: 1rem;
   }
@@ -977,7 +977,7 @@ button:focus{
   }
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width:850px){
   /*画面幅が768以下の時*/
   .main {
     display: grid;
