@@ -17,8 +17,8 @@
     <div class="header">
       <div class="contents">
         <img class="logo" src="/static/base/defo.jpg" alt="Techbee">
-        <div class="home"{% if "/techbee/tech/" in request.path %}id="current"{% endif %}>
-          <a class="anot" href="{% url 'tech' 'movie' 0 0 %}">Tech<span class="n">N</span>ext</a>
+        <div class="home"{% if "/" in request.path %}id="current"{% endif %}>
+          <a class="anot" href="{% url 'technext' %}">Tech<span class="n">N</span>ext</a>
         </div>
         {% if user.is_authenticated and user.user_meta %}
         <li class="num1 list" {% ifequal index_current '/techbee/index/' %}id="current"{% endifequal %}>

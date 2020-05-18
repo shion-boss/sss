@@ -25,6 +25,8 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
+def technext_view(request):
+    return render(request,'techbee/indec2.html')
 
 def my_error_handler(request, *args, **kw):
     import sys
@@ -770,8 +772,8 @@ def album_view(request,id):
             for key,value in on:
                 if 'check' in key:
                     event_img=event_img_model.objects.get(id=int(value))
-                    event_img.delete()
                     cloudinary.uploader.destroy(event_img.img.public_id)
+                    event_img.delete()
     return redirect('community_event',id)
 
 @login_required
@@ -1069,8 +1071,8 @@ def delete_part_view(request,username,id):
     login_bonus(user)
     part=parts_model.objects.get(id=id)
     if user.user_meta.username==username:
-        part.delete()
         cloudinary.uploader.destroy(part.image.public_id)
+        part.delete()
     return redirect('accountkind',user.user_meta.username,'post')
 
 def editcate_view(request,username,id):
@@ -1093,6 +1095,7 @@ def editcate_view(request,username,id):
         except:
             pass
         else:
+            cloudinary.uploader.destroy(cate.img.public_id)
             cate.img=photo
             cate.save()
         try:

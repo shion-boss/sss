@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from techbee.urls import router
+from . import views
 
 from django.conf.urls import url
 from django.conf import settings
@@ -24,6 +25,7 @@ from django.views.static import serve  #追加
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('/',views.technext_view,name='technext'),
     path('techbee/',include("techbee.urls")),
     path('auth/', include('allauth.urls')),
     path('oauth/', include('social_django.urls', namespace='social')),
