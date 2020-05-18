@@ -77,7 +77,7 @@ def login_bonus(user):
     if (login_date.day != now.day) or (login_month != now_month):
         meta=user_meta.objects.get(user=user)
         meta.last_login=datetime.date.today()
-        meta.like_point += 16
+        meta.like_point += 33
         afi=afirieito_model.objects.filter(introducer=user.user_meta.username)
         afi_list=0
         for a in afi:
@@ -651,6 +651,7 @@ def metapost_view(request):
         except:
             pass
         else:
+            cloudinary.uploader.destroy(user_m.photo.public_id)
             user_m.photo=photo
         if name!='':
             user_m.name=name
@@ -729,7 +730,7 @@ def community2_view(request,id):
         }
         return render(request,'techbee/community2.html',params)
 
-@login_required
+
 def footer_view(request,category):
     params={
         'category':category,
@@ -770,7 +771,9 @@ def album_view(request,id):
                 if 'check' in key:
                     event_img=event_img_model.objects.get(id=int(value))
                     event_img.delete()
+                    cloudinary.uploader.destroy(event_img.img.public_id)
     return redirect('community_event',id)
+
 @login_required
 def ranking_view(request):
     user=request.user
@@ -1047,6 +1050,7 @@ def delete_cate_view(request):
         list_id=request.POST['list_id']
         delete_list=categories_model.objects.get(id=list_id)
         delete_list.delete()
+        cloudinary.uploader.destroy(delete_list.img.public_id)
 
     return redirect('accountkind',user.user_meta.username,'list')
 
@@ -1066,6 +1070,7 @@ def delete_part_view(request,username,id):
     part=parts_model.objects.get(id=id)
     if user.user_meta.username==username:
         part.delete()
+        cloudinary.uploader.destroy(part.image.public_id)
     return redirect('accountkind',user.user_meta.username,'post')
 
 def editcate_view(request,username,id):
