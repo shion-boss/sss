@@ -1049,8 +1049,8 @@ def delete_cate_view(request):
     if request.method=='POST':
         list_id=request.POST['list_id']
         delete_list=categories_model.objects.get(id=list_id)
-        delete_list.delete()
         cloudinary.uploader.destroy(delete_list.img.public_id)
+        delete_list.delete()
 
     return redirect('accountkind',user.user_meta.username,'list')
 
