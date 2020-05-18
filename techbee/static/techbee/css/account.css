@@ -189,8 +189,8 @@
 }
 
 .v_box{
-  width: 280px;
-  height: 180px;
+  width: 20vw;
+  height: 17vw;
   margin-top : 1rem ;
   z-index: 0;
   display: flex;
