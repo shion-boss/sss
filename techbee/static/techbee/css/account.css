@@ -975,6 +975,22 @@ button:focus{
     z-index: 1;
     outline: 0;
   }
+  .a_box {
+    grid-column: 1;
+    grid-row: 1;
+    width: 33vw;
+    height: 17vw;
+    border: solid 2px #808080;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+  }
+  .c_img {
+    height: 17vw;
+  }
 }
 
 @media screen and (max-width:850px){
@@ -1230,8 +1246,8 @@ button:focus{
   .a_box {
     grid-column: 1;
     grid-row: 1;
-    width: 240px;
-    height: 155px;
+    width: 33vw;
+    height: 17vw;
     border: solid 2px #808080;
     position: relative;
     overflow: hidden;
@@ -1241,7 +1257,7 @@ button:focus{
     background-color: black;
   }
   .c_img {
-    height: 155px;
+    height: 17vw;
   }
 }
 
@@ -1501,5 +1517,21 @@ button:focus{
     text-shadow: 1px 2px 3px #808080;
     margin-bottom: 1rem;
     background-color: white;
+  }
+  .a_box {
+    grid-column: 1;
+    grid-row: 1;
+    width: 90vw;
+    height: 55vw;
+    border: solid 2px #808080;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+  }
+  .c_img {
+    height: 55vw;
   }
 }
