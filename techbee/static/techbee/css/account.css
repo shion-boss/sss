@@ -1254,7 +1254,7 @@ button:focus{
     grid-column: 1;
     grid-row: 1;
     width: 33vw;
-    height: 17vw;
+    height: 20vw;
     border: solid 2px #808080;
     position: relative;
     overflow: hidden;
@@ -1264,7 +1264,7 @@ button:focus{
     background-color: black;
   }
   .c_img {
-    height: 17vw;
+    height: 20vw;
   }
 }
 
