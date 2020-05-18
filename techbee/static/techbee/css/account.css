@@ -293,8 +293,8 @@
 .a_box{
   grid-column: 1;
   grid-row: 1;
-  width: 280px;
-  height: 180px;
+  width: 20vw;
+  height: 12vw;
   border: solid 2px #808080;
   position: relative;
   overflow: hidden;
