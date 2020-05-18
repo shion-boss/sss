@@ -970,6 +970,13 @@ button:focus{
     overflow: hidden;
     background-color: rgb(0,0,0);
   }
+  .relation_box {
+    display: grid;
+    grid-template-columns: 1fr 33vw 1fr;
+    grid-template-rows: auto;
+    margin-bottom: 1rem;
+  }
+  
   .main_video {
     height: 20vw;
     z-index: 1;
