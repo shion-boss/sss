@@ -3,14 +3,14 @@
 
   .top-wrapper {
     padding: 0;
-    background-image: url(uchuu-ddg.png);
+    background-image: url("https://res.cloudinary.com/hm9k6tunn/image/upload/v1589620537/uchuu-ddg_xvz90b.png");
     background-position: center;
 
   }
 
   #bg-video {
     display: none;
-    background: url('uchuu-ddg.png') no-repeat;
+    background: url("https://res.cloudinary.com/hm9k6tunn/image/upload/v1589620537/uchuu-ddg_xvz90b.png") no-repeat;
   }
 
   .tw-mes h1 {

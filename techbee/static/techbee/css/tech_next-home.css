@@ -20,7 +20,7 @@ a {
 .top-wrapper {
   width: 100%;
   height: 900px;
-  background-image: url(/static/uchuu.jpg);
+  background-image: url("https://res.cloudinary.com/hm9k6tunn/image/upload/v1589620537/uchuu-ddg_xvz90b.png");
   background-size: cover;
   padding: 0 200px;
   position: relative;
