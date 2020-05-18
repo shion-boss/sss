@@ -1518,6 +1518,12 @@ button:focus{
     margin-bottom: 1rem;
     background-color: white;
   }
+  .relation_box {
+    display: grid;
+    grid-template-columns: 1fr 90vw 1fr;
+    grid-template-rows: auto;
+    margin-bottom: 1rem;
+  }
   .a_box {
     grid-column: 1;
     grid-row: 1;
