@@ -110,13 +110,13 @@ p{
   grid-column: 2;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4,280px);
+  grid-template-columns: repeat(4,20vw);
   padding: 1rem;
   box-sizing: border-box;
 }
 
 .e_box{
-  width: 280px;
+  width: 20vw;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -125,8 +125,8 @@ p{
 }
 .eb_box{
   border: solid 1px #808080;
-  height: 180px;
-  width: 280px;
+  height: 12vw;
+  width: 20vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,7 +135,7 @@ p{
 }
 
 .e_box img{
-  height:180px;
+  height:12vw;
   border: solid 1px #808080;
 }
 
@@ -564,8 +564,8 @@ p{
   }
   .eb_box {
     border: solid 1px #808080;
-    height: 120px;
-    width: 180px;
+    height: 12vw;
+    width: 20vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -573,7 +573,7 @@ p{
     background-color: black;
   }
   .e_box img {
-    height: 120px;
+    height: 12vw;
     border: solid 1px #808080;
   }
   .e_box {
@@ -582,7 +582,7 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 120px;
+    height: 12vw;
     margin-bottom: 1rem;
   }
   .event_img_box {
@@ -802,8 +802,8 @@ p{
   }
   .eb_box {
     border: solid 1px #808080;
-    height: 99px;
-    width: 154px;
+    height: 12vw;
+    width: 20vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -811,7 +811,7 @@ p{
     background-color: black;
   }
   .e_box img {
-    height: 99px;
+    height: 12vw;
     border: solid 1px #808080;
   }
   .e_box {
@@ -820,7 +820,7 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 99px;
+    height: 12vw;
     margin-bottom: 1rem;
   }
   .event_img_box {
@@ -1033,8 +1033,8 @@ p{
   }
   .eb_box {
     border: solid 1px #808080;
-    height: 99px;
-    width: 154px;
+    height: 28vw;
+    width: 45vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1042,7 +1042,7 @@ p{
     background-color: black;
   }
   .e_box img {
-    height: 99px;
+    height: 28vw;
     border: solid 1px #808080;
   }
   .e_box {
@@ -1051,7 +1051,7 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 99px;
+    height: 28vw;
     margin-bottom: 1rem;
   }
   .event_img_box {
