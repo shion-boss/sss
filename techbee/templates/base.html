@@ -17,7 +17,7 @@
     <div class="header">
       <div class="contents">
         <img class="logo" src="/static/base/defo.jpg" alt="Techbee">
-        <div class="home"{% if "/" in request.path %}id="current"{% endif %}>
+        <div class="home"{% if "/techbee/" in request.path %}id="current"{% endif %}>
           <a class="anot" href="{% url 'technext' %}">Tech<span class="n">N</span>ext</a>
         </div>
         {% if user.is_authenticated and user.user_meta %}
