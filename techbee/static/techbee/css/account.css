@@ -179,7 +179,7 @@
 
 .post_part{
   display: grid;
-  grid-template-columns: 1fr 284px 1fr;
+  grid-template-columns: 1fr 20vw 1fr;
   grid-template-rows: auto;
   margin-bottom: 1rem;
 }
