@@ -3,14 +3,22 @@
 
   .top-wrapper {
     padding: 0;
+<<<<<<< HEAD
     background-image: url("https://res.cloudinary.com/hm9k6tunn/image/upload/v1589620537/uchuu-ddg_xvz90b.png");
+=======
+    background-image: url(uchuu-ddg.png);
+>>>>>>> a3a3df531d7e2466352ed85cad556db871626739
     background-position: center;
 
   }
 
   #bg-video {
     display: none;
+<<<<<<< HEAD
     background: url('https://res.cloudinary.com/hm9k6tunn/image/upload/v1589620537/uchuu-ddg_xvz90b.png') no-repeat;
+=======
+    background: url('uchuu-ddg.png') no-repeat;
+>>>>>>> a3a3df531d7e2466352ed85cad556db871626739
   }
 
   .tw-mes h1 {
@@ -151,7 +159,11 @@
 
   .top-wrapper {
     padding: 0;
+<<<<<<< HEAD
     background-image: url("https://res.cloudinary.com/hm9k6tunn/image/upload/v1589620537/uchuu-ddg_xvz90b.png");
+=======
+    background-image: url(uchuu-ddg.png);
+>>>>>>> a3a3df531d7e2466352ed85cad556db871626739
     background-position: center;
 
   }
