@@ -564,8 +564,8 @@ p{
   }
   .eb_box {
     border: solid 1px #808080;
-    height: 12vw;
-    width: 20vw;
+    height: 15vw;
+    width: 24vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -573,7 +573,7 @@ p{
     background-color: black;
   }
   .e_box img {
-    height: 12vw;
+    height: 15vw;
     border: solid 1px #808080;
   }
   .e_box {
@@ -582,7 +582,7 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 12vw;
+    height: 15vw;
     margin-bottom: 1rem;
   }
   .event_img_box {
