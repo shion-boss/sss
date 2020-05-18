@@ -280,7 +280,7 @@
 
 .relation_box{
   display: grid;
-  grid-template-columns: 1fr 284px 1fr;
+  grid-template-columns: 1fr 20vw 1fr;
   grid-template-rows: auto;
   margin-bottom: 1rem;
 }
@@ -288,7 +288,7 @@
   grid-column: 2;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 184px auto;
+  grid-template-rows:auto;
 }
 .a_box{
   grid-column: 1;
