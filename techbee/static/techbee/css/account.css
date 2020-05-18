@@ -954,7 +954,7 @@ button:focus{
   }
   .post_part {
     display: grid;
-    grid-template-columns: 1fr 33vw 1fr;
+    grid-template-columns: 0 33vw 0;
     grid-template-rows: auto;
     margin-bottom: 1rem;
   }
