@@ -110,7 +110,7 @@ p{
   grid-column: 2;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4,20vw);
+  grid-template-columns: repeat(4,1fr);
   padding: 1rem;
   box-sizing: border-box;
 }
