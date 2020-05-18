@@ -976,7 +976,7 @@ button:focus{
     grid-template-rows: auto;
     margin-bottom: 1rem;
   }
-  
+
   .main_video {
     height: 20vw;
     z-index: 1;
@@ -1240,7 +1240,7 @@ button:focus{
   }
   .relation_box {
     display: grid;
-    grid-template-columns: 1fr 240px 1fr;
+    grid-template-columns: 1fr 33vw 1fr;
     grid-template-rows: auto;
     margin-bottom: 1rem;
   }
@@ -1248,7 +1248,7 @@ button:focus{
     grid-column: 2;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 159px auto;
+    grid-template-rows: auto;
   }
   .a_box {
     grid-column: 1;
