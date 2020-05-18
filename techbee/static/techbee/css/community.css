@@ -800,29 +800,8 @@ p{
   .album_label {
     font-size: 1.5rem;
   }
-  .eb_box {
-    border: solid 1px #808080;
-    height: 12vw;
-    width: 20vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background-color: black;
-  }
-  .e_box img {
-    height: 12vw;
-    border: solid 1px #808080;
-  }
-  .e_box {
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 12vw;
-    margin-bottom: 1rem;
-  }
+
+
   .event_img_box {
     grid-column: 1;
     width: 100%;
