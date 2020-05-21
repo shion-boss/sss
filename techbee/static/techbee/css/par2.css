@@ -424,7 +424,7 @@ button:focus{
 
 .relation_box {
   display: grid;
-  grid-template-columns: 1fr 33vw 1fr;
+  grid-template-columns: 1fr 25vw 1fr;
   grid-template-rows: auto;
   margin-bottom: 1rem;
 }
@@ -437,8 +437,8 @@ button:focus{
 .a_box {
   grid-column: 1;
   grid-row: 1;
-  width: 33vw;
-  height: 20vw;
+  width: 25vw;
+  height: 15vw;
   border: solid 2px #808080;
   position: relative;
   overflow: hidden;
@@ -448,7 +448,7 @@ button:focus{
   background-color: black;
 }
 .c_img {
-  height: 20vw;
+  height: 15vw;
 }
 
 
