@@ -9,8 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Petrona&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'techbee/css/pagi.css' %}"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    <link rel="stylesheet" href="./loaders.min.css" type="text/css">
   </head>
   <body>
+    <div id="pageloading-wrap">
+      <!-- 「Loaders.css」をアイコンに採用 -->
+      <div id="pageloading-icon" class="ball-pulse-sync"><div></div><div></div><div></div></div>
+    </div>
     <input type="checkbox" name="" value=""id='hum'>
     <label for="hum" class='hum_label'><i class="fas fa-bars"></i></label>
     <label for="hum" class='hum_label2'><i class="fas fa-angle-left"></i></label>
@@ -134,6 +139,17 @@
 
         }
         reader.readAsDataURL(e.target.files[0]);
+    });
+    </script>
+    <script type="text/javascript">
+    $(function(){
+     $(window).on('load',function(){
+       $("#page-loading").delay(1000).fadeOut('slow');
+     });
+     function loaderClose(){
+       $("#page-loading").fadeOut('slow');
+     }
+     setTimeout(loaderClose,10000);
     });
     </script>
 
