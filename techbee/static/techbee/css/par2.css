@@ -1155,21 +1155,21 @@ button:focus{
   }
   .post_part3{
     display: grid;
-    grid-template-columns: 1fr 20vw 1fr;
+    grid-template-columns: 1fr 33vw 1fr;
     grid-template-rows: auto;
     margin-bottom: 1rem;
   }
 
   .v_box3{
-    width: 20vw;
-    height: 12vw;
+    width: 33vw;
+    height: 20vw;
     margin-top : 1rem ;
     z-index: 0;
     overflow: hidden;
     border: solid 1px #808080;
   }
   .main_video3{
-    height: 12vw;
+    height: 20vw;
   }
   .kind {
     display: grid;
