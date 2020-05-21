@@ -344,6 +344,28 @@
 
 @media screen and (max-width:1024px){
   /*画面幅が1024以下の時*/
+  .relation_box {
+    display: grid;
+    grid-template-columns: 1fr 33vw 1fr;
+    grid-template-rows: auto;
+    margin-bottom: 1rem;
+  }
+  .a_box {
+    grid-column: 1;
+    grid-row: 1;
+    width: 33vw;
+    height: 20vw;
+    border: solid 2px #808080;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+  }
+  .c_img {
+    height: 20vw;
+  }
   .post_parts {
     z-index: 3;
     grid-row: 4;
@@ -532,6 +554,28 @@
 
 @media screen and (max-width:480px){
   /*画面幅が480pxまでの時*/
+  .relation_box {
+    display: grid;
+    grid-template-columns: 1fr 90vw 1fr;
+    grid-template-rows: auto;
+    margin-bottom: 1rem;
+  }
+  .a_box {
+    grid-column: 1;
+    grid-row: 1;
+    width: 90vw;
+    height: 55vw;
+    border: solid 2px #808080;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+  }
+  .c_img {
+    height: 55vw;
+  }
   .title {
       text-align: center;
       vertical-align: bottom;
