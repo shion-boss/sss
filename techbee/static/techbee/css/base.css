@@ -664,7 +664,7 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
   grid-template-rows: auto;
   grid-row-gap: 1rem;
   list-style: none;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 
 .lista{
@@ -838,7 +838,7 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
     grid-template-rows: auto;
     grid-row-gap: 1rem;
     list-style: none;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
   }
   .bee_box img {
     width: 25%;
@@ -1000,7 +1000,7 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
     grid-template-rows: auto;
     grid-row-gap: 1rem;
     list-style: none;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
   }
   .bee_box img {
     width: 30%;
