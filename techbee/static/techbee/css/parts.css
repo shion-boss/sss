@@ -238,7 +238,7 @@
 
 .relation_box{
   display: grid;
-  grid-template-columns: 1fr 284px 1fr;
+  grid-template-columns: 1fr 20vw 1fr;
   grid-template-rows: auto;
   margin-bottom: 1rem;
 }
@@ -246,13 +246,13 @@
   grid-column: 2;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 184px auto;
+  grid-template-rows:auto;
 }
 .a_box{
   grid-column: 1;
   grid-row: 1;
-  width: 280px;
-  height: 180px;
+  width: 20vw;
+  height: 12vw;
   border: solid 2px #808080;
   position: relative;
   overflow: hidden;
@@ -263,7 +263,7 @@
 }
 
 .c_img{
-  height: 180px;
+  height: 12vw;
 }
 
 .filename2{
