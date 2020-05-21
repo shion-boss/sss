@@ -146,7 +146,7 @@ def tb_view(request):
     except:
         return redirect(to='loginselect')
     login_bonus(user)
-    return render(request,'techbee/tech-bee.html',params)
+    return render(request,'techbee/tech-bee.html')
 
 @login_required
 def tech_view(request,category,w,num):
