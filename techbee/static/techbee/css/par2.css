@@ -798,6 +798,10 @@ button:focus{
   z-index: 0;
   overflow: hidden;
   border: solid 1px #808080;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .main_video3{
   height: 12vw;
