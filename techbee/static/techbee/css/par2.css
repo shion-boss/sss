@@ -422,9 +422,9 @@ button:focus{
   grid-column: 3;
 }
 
-.relation_box{
+.relation_box {
   display: grid;
-  grid-template-columns: 1fr 284px 1fr;
+  grid-template-columns: 1fr 33vw 1fr;
   grid-template-rows: auto;
   margin-bottom: 1rem;
 }
@@ -432,13 +432,13 @@ button:focus{
   grid-column: 2;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 184px auto;
+  grid-template-rows:auto;
 }
-.a_box{
+.a_box {
   grid-column: 1;
   grid-row: 1;
-  width: 280px;
-  height: 180px;
+  width: 33vw;
+  height: 20vw;
   border: solid 2px #808080;
   position: relative;
   overflow: hidden;
@@ -447,10 +447,10 @@ button:focus{
   align-items: center;
   background-color: black;
 }
-
-.c_img{
-  height: 180px;
+.c_img {
+  height: 20vw;
 }
+
 
 .filename2{
   grid-column: 1;
@@ -783,7 +783,7 @@ button:focus{
 
 .post_part3{
   display: grid;
-  grid-template-columns: 1fr 284px 1fr;
+  grid-template-columns: 1fr 20vw 1fr;
   grid-template-rows: auto;
   margin-bottom: 1rem;
 }
@@ -793,8 +793,8 @@ button:focus{
 }
 
 .v_box3{
-  width: 280px;
-  height: 180px;
+  width: 20vw;
+  height: 12vw;
   margin-top : 1rem ;
   z-index: 0;
   overflow: hidden;
