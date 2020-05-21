@@ -30,8 +30,14 @@ br {
   font-family: 'dot12r';
   src: url(/static/PixelMplus12-Regular.ttf) format('truetype');
 }
+.waku{
+  grid-area:head;
+  height: 50px;
+  width:100%;
+}
 
 .body-tb {
+  grid-column: 3/7;
   padding: 0 3vw;
   background-color: rgb(41, 39, 48);
   text-align: center;
