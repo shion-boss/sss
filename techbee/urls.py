@@ -26,6 +26,7 @@ urlpatterns = [
     path('delete/',views.delete_cate_view,name='delete_cate'),
     path('deletepart/<str:username>/<int:id>/',views.delete_part_view,name='delete_part'),
     path('',views.technext_view,name='technext'),
+    path('story/',views.tb_view,name='tb'),
     path("ajax/", views.like_ajax_response,name='ajax'),
     path("ajaxf/",views.favorite_ajax_view,name='ajaxf'),
     path("ajaxc/",views.channel_ajax_view,name='ajaxc'),

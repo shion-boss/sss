@@ -137,6 +137,16 @@ def index(request):
 
     return render(request,'techbee/index.html',params)
 
+@login_required
+def tb_view(request):
+    payjp.api_key ='sk_test_f0d6fe8a9725200cda316d56'
+    user=request.user
+    try:
+        user.user_meta.username
+    except:
+        return redirect(to='loginselect')
+    login_bonus(user)
+    return render(request,'techbee/tech-bee.html',params)
 
 @login_required
 def tech_view(request,category,w,num):
