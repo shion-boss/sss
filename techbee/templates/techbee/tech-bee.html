@@ -1,442 +1,436 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <link rel="stylesheet" type="text/css" href="{% static 'techbee/css/tech-bee.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'techbee/css/tech-bee-res.css' %}"/>
-    <meta name="viewport" content="width=360,initial-scale=1">
-    <meta charset="utf-8">
-    <title>TechBee</title>
-  </head>
-  <body>
-    <div class="body-tb">
-      <h1>hkk</h1>
-      <h1>FOREST STORY</h1>
-      <div class="body-tb-main">
-        <div class="pop-box">
+{% block body_k %}
+<link rel="stylesheet" type="text/css" href="{% static 'techbee/css/tech-bee.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'techbee/css/tech-bee-res.css' %}"/>
+<meta name="viewport" content="width=360,initial-scale=1">
+<div class="body-tb">
+  
+  <h1>FOREST STORY</h1>
+  <div class="body-tb-main">
+    <div class="pop-box">
 
-          <input type="checkbox" id="popup-on1">
-          <div class="popup">
+      <input type="checkbox" id="popup-on1">
+      <div class="popup">
 
-            <div class="popup-content">
-              <!-- ポップアップの中身 -->
+        <div class="popup-content">
+          <!-- ポップアップの中身 -->
 
-              <label for="pop-check1">
-              <input type="checkbox" id="pop-check1">
-              <div class="pop-card">
-                <div class="pop-left">
-                  <img src="/static/tb-green.jpg" alt="">
-                </div>
-                <div class="pop-back">
-                  <div class="pop-right">
-                    <div class="textboard">
-                      <p class="test2-1">Story▶FOREST</p>
-                      <p class="test2-2">Episode▶01</p>
-                      <p class="test2-3">Title▶GREEN</p>
-                    </div>
-                    <div class="textboard">
-                      <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
-                      <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
-                      <p class="test3">TechBee<br>「そうか...」</p>
-                    </div>
-                    <div class="textboard">
-                      <label for="popup-on1"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
-                    </div>
-                  </div>
-                </div>
-                <div class="clear"></div>
-              </div></label>
-
-
-
-              <!-- ./ポップアップの中身　ここまで -->
+          <label for="pop-check1">
+          <input type="checkbox" id="pop-check1">
+          <div class="pop-card">
+            <div class="pop-left">
+              <img src="/static/tb-green.jpg" alt="">
             </div>
-
-          </div>
-
-          <input type="checkbox" id="popup-on2">
-          <div class="popup">
-
-            <div class="popup-content">
-              <!-- ポップアップの中身 -->
-              <label for="pop-check2">
-              <input type="checkbox" id="pop-check2">
-              <div class="pop-card">
-                <div class="pop-left">
-                  <img src="/static/tb-green.jpg" alt="">
+            <div class="pop-back">
+              <div class="pop-right">
+                <div class="textboard">
+                  <p class="test2-1">Story▶FOREST</p>
+                  <p class="test2-2">Episode▶01</p>
+                  <p class="test2-3">Title▶GREEN</p>
                 </div>
-                <div class="pop-back">
-                  <div class="pop-right">
-                    <div class="textboard">
-                      <p class="test2-1">Story▶FOREST</p>
-                      <p class="test2-2">Episode▶01</p>
-                      <p class="test2-3">Title▶GREEN</p>
-                    </div>
-                    <div class="textboard">
-                      <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
-                      <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
-                      <p class="test3">TechBee<br>「そうか...」</p>
-                    </div>
-                    <div class="textboard">
-                      <label for="popup-on2"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
-                    </div>
-                  </div>
+                <div class="textboard">
+                  <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
+                  <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
+                  <p class="test3">TechBee<br>「そうか...」</p>
                 </div>
-                <div class="clear"></div>
-              </div></label>
-              <!-- ./ポップアップの中身 ここまで -->
+                <div class="textboard">
+                  <label for="popup-on1"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
+                </div>
+              </div>
             </div>
+            <div class="clear"></div>
+          </div></label>
 
-          </div>
 
-          <input type="checkbox" id="popup-on3">
-          <div class="popup">
 
-            <div class="popup-content">
-              <!-- ポップアップの中身 -->
-              <label for="pop-check3">
-              <input type="checkbox" id="pop-check3">
-              <div class="pop-card">
-                <div class="pop-left">
-                  <img src="/static/tb-green.jpg" alt="">
-                </div>
-                <div class="pop-back">
-                  <div class="pop-right">
-                    <div class="textboard">
-                      <p class="test2-1">Story▶FOREST</p>
-                      <p class="test2-2">Episode▶01</p>
-                      <p class="test2-3">Title▶GREEN</p>
-                    </div>
-                    <div class="textboard">
-                      <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
-                      <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
-                      <p class="test3">TechBee<br>「そうか...」</p>
-                    </div>
-                    <div class="textboard">
-                      <label for="popup-on3"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
-                    </div>
-                  </div>
-                </div>
-                <div class="clear"></div>
-              </div></label>
-              <!-- ./ポップアップの中身 ここまで -->
-            </div>
-
-          </div>
-
-          <input type="checkbox" id="popup-on4">
-          <div class="popup">
-
-            <div class="popup-content">
-              <!-- ポップアップの中身 -->
-              <label for="pop-check4">
-              <input type="checkbox" id="pop-check4">
-              <div class="pop-card">
-                <div class="pop-left">
-                  <img src="/static/tb-green.jpg" alt="">
-                </div>
-                <div class="pop-back">
-                  <div class="pop-right">
-                    <div class="textboard">
-                      <p class="test2-1">Story▶FOREST</p>
-                      <p class="test2-2">Episode▶01</p>
-                      <p class="test2-3">Title▶GREEN</p>
-                    </div>
-                    <div class="textboard">
-                      <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
-                      <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
-                      <p class="test3">TechBee<br>「そうか...」</p>
-                    </div>
-                    <div class="textboard">
-                      <label for="popup-on4"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
-                    </div>
-                  </div>
-                </div>
-                <div class="clear"></div>
-              </div></label>
-              <!-- ./ポップアップの中身 ここまで -->
-            </div>
-
-          </div>
-
-          <input type="checkbox" id="popup-on5">
-          <div class="popup">
-
-            <div class="popup-content">
-              <!-- ポップアップの中身 -->
-              <label for="pop-check5">
-              <input type="checkbox" id="pop-check5">
-              <div class="pop-card">
-                <div class="pop-left">
-                  <img src="/static/tb-green.jpg" alt="">
-                </div>
-                <div class="pop-back">
-                  <div class="pop-right">
-                    <div class="textboard">
-                      <p class="test2-1">Story▶FOREST</p>
-                      <p class="test2-2">Episode▶01</p>
-                      <p class="test2-3">Title▶GREEN</p>
-                    </div>
-                    <div class="textboard">
-                      <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
-                      <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
-                      <p class="test3">TechBee<br>「そうか...」</p>
-                    </div>
-                    <div class="textboard">
-                      <label for="popup-on5"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
-                    </div>
-                  </div>
-                </div>
-                <div class="clear"></div>
-              </div></label>
-              <!-- ./ポップアップの中身 ここまで -->
-            </div>
-
-          </div>
-
-          <input type="checkbox" id="popup-on6">
-          <div class="popup">
-
-            <div class="popup-content">
-              <!-- ポップアップの中身 -->
-              <label for="pop-check6">
-              <input type="checkbox" id="pop-check6">
-              <div class="pop-card">
-                <div class="pop-left">
-                  <img src="/static/tb-green.jpg" alt="">
-                </div>
-                <div class="pop-back">
-                  <div class="pop-right">
-                    <div class="textboard">
-                      <p class="test2-1">Story▶FOREST</p>
-                      <p class="test2-2">Episode▶01</p>
-                      <p class="test2-3">Title▶GREEN</p>
-                    </div>
-                    <div class="textboard">
-                      <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
-                      <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
-                      <p class="test3">TechBee<br>「そうか...」</p>
-                    </div>
-                    <div class="textboard">
-                      <label for="popup-on6"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
-                    </div>
-                  </div>
-                </div>
-                <div class="clear"></div>
-              </div></label>
-              <!-- ./ポップアップの中身　ここまで -->
-            </div>
-
-          </div>
-
-          <input type="checkbox" id="popup-on7">
-          <div class="popup">
-
-            <div class="popup-content">
-              <!-- ポップアップの中身 -->
-              <label for="pop-check7">
-              <input type="checkbox" id="pop-check7">
-              <div class="pop-card">
-                <div class="pop-left">
-                  <img src="/static/tb-green.jpg" alt="">
-                </div>
-                <div class="pop-back">
-                  <div class="pop-right">
-                    <div class="textboard">
-                      <p class="test2-1">Story▶FOREST</p>
-                      <p class="test2-2">Episode▶01</p>
-                      <p class="test2-3">Title▶GREEN</p>
-                    </div>
-                    <div class="textboard">
-                      <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
-                      <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
-                      <p class="test3">TechBee<br>「そうか...」</p>
-                    </div>
-                    <div class="textboard">
-                      <label for="popup-on7"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
-                    </div>
-                  </div>
-                </div>
-                <div class="clear"></div>
-              </div></label>
-              <!-- ./ポップアップの中身　ここまで -->
-            </div>
-
-          </div>
-
-          <input type="checkbox" id="popup-on8">
-          <div class="popup">
-
-            <div class="popup-content">
-              <!-- ポップアップの中身 -->
-              <label for="pop-check8">
-              <input type="checkbox" id="pop-check8">
-              <div class="pop-card">
-                <div class="pop-left">
-                  <img src="/static/tb-green.jpg" alt="">
-                </div>
-                <div class="pop-back">
-                  <div class="pop-right">
-                    <div class="textboard">
-                      <p class="test2-1">Story▶FOREST</p>
-                      <p class="test2-2">Episode▶01</p>
-                      <p class="test2-3">Title▶GREEN</p>
-                    </div>
-                    <div class="textboard">
-                      <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
-                      <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
-                      <p class="test3">TechBee<br>「そうか...」</p>
-                    </div>
-                    <div class="textboard">
-                      <label for="popup-on8"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
-                    </div>
-                  </div>
-                </div>
-                <div class="clear"></div>
-              </div></label>
-              <!-- ./ポップアップの中身　ここまで -->
-            </div>
-
-          </div>
-
-          <input type="checkbox" id="popup-on9">
-          <div class="popup">
-
-            <div class="popup-content">
-              <!-- ポップアップの中身 -->
-              <label for="pop-check9">
-              <input type="checkbox" id="pop-check9">
-              <div class="pop-card">
-                <div class="pop-left">
-                  <img src="/static/tb-green.jpg" alt="">
-                </div>
-                <div class="pop-back">
-                  <div class="pop-right">
-                    <div class="textboard">
-                      <p class="test2-1">Story▶FOREST</p>
-                      <p class="test2-2">Episode▶01</p>
-                      <p class="test2-3">Title▶GREEN</p>
-                    </div>
-                    <div class="textboard">
-                      <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
-                      <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
-                      <p class="test3">TechBee<br>「そうか...」</p>
-                    </div>
-                    <div class="textboard">
-                      <label for="popup-on9"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
-                    </div>
-                  </div>
-                </div>
-                <div class="clear"></div>
-              </div></label>
-              <!-- ./ポップアップの中身　ここまで -->
-            </div>
-
-          </div>
-
-          <input type="checkbox" id="popup-on10">
-          <div class="popup">
-
-            <div class="popup-content">
-              <!-- ポップアップの中身 -->
-              <label for="pop-check10">
-              <input type="checkbox" id="pop-check10">
-              <div class="pop-card">
-                <div class="pop-left">
-                  <img src="/static/tb-green.jpg" alt="">
-                </div>
-                <div class="pop-back">
-                  <div class="pop-right">
-                    <div class="textboard">
-                      <p class="test2-1">Story▶FOREST</p>
-                      <p class="test2-2">Episode▶01</p>
-                      <p class="test2-3">Title▶GREEN</p>
-                    </div>
-                    <div class="textboard">
-                      <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
-                      <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
-                      <p class="test3">TechBee<br>「そうか...」</p>
-                    </div>
-                    <div class="textboard">
-                      <label for="popup-on10"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
-                    </div>
-                  </div>
-                </div>
-                <div class="clear"></div>
-              </div></label>
-              <!-- ./ポップアップの中身　ここまで -->
-            </div>
-
-          </div>
-
+          <!-- ./ポップアップの中身　ここまで -->
         </div>
-        <div class="body-tb-main-cons">
-          <label for="popup-on1"><label for="popup-on1"><div class="card1 card" style="left: 0vw;">
-            <img src="/static/tb-green.jpg" alt="">
-            <div class="card-txt">
-              <p class="test1">01</p>
-            </div>
-          </div></label>
-          <label for="popup-on2"><label for="popup-on2"><div class="card2 card" style="left: 10vw;">
-            <img src="/static/tb-moon.jpg" alt="">
-            <div class="card-txt">
-              <p class="test1">02</p>
-            </div>
-            </div></label>
 
-          <label for="popup-on3"><label for="popup-on3"><div class="card3 card" style="left: 20vw;">
-            <img src="/static/tb-zukan.jpg" alt="">
-            <div class="card-txt">
-              <p class="test1">03</p>
-            </div>
-          </div></label>
-          <label for="popup-on4"><label for="popup-on4"><div class="card4 card" style="left: 30vw;">
-            <img src="/static/tb-moon.jpg" alt="">
-            <div class="card-txt">
-              <p class="test1">04</p>
-            </div>
-          </div></label>
-          <label for="popup-on5"><label for="popup-on5"><div class="card5 card" style="left: 40vw;">
-            <img src="/static/tb-green.jpg" alt="">
-            <div class="card-txt">
-              <p class="test1">05</p>
-            </div>
-          </div></label>
-          <label for="popup-on6"><label for="popup-on6"><div class="card6 card" style="left: 50vw;">
-            <img src="/static/tb-green.jpg" alt="">
-            <div class="card-txt">
-              <p class="test1">06</p>
-            </div>
-          </div></label>
-          <label for="popup-on7"><label for="popup-on7"><div class="card7 card" style="left: 60vw;">
-            <img src="/static/tb-green.jpg" alt="">
-            <div class="card-txt">
-              <p class="test1">07</p>
-            </div>
-          </div></label>
-          <label for="popup-on8"><label for="popup-on8"><div class="card8 card" style="left: 70vw;">
-            <img src="/static/tb-green.jpg" alt="">
-            <div class="card-txt">
-              <p class="test1">08</p>
-            </div>
-          </div></label>
-          <label for="popup-on9"><label for="popup-on9"><div class="card9 card" style="left: 80vw;">
-            <img src="/static/tb-green.jpg" alt="">
-            <div class="card-txt">
-              <p class="test1">09</p>
-            </div>
-          </div></label>
-          <label for="popup-on10"><label for="popup-on10"><div class="card10 card" style="left: 90vw;">
-            <img src="/static/tb-green.jpg" alt="">
-            <div class="card-txt">
-              <p class="test1">10</p>
-            </div>
-          </div></label>
-          <div class="clear"></div>
-        </div>
       </div>
-      <a href="#"><h2>TechBee...</h2></a>
+
+      <input type="checkbox" id="popup-on2">
+      <div class="popup">
+
+        <div class="popup-content">
+          <!-- ポップアップの中身 -->
+          <label for="pop-check2">
+          <input type="checkbox" id="pop-check2">
+          <div class="pop-card">
+            <div class="pop-left">
+              <img src="/static/tb-green.jpg" alt="">
+            </div>
+            <div class="pop-back">
+              <div class="pop-right">
+                <div class="textboard">
+                  <p class="test2-1">Story▶FOREST</p>
+                  <p class="test2-2">Episode▶01</p>
+                  <p class="test2-3">Title▶GREEN</p>
+                </div>
+                <div class="textboard">
+                  <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
+                  <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
+                  <p class="test3">TechBee<br>「そうか...」</p>
+                </div>
+                <div class="textboard">
+                  <label for="popup-on2"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div></label>
+          <!-- ./ポップアップの中身 ここまで -->
+        </div>
+
+      </div>
+
+      <input type="checkbox" id="popup-on3">
+      <div class="popup">
+
+        <div class="popup-content">
+          <!-- ポップアップの中身 -->
+          <label for="pop-check3">
+          <input type="checkbox" id="pop-check3">
+          <div class="pop-card">
+            <div class="pop-left">
+              <img src="/static/tb-green.jpg" alt="">
+            </div>
+            <div class="pop-back">
+              <div class="pop-right">
+                <div class="textboard">
+                  <p class="test2-1">Story▶FOREST</p>
+                  <p class="test2-2">Episode▶01</p>
+                  <p class="test2-3">Title▶GREEN</p>
+                </div>
+                <div class="textboard">
+                  <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
+                  <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
+                  <p class="test3">TechBee<br>「そうか...」</p>
+                </div>
+                <div class="textboard">
+                  <label for="popup-on3"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div></label>
+          <!-- ./ポップアップの中身 ここまで -->
+        </div>
+
+      </div>
+
+      <input type="checkbox" id="popup-on4">
+      <div class="popup">
+
+        <div class="popup-content">
+          <!-- ポップアップの中身 -->
+          <label for="pop-check4">
+          <input type="checkbox" id="pop-check4">
+          <div class="pop-card">
+            <div class="pop-left">
+              <img src="/static/tb-green.jpg" alt="">
+            </div>
+            <div class="pop-back">
+              <div class="pop-right">
+                <div class="textboard">
+                  <p class="test2-1">Story▶FOREST</p>
+                  <p class="test2-2">Episode▶01</p>
+                  <p class="test2-3">Title▶GREEN</p>
+                </div>
+                <div class="textboard">
+                  <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
+                  <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
+                  <p class="test3">TechBee<br>「そうか...」</p>
+                </div>
+                <div class="textboard">
+                  <label for="popup-on4"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div></label>
+          <!-- ./ポップアップの中身 ここまで -->
+        </div>
+
+      </div>
+
+      <input type="checkbox" id="popup-on5">
+      <div class="popup">
+
+        <div class="popup-content">
+          <!-- ポップアップの中身 -->
+          <label for="pop-check5">
+          <input type="checkbox" id="pop-check5">
+          <div class="pop-card">
+            <div class="pop-left">
+              <img src="/static/tb-green.jpg" alt="">
+            </div>
+            <div class="pop-back">
+              <div class="pop-right">
+                <div class="textboard">
+                  <p class="test2-1">Story▶FOREST</p>
+                  <p class="test2-2">Episode▶01</p>
+                  <p class="test2-3">Title▶GREEN</p>
+                </div>
+                <div class="textboard">
+                  <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
+                  <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
+                  <p class="test3">TechBee<br>「そうか...」</p>
+                </div>
+                <div class="textboard">
+                  <label for="popup-on5"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div></label>
+          <!-- ./ポップアップの中身 ここまで -->
+        </div>
+
+      </div>
+
+      <input type="checkbox" id="popup-on6">
+      <div class="popup">
+
+        <div class="popup-content">
+          <!-- ポップアップの中身 -->
+          <label for="pop-check6">
+          <input type="checkbox" id="pop-check6">
+          <div class="pop-card">
+            <div class="pop-left">
+              <img src="/static/tb-green.jpg" alt="">
+            </div>
+            <div class="pop-back">
+              <div class="pop-right">
+                <div class="textboard">
+                  <p class="test2-1">Story▶FOREST</p>
+                  <p class="test2-2">Episode▶01</p>
+                  <p class="test2-3">Title▶GREEN</p>
+                </div>
+                <div class="textboard">
+                  <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
+                  <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
+                  <p class="test3">TechBee<br>「そうか...」</p>
+                </div>
+                <div class="textboard">
+                  <label for="popup-on6"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div></label>
+          <!-- ./ポップアップの中身　ここまで -->
+        </div>
+
+      </div>
+
+      <input type="checkbox" id="popup-on7">
+      <div class="popup">
+
+        <div class="popup-content">
+          <!-- ポップアップの中身 -->
+          <label for="pop-check7">
+          <input type="checkbox" id="pop-check7">
+          <div class="pop-card">
+            <div class="pop-left">
+              <img src="/static/tb-green.jpg" alt="">
+            </div>
+            <div class="pop-back">
+              <div class="pop-right">
+                <div class="textboard">
+                  <p class="test2-1">Story▶FOREST</p>
+                  <p class="test2-2">Episode▶01</p>
+                  <p class="test2-3">Title▶GREEN</p>
+                </div>
+                <div class="textboard">
+                  <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
+                  <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
+                  <p class="test3">TechBee<br>「そうか...」</p>
+                </div>
+                <div class="textboard">
+                  <label for="popup-on7"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div></label>
+          <!-- ./ポップアップの中身　ここまで -->
+        </div>
+
+      </div>
+
+      <input type="checkbox" id="popup-on8">
+      <div class="popup">
+
+        <div class="popup-content">
+          <!-- ポップアップの中身 -->
+          <label for="pop-check8">
+          <input type="checkbox" id="pop-check8">
+          <div class="pop-card">
+            <div class="pop-left">
+              <img src="/static/tb-green.jpg" alt="">
+            </div>
+            <div class="pop-back">
+              <div class="pop-right">
+                <div class="textboard">
+                  <p class="test2-1">Story▶FOREST</p>
+                  <p class="test2-2">Episode▶01</p>
+                  <p class="test2-3">Title▶GREEN</p>
+                </div>
+                <div class="textboard">
+                  <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
+                  <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
+                  <p class="test3">TechBee<br>「そうか...」</p>
+                </div>
+                <div class="textboard">
+                  <label for="popup-on8"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div></label>
+          <!-- ./ポップアップの中身　ここまで -->
+        </div>
+
+      </div>
+
+      <input type="checkbox" id="popup-on9">
+      <div class="popup">
+
+        <div class="popup-content">
+          <!-- ポップアップの中身 -->
+          <label for="pop-check9">
+          <input type="checkbox" id="pop-check9">
+          <div class="pop-card">
+            <div class="pop-left">
+              <img src="/static/tb-green.jpg" alt="">
+            </div>
+            <div class="pop-back">
+              <div class="pop-right">
+                <div class="textboard">
+                  <p class="test2-1">Story▶FOREST</p>
+                  <p class="test2-2">Episode▶01</p>
+                  <p class="test2-3">Title▶GREEN</p>
+                </div>
+                <div class="textboard">
+                  <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
+                  <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
+                  <p class="test3">TechBee<br>「そうか...」</p>
+                </div>
+                <div class="textboard">
+                  <label for="popup-on9"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div></label>
+          <!-- ./ポップアップの中身　ここまで -->
+        </div>
+
+      </div>
+
+      <input type="checkbox" id="popup-on10">
+      <div class="popup">
+
+        <div class="popup-content">
+          <!-- ポップアップの中身 -->
+          <label for="pop-check10">
+          <input type="checkbox" id="pop-check10">
+          <div class="pop-card">
+            <div class="pop-left">
+              <img src="/static/tb-green.jpg" alt="">
+            </div>
+            <div class="pop-back">
+              <div class="pop-right">
+                <div class="textboard">
+                  <p class="test2-1">Story▶FOREST</p>
+                  <p class="test2-2">Episode▶01</p>
+                  <p class="test2-3">Title▶GREEN</p>
+                </div>
+                <div class="textboard">
+                  <p class="test3">TechBee<br>「君はアブラムシしか食べないのかい？」</p>
+                  <p class="test3">てんとう虫<br>「１つのものだけ食べていれば、考えなくてすむからね」</p>
+                  <p class="test3">TechBee<br>「そうか...」</p>
+                </div>
+                <div class="textboard">
+                  <label for="popup-on10"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div></label>
+          <!-- ./ポップアップの中身　ここまで -->
+        </div>
+
+      </div>
 
     </div>
-  </body>
-</html>
+    <div class="body-tb-main-cons">
+      <label for="popup-on1"><label for="popup-on1"><div class="card1 card" style="left: 0vw;">
+        <img src="/static/tb-green.jpg" alt="">
+        <div class="card-txt">
+          <p class="test1">01</p>
+        </div>
+      </div></label>
+      <label for="popup-on2"><label for="popup-on2"><div class="card2 card" style="left: 10vw;">
+        <img src="/static/tb-moon.jpg" alt="">
+        <div class="card-txt">
+          <p class="test1">02</p>
+        </div>
+        </div></label>
+
+      <label for="popup-on3"><label for="popup-on3"><div class="card3 card" style="left: 20vw;">
+        <img src="/static/tb-zukan.jpg" alt="">
+        <div class="card-txt">
+          <p class="test1">03</p>
+        </div>
+      </div></label>
+      <label for="popup-on4"><label for="popup-on4"><div class="card4 card" style="left: 30vw;">
+        <img src="/static/tb-moon.jpg" alt="">
+        <div class="card-txt">
+          <p class="test1">04</p>
+        </div>
+      </div></label>
+      <label for="popup-on5"><label for="popup-on5"><div class="card5 card" style="left: 40vw;">
+        <img src="/static/tb-green.jpg" alt="">
+        <div class="card-txt">
+          <p class="test1">05</p>
+        </div>
+      </div></label>
+      <label for="popup-on6"><label for="popup-on6"><div class="card6 card" style="left: 50vw;">
+        <img src="/static/tb-green.jpg" alt="">
+        <div class="card-txt">
+          <p class="test1">06</p>
+        </div>
+      </div></label>
+      <label for="popup-on7"><label for="popup-on7"><div class="card7 card" style="left: 60vw;">
+        <img src="/static/tb-green.jpg" alt="">
+        <div class="card-txt">
+          <p class="test1">07</p>
+        </div>
+      </div></label>
+      <label for="popup-on8"><label for="popup-on8"><div class="card8 card" style="left: 70vw;">
+        <img src="/static/tb-green.jpg" alt="">
+        <div class="card-txt">
+          <p class="test1">08</p>
+        </div>
+      </div></label>
+      <label for="popup-on9"><label for="popup-on9"><div class="card9 card" style="left: 80vw;">
+        <img src="/static/tb-green.jpg" alt="">
+        <div class="card-txt">
+          <p class="test1">09</p>
+        </div>
+      </div></label>
+      <label for="popup-on10"><label for="popup-on10"><div class="card10 card" style="left: 90vw;">
+        <img src="/static/tb-green.jpg" alt="">
+        <div class="card-txt">
+          <p class="test1">10</p>
+        </div>
+      </div></label>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <a href="#"><h2>TechBee...</h2></a>
+
+</div>
+{% endblock %}
