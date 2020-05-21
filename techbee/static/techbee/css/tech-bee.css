@@ -1,0 +1,449 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0 0 0 200px;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.clear {
+  clear: both;
+}
+
+br {
+  display: none;
+}
+
+
+@font-face {
+	font-family: 'dot10b';
+	src: url(/static/PixelMplus10-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'dot10r';
+  src: url(/static/PixelMplus10-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'dot12b';
+	src: url(/static/PixelMplus12-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'dot12r';
+  src: url(/static/PixelMplus12-Regular.ttf) format('truetype');
+}
+
+.body-tb {
+  padding: 0 3vw;
+  background-color: rgb(41, 39, 48);
+  text-align: center;
+  width: 86vw;
+  position: relative;
+}
+
+.body-tb h1 {
+  color: white;
+  font-size: 1.5rem;
+  margin: 15px 0;
+  border: 5px solid white;
+  display: inline-block;
+  padding: 7px 40px;
+  border-radius: 400px;
+  font-family: 'dot12b';
+}
+
+.body-tb h2 {
+  color: white;
+  font-size: 2rem;
+  margin: 15px 0;
+  display: inline-block;
+  padding: 7px 40px;
+  font-family: 'dot12b';
+}
+
+.body-tb-main {
+  width: 80vw;
+  height: 61.1vw;
+  background-image: url(https://res.cloudinary.com/hm9k6tunn/image/upload/v1589766720/tb-main-back_jeo64j.png);
+  background-size: 100%;
+  background-position: center center;
+  border-radius: 10px;
+  overflow: scroll;
+  padding: 0 20px;
+  box-shadow:0px 0px 8px 5px #000 inset;
+  z-index: 9999;
+  border: 1px solid black;
+
+
+}
+
+.body-tb-main::-webkit-scrollbar {
+    display:none;
+}
+
+/* ポップアップウインドウの設定 */
+.popup {
+  background-color: black;
+  display: none;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateY(-80%);
+  transform: translateX(-50%);
+  margin: auto;
+  width: 50vw;
+  overflow-y: scroll;
+  z-index: 1000000;
+  border-radius: 5px;
+  border: 4px double white;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, .8);
+}
+
+input {
+  display: none;
+}
+
+/* チェックボックスの初期設定 */
+#popup-on1{
+  display: none;
+}
+/* チェックされたらポップアップウインドウを開く */
+#popup-on1:checked+.popup{
+  display: block;
+  transition: 3s;
+}
+
+/* チェックボックスの初期設定 */
+#popup-on2{
+  display: none;
+}
+/* チェックされたらポップアップウインドウを開く */
+#popup-on2:checked+.popup{
+  display: block;
+  transition: 3s;
+}
+
+/* チェックボックスの初期設定 */
+#popup-on3{
+  display: none;
+}
+/* チェックされたらポップアップウインドウを開く */
+#popup-on3:checked+.popup{
+  display: block;
+  transition: 3s;
+}
+
+/* チェックボックスの初期設定 */
+#popup-on4{
+  display: none;
+}
+/* チェックされたらポップアップウインドウを開く */
+#popup-on4:checked+.popup{
+  display: block;
+  transition: 3s;
+}
+
+/* チェックボックスの初期設定 */
+#popup-on5{
+  display: none;
+}
+/* チェックされたらポップアップウインドウを開く */
+#popup-on5:checked+.popup{
+  display: block;
+  transition: 3s;
+}
+
+/* チェックボックスの初期設定 */
+#popup-on6{
+  display: none;
+}
+/* チェックされたらポップアップウインドウを開く */
+#popup-on6:checked+.popup{
+  display: block;
+  transition: 3s;
+}
+
+/* チェックボックスの初期設定 */
+#popup-on7{
+  display: none;
+}
+/* チェックされたらポップアップウインドウを開く */
+#popup-on7:checked+.popup{
+  display: block;
+  transition: 3s;
+}
+
+/* チェックボックスの初期設定 */
+#popup-on8{
+  display: none;
+}
+/* チェックされたらポップアップウインドウを開く */
+#popup-on8:checked+.popup{
+  display: block;
+  transition: 3s;
+}
+
+/* チェックボックスの初期設定 */
+#popup-on9{
+  display: none;
+}
+/* チェックされたらポップアップウインドウを開く */
+#popup-on9:checked+.popup{
+  display: block;
+  transition: 3s;
+}
+
+/* チェックボックスの初期設定 */
+#popup-on10{
+  display: none;
+}
+/* チェックされたらポップアップウインドウを開く */
+#popup-on10:checked+.popup{
+  display: block;
+  transition: 3s;
+}
+
+
+
+/* 閉じるアイコン（右上） */
+.icon-close{
+  background: black;
+  color: white;
+  font-size: 30px;
+  padding: 0 10px;
+  position: absolute;
+  right: 0;
+  font-family: 'dot12r';
+  border-radius: 5px;
+  margin: 10px;
+  border: 4px double white;
+}
+
+/* 閉じるボタン */
+.btn-close{
+  background: #000;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px auto;
+  width: 95%;
+  height: 100%;
+  text-align: center;
+  font-family: 'dot10r';
+  line-height: 2.7rem;
+}
+
+/* 開くボタン */
+.btn-open{
+  background: #fff;
+  border-radius: 10px;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  margin: 10px auto;
+  width: 95%;
+  text-align: center;
+}
+
+/* ポップアップの内容 */
+.popup-content{
+  margin: 40px auto 40px auto;
+  width: 90%;
+  padding: 30px 20px 20px 20px;
+
+}
+
+.pop-left {
+  width: 48%;
+  margin-right: 2%;
+  float: left;
+
+}
+
+.pop-left img{
+  width: 100%;
+  border-radius: 5px;
+}
+
+
+
+.card {
+  width: 14vw;
+  height: 21vw;
+  background-color: rgb(41, 39, 48);
+  display: inline-block;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 1vw;
+  box-shadow: -1rem 0 4rem 1rem; #000;
+  cursor: pointer;
+  z-index: 10;
+  position: absolute;
+  top: 4vw;
+
+  transition: 0.4s ease-in-out;
+}
+
+
+
+.body-tb-main-cons:hover .card {
+  transform: rotateY(-70deg);
+  transition: 0.4s ease-in-out;
+}
+
+.body-tb-main-cons:hover .card:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-in-out;
+}
+
+
+
+
+
+.card img {
+  width: 12vw;
+  height:19vw;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+
+
+.body-tb-main-cons {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  height: 21vw;
+}
+
+.card-txt {
+  width: 12vw;
+  height: 5vw;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  color: #FFF;
+  border: 2px solid #000;
+  border-radius: 5px;
+  box-shadow: 0 0 0 4px #FFF inset;
+  background-color: rgba(0,0,0,0.9);
+  position: absolute;
+  bottom: 1.2vw;
+  font-family: 'dot10r';
+}
+
+.pop-right {
+  width: 48%;
+  float: left;
+  margin-left: 2%;
+}
+
+.textboard {
+  width: 100%;
+  margin: 0 auto 1rem auto;
+  font-size: 1.5rem;
+  color: #FFF;
+  border: 2px solid #000;
+  border-radius: 5px;
+  box-shadow: 0 0 0 4px #FFF inset;
+  background-color: rgba(0,0,0,0.9);
+  font-family: 'dot10r';
+  text-align: left;
+}
+
+.textboard span {
+  font-family: 'dot12r'
+}
+
+.test2-1 {
+
+  width: 96% ;
+  margin: 5% ;
+  white-space: pre ;
+  overflow: hidden ;
+
+  -webkit-animation: dzDq 1s steps(70, end)  ;
+  /* プロパティは順に name, duration, timing-function です */
+  }
+
+.test2-2 {
+
+    width: 96% ;
+    margin: 5% ;
+    white-space: pre ;
+    overflow: hidden ;
+    visibility: hidden;
+    -webkit-animation: dzDq 1s 1s steps(70, end) !important;
+    -webkit-animation-fill-mode: forwards !important;
+    /* プロパティは順に name, duration, timing-function です */
+    }
+
+  .test2-3 {
+
+      width: 96% ;
+      margin: 5% ;
+      white-space: pre ;
+      overflow: hidden ;
+      visibility: hidden;
+      -webkit-animation: dzDq 1s 2s steps(70, end) !important;
+      -webkit-animation-fill-mode: forwards !important;
+      /* プロパティは順に name, duration, timing-function です */
+      }
+
+
+.test3 {
+  font-size: 1rem;
+  width: 100％;
+  margin: 5%;
+  white-space: pre-wrap;
+  overflow: hidden;
+
+  /* プロパティは順に name, duration, timing-function です */
+  }
+.test3:after {
+  content: '▶';
+  -webkit-animation: dzPulse 1s infinite ease;
+  /* プロパティは順に name, duration, iteration-count, timing-function です */
+}
+
+.test1 {
+  letter-spacing: 0.2rem;
+
+  width: 96%;
+  margin: 3%;
+  white-space: pre;
+  overflow: hidden;
+  -webkit-animation: dzDq 3s steps(70, end) ;
+  /* プロパティは順に name, duration, timing-function です */
+  }
+.test1:after {
+  content: '▶';
+  -webkit-animation: dzPulse 1s infinite ease;
+  /* プロパティは順に name, duration, iteration-count, timing-function です */
+}
+
+
+
+
+@-webkit-keyframes dzDq { from { width: 0; }
+  0% {visibility: visible;}
+  to {visibility: visible;}
+} /* 開始地点の指定 */
+@-moz-keyframes dzDq { from { width: 0 } }
+@-webkit-keyframes dzPulse { { /* 透明度の指定 */
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@-moz-keyframes dzPulse {
+from { opacity: 1; }
+to { opacity: 0; }
+}
