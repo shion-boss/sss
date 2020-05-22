@@ -128,6 +128,12 @@ input {
   background-color:red;
 }
 
+.popup-back {
+  background-color: white;
+  position: relative;
+  
+}
+
 /* チェックボックスの初期設定 */
 #popup-on2{
   display: none;
