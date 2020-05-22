@@ -107,7 +107,7 @@ br {
   z-index: 1000000;
   border-radius: 5px;
   border: 4px double white;
-  
+
 }
 
 input {
@@ -122,6 +122,10 @@ input {
 #popup-on1:checked+.popup{
   display: block;
   transition: 3s;
+}
+
+#popup-on1:.checed+.body-tb-main {
+  background-color: black;
 }
 
 /* チェックボックスの初期設定 */
