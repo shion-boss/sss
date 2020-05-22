@@ -124,20 +124,18 @@ input {
   transition: 3s;
 }
 
-#popup-on1:.checed #pop-back {
-  display: none;
-  background-color: red;
-  position: relative;
-  z-index: 2000;
+#popup-on1:.checed ~ .pop-back {
+
 }
 
-.popup-back {
+.pop-back {
   background-color: white;
-  position: relative;
+  position: absolute;
   z-index: 1000;
-  width: 100%;
-  height: 100%;
-  display: none;
+  width: 80vw;
+  height: 61.1vw;
+  display: block;
+  z-index: 2200;
 
 }
 
