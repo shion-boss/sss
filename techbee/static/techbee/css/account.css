@@ -1114,7 +1114,10 @@ button:focus{
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
+    text-align: center;
   }
+
+
   .copy_a {
     width: 6rem;
     height: 1.5rem;
