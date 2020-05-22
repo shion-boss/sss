@@ -32,10 +32,10 @@
 }
 
 .in_box {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 1;
-  height: 20vw;
-  width: 33vw;
+  height: 15vw;
+  width: 25vw;
   overflow: hidden;
   background-color: rgb(0,0,0);
   box-sizing: border-box;
@@ -47,7 +47,7 @@
 
 
 .event_img{
-  height: 20vw;
+  height: 15vw;
   margin: 0 auto;
 }
 
@@ -495,6 +495,19 @@ p{
     grid-template-rows: auto;
     padding: 1rem;
     box-sizing: border-box;
+  }
+  .in_box {
+    grid-column: 2;
+    grid-row: 1;
+    height: 20vw;
+    width: 33vw;
+    overflow: hidden;
+    background-color: rgb(0,0,0);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1rem auto;
   }
   .grid_e_box{
     grid-column: 3;
