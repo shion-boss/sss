@@ -229,7 +229,7 @@ body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
   grid-template-rows: 3rem auto;
   padding: 1rem;
   z-index: 2002;
-  height: 80%;
+  height: 85%;
   width:40%;
   border-radius: 20px;
   background-color: white;
