@@ -290,14 +290,14 @@ p{
 .ch_box{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 20vw;
+  grid-template-rows: auto;
   overflow-y: scroll;
   height: 400px;
 }
 
 .edit_border{
   position: relative;
-  height: 20vw;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
