@@ -125,7 +125,7 @@ input {
 }
 
 #popup-on1:.checed~#pop-back {
-  display: block;
+  display: none;
   background-color: red;
   position: relative;
   z-index: 2000;
