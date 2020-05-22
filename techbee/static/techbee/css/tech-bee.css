@@ -135,7 +135,7 @@ input {
   transition: 3s;
 }
 
-#popup-on1:.checed ~ .pop-back {
+#popup-on1:.checed .pop-back {
   display: block;
 }
 
