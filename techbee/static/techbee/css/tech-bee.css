@@ -136,7 +136,7 @@ input {
 }
 
 #popup-on1:.checed ~ .pop-back {
-  display: none;
+  display: block;
 }
 
 
