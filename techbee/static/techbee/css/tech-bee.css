@@ -110,6 +110,17 @@ br {
 
 }
 
+.pop-back {
+  background-color: white;
+  position: absolute;
+  z-index: 1000;
+  width: 80vw;
+  height: 61.1vw;
+  display: none;
+  z-index: 2200;
+
+}
+
 input {
   display: none;
 }
@@ -125,19 +136,10 @@ input {
 }
 
 #popup-on1:.checed ~ .pop-back {
-
+  display: none;
 }
 
-.pop-back {
-  background-color: white;
-  position: absolute;
-  z-index: 1000;
-  width: 80vw;
-  height: 61.1vw;
-  display: block;
-  z-index: 2200;
 
-}
 
 /* チェックボックスの初期設定 */
 #popup-on2{
