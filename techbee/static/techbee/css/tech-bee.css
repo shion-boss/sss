@@ -107,7 +107,7 @@ br {
   z-index: 1000000;
   border-radius: 5px;
   border: 4px double white;
-  box-shadow: 0 0 0 9999px rgba(0, 0, 0, .8);
+  
 }
 
 input {
