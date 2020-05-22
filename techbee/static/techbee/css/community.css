@@ -17,16 +17,32 @@
 .event_box{
   width: 100%;
 }
+
+
 .event{
   width: 100%;
   margin-top: 1rem;
   border-top: solid 1px #808080;
   border-bottom: solid 1px #808080;
   display: grid;
-  grid-template-columns: 300px 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   padding: 2rem 1rem 5px 1rem;
   box-sizing: border-box;
+}
+
+.in_box {
+  grid-column: 2;
+  grid-row: 1;
+  height: 20vw;
+  width: 33vw;
+  overflow: hidden;
+  background-color: rgb(0,0,0);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem auto;
 }
 
 
@@ -479,19 +495,6 @@ p{
     grid-template-rows: auto;
     padding: 1rem;
     box-sizing: border-box;
-  }
-  .in_box {
-    grid-column: 2;
-    grid-row: 1;
-    height: 20vw;
-    width: 33vw;
-    overflow: hidden;
-    background-color: rgb(0,0,0);
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 1rem auto;
   }
   .grid_e_box{
     grid-column: 3;
