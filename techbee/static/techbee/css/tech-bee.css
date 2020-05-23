@@ -105,7 +105,6 @@ br {
 /* ポップアップウインドウの設定 */
 .popup {
   background-color: black;
-  display: none;
   position: absolute;
   top: 20%;
   left: 50%;
