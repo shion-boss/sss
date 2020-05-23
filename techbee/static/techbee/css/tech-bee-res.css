@@ -46,7 +46,7 @@
   }
 
   .popup-content {
-    margin: 10px auto 40px auto !important;
+    margin: 10px auto 20px auto !important;
     position: relative;
     padding: 0;
   }
@@ -61,6 +61,7 @@
   .textboard {
     font-size: 1.1rem !important;
     padding: 0;
+    width: 95%;
   }
 
 
