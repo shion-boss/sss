@@ -128,18 +128,16 @@ input {
 }
 
 /* チェックボックスの初期設定 */
-#popup-on1{
+.popup-ons{
   display: none;
 }
 /* チェックされたらポップアップウインドウを開く */
-#popup-on1:checked+.pop-box{
+.popup-ons:checked+.pop-box{
   display: block;
   transition: 3s;
 }
 
-#popup-on1:.checed+.pop-back {
-  display: block;
-}
+
 
 
 
@@ -200,7 +198,7 @@ input {
 .popup-content{
   margin: 40px auto 40px auto;
   width: 90%;
-  padding: 30px 20px 20px 20px;
+  padding:0px 20px;
 
 }
 

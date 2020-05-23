@@ -89,7 +89,9 @@
     transform: rotateY(360deg);
   }
 
-  
+  .pop-box {
+    height: 80%;
+  }
 
   .pop-back {
     height: 100%;
@@ -144,37 +146,6 @@
     left: 20vw !important;
   }
 
-  .card3 {
-    left: 40vw !important;
-  }
-
-  .card4 {
-    left: 60vw !important;
-  }
-
-  .card5 {
-    left: 80vw !important;
-  }
-
-  .card6 {
-    left: 100vw !important;
-  }
-
-  .card7 {
-    left: 120vw !important;
-  }
-
-  .card8 {
-    left: 140vw !important;
-  }
-
-  .card9 {
-    left: 160vw !important;
-  }
-
-  .card10 {
-    left: 180vw !important;
-  }
 
 
 }
