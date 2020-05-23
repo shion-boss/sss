@@ -130,12 +130,12 @@ input {
   display: none;
 }
 /* チェックされたらポップアップウインドウを開く */
-#popup-on1:checked+.popup{
+#popup-on1:checked~.popup{
   display: block;
   transition: 3s;
 }
 
-#popup-on1:.checed .pop-back {
+#popup-on1:.checed ~ .pop-back {
   display: block;
 }
 
