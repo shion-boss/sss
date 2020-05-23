@@ -99,6 +99,7 @@ br {
   width: 80vw;
   height: 61.1vw;
   z-index: 2200;
+  display: none;
 }
 
 /* ポップアップウインドウの設定 */
@@ -133,7 +134,7 @@ input {
   display: none;
 }
 /* チェックされたらポップアップウインドウを開く */
-#popup-on1:checked+.popup{
+#popup-on1:checked+.pop-box{
   display: block;
   transition: 3s;
 }
