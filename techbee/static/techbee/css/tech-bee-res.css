@@ -41,16 +41,9 @@
 
 @media screen and (max-width: 425px) {
 
-  .body-tb-main {
-    height: 500px;
-  }
-
-
-
   .popup {
     width: 70% !important;
     height: 70% !important;
-    top: 15%;
   }
 
   .popup-content {
