@@ -80,11 +80,9 @@ br {
   background-position: center center;
   border-radius: 10px;
   overflow: scroll;
-  padding: 0 20px;
   box-shadow:0px 0px 8px 5px #000 inset;
   z-index: 9999;
   border: 1px solid black;
-  box-sizing: content-box;
 
 }
 
@@ -93,14 +91,14 @@ br {
 }
 
 .pop-box {
-  background-color: white;
+  background-color: rgba(79, 79, 79,0.8);
   position: absolute;
   z-index: 1000;
   width: 80vw;
   height: 61.1vw;
   z-index: 2200;
   display: none;
-
+  border-radius: 10px;
 }
 
 /* ポップアップウインドウの設定 */
