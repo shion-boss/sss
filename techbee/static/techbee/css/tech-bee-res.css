@@ -89,6 +89,14 @@
     transform: rotateY(360deg);
   }
 
+  .popup-ons:checked ~ div .pop-left {
+    transform: rotateY(180deg);
+  }
+
+  .popup-ons:checked ~ div .pop-back {
+    transform: rotateY(360deg);
+  }
+
   .pop-box {
     height: 80%;
   }
