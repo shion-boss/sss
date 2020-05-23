@@ -48,6 +48,7 @@
 
   .popup {
     width: 85% !important;
+    height: 80%;
   }
 
   .popup-content {
@@ -70,30 +71,19 @@
   }
 
 
-  #pop-check1 {
+  .pop-checks {
     display: none;
   }
 
-  #pop-check1:checked ~ div .pop-left {
+  .pop-checks:checked ~ div .pop-left {
     transform: rotateY(180deg);
   }
 
-  #pop-check1:checked ~ div .pop-back {
+  .pop-checks:checked ~ div .pop-back {
     transform: rotateY(360deg);
   }
 
-  #pop-check2 {
-    display: none;
-  }
-
-  #pop-check2:checked ~ div .pop-left {
-    transform: rotateY(180deg);
-  }
-
-  #pop-check2:checked ~ div .pop-back {
-    transform: rotateY(360deg);
-  }
-
+  
 
 
   .pop-box {
