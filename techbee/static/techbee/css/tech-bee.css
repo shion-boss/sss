@@ -44,6 +44,10 @@ br {
   width:100%;
 }
 
+.toukolabel {
+  display: none;
+}
+
 .body-tb {
   grid-column: 2/5;
   padding: 0 3vw;
