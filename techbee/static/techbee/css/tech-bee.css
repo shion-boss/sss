@@ -84,7 +84,7 @@ br {
   box-shadow:0px 0px 8px 5px #000 inset;
   z-index: 9999;
   border: 1px solid black;
-
+  box-sizing: content-box;
 
 }
 
@@ -100,8 +100,7 @@ br {
   height: 61.1vw;
   z-index: 2200;
   display: none;
-  border-left: 20px solid white;
-  border-right: 20px solid white;
+
 }
 
 /* ポップアップウインドウの設定 */
