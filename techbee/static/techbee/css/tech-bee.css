@@ -50,6 +50,7 @@ br {
   background-color: rgb(41, 39, 48);
   text-align: center;
   position: relative;
+  height: 100vh;
 }
 
 .body-tb h1 {
@@ -74,7 +75,7 @@ br {
 
 .body-tb-main {
   width: 80vw;
-  height: 61.1vw;
+  height: 80%;
   background-image: url(https://res.cloudinary.com/hm9k6tunn/image/upload/v1589766720/tb-main-back_jeo64j.png);
   background-size: 100%;
   background-position: center center;
@@ -95,7 +96,7 @@ br {
   position: absolute;
   z-index: 1000;
   width: 80vw;
-  height: 61.1vw;
+  height: 80%;
   z-index: 2200;
   display: none;
   border-radius: 10px;
