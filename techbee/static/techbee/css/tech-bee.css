@@ -92,6 +92,15 @@ br {
     display:none;
 }
 
+.pop-box {
+  background-color: white;
+  position: absolute;
+  z-index: 1000;
+  width: 80vw;
+  height: 61.1vw;
+  z-index: 2200;
+}
+
 /* ポップアップウインドウの設定 */
 .popup {
   background-color: black;
@@ -111,13 +120,7 @@ br {
 }
 
 .pop-back {
-  background-color: white;
-  position: absolute;
-  z-index: 1000;
-  width: 80vw;
-  height: 61.1vw;
-  display: none;
-  z-index: 2200;
+
 
 }
 
