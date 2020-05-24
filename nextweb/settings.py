@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'techbee',
-    'bee_tag',
+    'templatetags',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
