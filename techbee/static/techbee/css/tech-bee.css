@@ -140,13 +140,12 @@ input {
   display: block;
 }
 
-
-.front {
-  transform: rotateY(180deg) !important;
+.front{
+  transform: rotateY(0);
 }
 
 .back{
-  transform: rotateY(360deg) !important;
+  transform: rotateY(0);
 }
 
 
