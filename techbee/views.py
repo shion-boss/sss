@@ -146,10 +146,11 @@ def tb_view(request,cate):
     except:
         return redirect(to='loginselect')
     login_bonus(user)
-    b_cate=bee_cate_model.objects.filter(category=cate).order_by('post_time')
+    b_cate=bee_cate_model.objects.get(category=cate)
+    b_story.objects.filter(category=b_cate).order_by('post_time')
     params={
         'cate':cate,
-        'ccc':b_cate,
+        'ccc':b_story,
     }
     return render(request,'techbee/tech-bee.html',params)
 
