@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from .forms import user_meta_form,card_form,meta_form
 from django.contrib.auth import authenticate
-from .models import user_meta,parts_model,categories_model,like_model,favorite_model,channel_model,afirieito_model,event_model,event_img_model,footer_cat_model,footer_model,tech_tube_model,tube_movie_model,tech_teaching_model,teaching_movie_model,tech_bee_model,bee_model
+from .models import user_meta,parts_model,categories_model,like_model,favorite_model,channel_model,afirieito_model,event_model,event_img_model,footer_cat_model,footer_model,tech_tube_model,tube_movie_model,tech_teaching_model,teaching_movie_model
 import requests
 from django.contrib.auth.decorators import login_required
 import os
