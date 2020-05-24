@@ -132,7 +132,7 @@ input {
   display: none;
 }
 /* チェックされたらポップアップウインドウを開く */
-.popup-ons:checked+.pop-box{
+.popup-ons:checked~.pop-box{
   display: block;
   transition: 3s;
 }
