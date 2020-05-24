@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load bee_tag %}
 {% load static %}
 {% block body_k %}
 <link rel="stylesheet" type="text/css" href="{% static 'techbee/css/tech-bee.css' %}"/>
@@ -54,7 +55,7 @@
 
       <!--繰り返し-->
       {% for c in ccc %}
-      <div class="card1 card poplabel" style="left: 2vw;">
+      <div class="card1 card poplabel" style="left: {{forloop.counter0|keito}}vw;">
         <img src={{ c.image.url}}>
         <div class="card-txt">
           <p class="test1">{{forloop.counter}}</p>
