@@ -142,11 +142,11 @@ input {
 
 
 .front {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) !important;
 }
 
 .back{
-  transform: rotateY(360deg);
+  transform: rotateY(360deg) !important;
 }
 
 
