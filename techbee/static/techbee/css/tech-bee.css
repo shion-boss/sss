@@ -136,7 +136,12 @@ input {
   display: block;
   transition: 3s;
 }
-
+.hidden {
+  display: none;
+}
+.visible {
+  display: block;
+}
 
 
 
