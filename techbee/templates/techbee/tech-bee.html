@@ -15,7 +15,6 @@
       <div class="popup">
         <div class="popup-content">
           <!-- ポップアップの中身 -->
-          <label for={{c.title}}>
           <input type="checkbox" id={{c.title}} class="pop-checks">
           <div class="pop-card">
             <div class="pop-left">
@@ -37,16 +36,12 @@
                   <p class="test3">「<span>{{c.co3}}</span>」</p>
                 </div>
                 <div class="textboard">
-                  <label for={{c.category.category}} class='closelabel'>
-                    <p class="test2">
-                      <div class="btn-close">閉じる<span>×</span></div>
-                    </p>
-                  </label>
+                    <div class="btn-close test2 closelabel">閉じる<span>×</span></div>
                 </div>
               </div>
             </div>
             <div class="clear"></div>
-          </div></label>
+          </div>
           <!-- ./ポップアップの中身　ここまで -->
         </div>
       </div>
@@ -59,12 +54,12 @@
 
       <!--繰り返し-->
       {% for c in ccc %}
-      <label for={{c.title}}><div class="card1 card poplabel" style="left: 2vw;">
+      <div class="card1 card poplabel" style="left: 2vw;">
         <img src={{ c.image.url}}>
         <div class="card-txt">
           <p class="test1">{{forloop.counter}}</p>
         </div>
-      </div></label>
+      </div>
       <div class="clear"></div>
       {% endfor %}
       <!--繰り返し-->
@@ -73,4 +68,11 @@
   <a href="#"><h2>TechBee...</h2></a>
 
 </div>
+<script>
+  $(".poplabel").click(function(){
+  $(this).toggleClass("visible");});
+</script>
+
+
+
 {% endblock %}
