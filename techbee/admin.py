@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import user_meta,parts_model,channel_model,favorite_model,afirieito_model,categories_model,like_model,event_model,event_img_model,footer_model,footer_cat_model,tech_tube_model,tube_movie_model,tech_teaching_model,teaching_movie_model,tech_bee_model,bee_model,bee_cate_model,bee_story_model
+from .models import user_meta,parts_model,channel_model,favorite_model,afirieito_model,categories_model,like_model,event_model,event_img_model,footer_model,footer_cat_model,tech_tube_model,tube_movie_model,tech_teaching_model,teaching_movie_model,bee_cate_model,bee_story_model
 
 admin.site.register(user_meta)
 admin.site.register(parts_model)
