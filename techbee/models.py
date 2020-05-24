@@ -140,5 +140,22 @@ class bee_model(models.Model):
     def __str__(self):
         return self.title
 
+class bee_cate_model(models.Model):
+    category=models.CharField(max_length=6)
+    image = CloudinaryField('image', null=True, blank=True)
+
+class bee_story_model(models.Model):
+    category=models.ForeignKey(bee_cate_model,on_delete=models.CASCADE)
+    title=models.CharField(max_length=12)
+    image = CloudinaryField('image', null=True, blank=True)
+    name1=models.CharField(max_length=20)
+    co1=models.CharField(max_length=30)
+    name2=models.CharField(max_length=20)
+    co2=models.CharField(max_length=30)
+    name3=models.CharField(max_length=20)
+    co3=models.CharField(max_length=30)
+    post_time=models.DateTimeField(default=timezone.datetime.now)
+
+
 
 ###################receiver################################
