@@ -83,16 +83,7 @@
     transform: rotateY(360deg);
   }
 
-  .front {
-    transform: rotateY(180deg);
-  }
-
-  .back{
-    transform: rotateY(360deg);
-  }
-
-
-
+  
 
   .pop-box {
     height: 80%;
