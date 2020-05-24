@@ -139,9 +139,11 @@
     </script>
     <script type="text/javascript">
       $function({
-        $('.poplabel').click(function({
-          $(this).find('.pop-box')addClass('visible');
-        }));
+        $('.poplabel').click(function() {
+          $(this).find('pop-box').toggleClass('visible');
+
+
+        });
       });
     </script>
 
