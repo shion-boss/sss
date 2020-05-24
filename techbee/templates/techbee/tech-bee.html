@@ -10,16 +10,16 @@
   <div class="body-tb-main">
     <!--繰り返し-->
     {% for c in ccc %}
-    <input type="checkbox" id="{{c.category.category}}" class="popup-ons">
+    <input type="checkbox" id={{c.category.category}} class="popup-ons">
     <div class="pop-box">
       <div class="popup">
         <div class="popup-content">
           <!-- ポップアップの中身 -->
-          <label for="{{c.title}}">
-          <input type="checkbox" id="{{c.title}}" class="pop-checks">
+          <label for={{c.title}}>
+          <input type="checkbox" id={{c.title}} class="pop-checks">
           <div class="pop-card">
             <div class="pop-left">
-              <img src="{{ c.image.url }}" alt="">
+              <img src={{ c.image.url }}>
             </div>
             <div class="pop-back">
               <div class="pop-right">
@@ -37,7 +37,7 @@
                   <p class="test3">「<span>{{c.co3}}</span>」</p>
                 </div>
                 <div class="textboard">
-                  <label for="{{c.category.category}}"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
+                  <label for={{c.category.category}}><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
                 </div>
               </div>
             </div>
@@ -55,9 +55,9 @@
 
       <!--繰り返し-->
       {% for c in ccc %}
-      <label for="{{c.title}}">
+      <label for={{c.title}}>
         <div class="card1 card" style="left: 2vw;">
-          <img src="{{ c.image.url}}" alt="">
+          <img src={{ c.image.url}}>
           <div class="card-txt">
             <p class="test1">{{forloop.counter}}</p>
           </div>
