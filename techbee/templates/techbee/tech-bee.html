@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load bee_tag %}
 {% load static %}
 {% block body_k %}
 <link rel="stylesheet" type="text/css" href="{% static 'techbee/css/tech-bee.css' %}"/>
@@ -6,38 +7,38 @@
 <meta name="viewport" content="width=360,initial-scale=1">
 <div class="body-tb">
 
-  <h1>FOREST STORY</h1>
+  <h1>{{ cate }}</h1>
   <div class="body-tb-main">
-
     <!--繰り返し-->
-    <input type="checkbox" id="popup-on1" class="popup-ons">
+    {% for c in ccc %}
+    <input type="checkbox" id="{{c.category.category}}{{forloop.counter}}" class="popup-ons">
     <div class="pop-box">
       <div class="popup">
         <div class="popup-content">
           <!-- ポップアップの中身 -->
-          <label for="pop-check1">
-          <input type="checkbox" id="pop-check1" class="pop-checks">
+          <label for="{{c.title}}{{forloop.counter}}">
+          <input type="checkbox" id="{{c.title}}{{forloop.counter}}" class="pop-checks">
           <div class="pop-card">
             <div class="pop-left">
-              <img src="/static/tb-green.jpg" alt="">
+              <img src="{{ c.image.url }}" alt="">
             </div>
             <div class="pop-back">
               <div class="pop-right">
                 <div class="textboard">
-                  <p class="test2-1">Story▶FOREST</p>
-                  <p class="test2-2">Episode▶01</p>
-                  <p class="test2-3">Title▶GREEN</p>
+                  <p class="test2-1">Story▶<span>{{ c.category.category}}</span></p>
+                  <p class="test2-2">Episode▶<span>{{ forloop.counter }}</span></p>
+                  <p class="test2-3">Title▶<span>{{ c.title}}</span></p>
                 </div>
                 <div class="textboard">
-                  <p class="test3">TechBee</p>
-                  <p class="test3">「君はアブラムシしか食べないのかい？」</p>
-                  <p class="test3">てんとう虫</p>
-                  <p class="test3">「１つのものだけ食べていれば、考えなくてすむからね」</p>
-                  <p class="test3">TechBee</p>
-                  <p class="test3">「そうか...」</p>
+                  <p class="test3">{{name1}}</p>
+                  <p class="test3">「<span>{{co1}}</span>」</p>
+                  <p class="test3">{{name2}}</p>
+                  <p class="test3">「<span>{{co2}}</span>」</p>
+                  <p class="test3">{{name3}}</p>
+                  <p class="test3">「<span>{{co3}}</span>」</p>
                 </div>
                 <div class="textboard">
-                  <label for="popup-on1"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
+                  <label for="{{c.category.category}}{{forloop.counter}}"><p class="test2"><div class="btn-close">閉じる <span>×</span></div></p></label>
                 </div>
               </div>
             </div>
@@ -47,20 +48,23 @@
         </div>
       </div>
     </div>
+    {% endfor %}
     <!--繰り返し-->
 
 
     <div class="body-tb-main-cons">
 
       <!--繰り返し-->
-      <label for="popup-on1">
-        <div class="card1 card" style="left: 2vw;">
-          <img src="/static/tb-green.jpg" alt="">
+      {% for c in ccc %}
+      <label for="{{c.title}}{{forloop.counter}}">
+        <div class="card1 card" style="left: '{{forloop.counter|keito }}'vw;">
+          <img src="{{ c.image.url}}" alt="">
           <div class="card-txt">
-            <p class="test1">01</p>
+            <p class="test1">{{forloop.counter}}</p>
           </div>
         </div>
       </label>
+      {% endfor %}
       <!--繰り返し-->
 
       <div class="clear"></div>

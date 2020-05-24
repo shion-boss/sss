@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from .forms import user_meta_form,card_form,meta_form
 from django.contrib.auth import authenticate
-from .models import user_meta,parts_model,categories_model,like_model,favorite_model,channel_model,afirieito_model,event_model,event_img_model,footer_cat_model,footer_model,tech_tube_model,tube_movie_model,tech_teaching_model,teaching_movie_model
+from .models import user_meta,parts_model,categories_model,like_model,favorite_model,channel_model,afirieito_model,event_model,event_img_model,footer_cat_model,footer_model,tech_tube_model,tube_movie_model,tech_teaching_model,teaching_movie_model,bee_cate_model,bbee_story_model
 import requests
 from django.contrib.auth.decorators import login_required
 import os
@@ -138,7 +138,7 @@ def index(request):
     return render(request,'techbee/index.html',params)
 
 @login_required
-def tb_view(request):
+def tb_view(request,cate):
     payjp.api_key ='sk_test_f0d6fe8a9725200cda316d56'
     user=request.user
     try:
@@ -146,7 +146,12 @@ def tb_view(request):
     except:
         return redirect(to='loginselect')
     login_bonus(user)
-    return render(request,'techbee/tech-bee.html')
+    b_cate=bee_cate_model.objects.filter(category=cate).order_by('post_time')
+    params={
+        'cate':cate,
+        'ccc':b_cate,
+    }
+    return render(request,'techbee/tech-bee.html',params)
 
 @login_required
 def tech_view(request,category,w,num):
