@@ -147,7 +147,7 @@ def tb_view(request,cate):
         return redirect(to='loginselect')
     login_bonus(user)
     b_cate=bee_cate_model.objects.get(category=cate)
-    b_story.objects.filter(category=b_cate).order_by('post_time')
+    b_story=bee_story_model.objects.filter(category=b_cate).order_by('post_time')
     params={
         'cate':cate,
         'ccc':b_story,
