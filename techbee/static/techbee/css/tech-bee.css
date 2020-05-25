@@ -358,16 +358,30 @@ input {
 .test3 {
   font-size: 1rem;
   width: 100％;
-  margin: 0 5%;
+  margin: 1.5% 5%;
   white-space: pre-wrap;
   overflow: hidden;
 
   /* プロパティは順に name, duration, timing-function です */
   }
+
+.test3-5 {
+  font-size: 1rem;
+  width: 100％;
+  margin: 1.5% 5%;
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+
 .test3:after {
   content: '▶';
   -webkit-animation: dzPulse 1s infinite ease;
   /* プロパティは順に name, duration, iteration-count, timing-function です */
+}
+
+.test3-5:after{
+  content: '▶';
+  -webkit-animation: dzPulse 1s infinite ease;
 }
 
 .test1 {
