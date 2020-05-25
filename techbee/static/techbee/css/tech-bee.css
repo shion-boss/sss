@@ -351,11 +351,14 @@ input {
       /* プロパティは順に name, duration, timing-function です */
       }
 
+.testkai {
+  margin: 5% 0;
+}
 
 .test3 {
   font-size: 1rem;
   width: 100％;
-  margin: 5%;
+  margin: 0 5%;
   white-space: pre-wrap;
   overflow: hidden;
 
