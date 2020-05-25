@@ -379,10 +379,7 @@ input {
   /* プロパティは順に name, duration, iteration-count, timing-function です */
 }
 
-.test3-5:after{
-  content: '▶';
-  -webkit-animation: dzPulse 1s infinite ease;
-}
+
 
 .test1 {
   letter-spacing: 0.2rem;
