@@ -59,7 +59,6 @@
 
   .popup {
     width: 85% !important;
-    height: 80%;
     overflow-y: inherit;
     padding: 1rem 0.5rem;
   }
