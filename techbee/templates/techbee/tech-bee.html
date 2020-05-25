@@ -75,11 +75,11 @@
 {% for c in ccc %}
 <script>
   $(".poplabel").click(function(){
-  $({{c.title}}).toggleClass("visible");});
+  $(".{{c.title}}").toggleClass("visible");});
 </script>
 <script>
   $(".closelabel").click(function(){
-  $({{c.title}}).toggleClass("visible");});
+  $(".{{c.title}}").toggleClass("visible");});
 </script>
 {% endfor %}
 <script>
