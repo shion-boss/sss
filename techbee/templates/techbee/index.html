@@ -54,21 +54,20 @@
         </div>
         <div class="slider-wrapper">
           <div class="slider">
-            
             <!--繰り返し-->
+            {% for b in bbb %}
             <div class="slide">
-              <a href="#">
-
-                <img src="/static/tb-green.jpg" alt="" id="ghjk">
+              <a href="{% url 'story' b.category %}">
+                <img src={{b.image.url}} alt="" id="ghjk">
                 <div class="slider-h" id="hjk">
-                  <h1 class="under1">  FOREST</h1>
+                  <h1 class="under1">{{b.category}}</h1>
                   <h2 class="under2"> STORY</h2>
                   <h3 class="under3">MORE</h3>
                 </div>
-                <p id="bgt">FOREST</p>
-
+                <p id="bgt">{{b.category}}</p>
               </a>
             </div>
+            {% endfor %}
             <!--繰り返し-->
 
             <div class="slide">

@@ -128,9 +128,11 @@ def index(request):
     login_bonus(user)
     customer = payjp.Customer.retrieve(user.user_meta.username)
     card = customer.cards.all(limit=3, offset=10)
+    b_cate=bee_cate_model.objects.all()
     params={
         'index_current':request.path,
         'aaa':'',
+        'bbb':b_cate,
         }
     for a in customer.cards.all()['data']:
         params['aaa']=a['id']
