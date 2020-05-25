@@ -20,7 +20,7 @@
     width: 95vw;
   }
 
-  
+
 
   .textboard {
     font-size: 1.3rem !important;
@@ -28,6 +28,10 @@
 
   .test3 {
     font-size: 0.8rem !important;
+  }
+
+  .test3-5 {
+    font-size: 0.8rem;
   }
 }
 
@@ -71,10 +75,15 @@
     -webkit-perspective: 150rem;
   }
 
+  .test1 {
+    font-size: 1.2rem;
+    line-height: 10vw;
+  }
+
   .textboard {
     font-size: 1.1rem !important;
     padding: 0;
-    width: 95%;
+    width: 100%;
   }
 
 
