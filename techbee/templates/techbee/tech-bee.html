@@ -12,7 +12,7 @@
     <!--繰り返し-->
     {% for c in ccc %}
     <input type="checkbox" id={{c.category.category}} class="popup-ons">
-    <div class="pop-box {{c.title}}">
+    <div class="pop-box {{c.title}}{{c.title}}{{c.id}}">
       <div class="popup">
         <div class="popup-content">
           <!-- ポップアップの中身 -->
@@ -81,11 +81,11 @@
 {% for c in ccc %}
 <script>
   $(".{{c.title}}").click(function(){
-  $(".{{c.title}}").toggleClass("visible");});
+  $(".{{c.title}}{{c.title}}{{c.id}}").toggleClass("visible");});
 </script>
 <script>
   $(".{{c.title}}{{c.id}}").click(function(){
-  $(".{{c.title}}").toggleClass("visible");});
+  $(".{{c.title}}{{c.title}}{{c.id}}").toggleClass("visible");});
 </script>
 {% endfor %}
 <script>
