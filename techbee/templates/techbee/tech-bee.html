@@ -43,7 +43,7 @@
                   </div>
                 </div>
                 <div class="textboard">
-                    <div class="btn-close test2 {{c.title}}{{c.id}}">閉じる<span>×</span></div>
+                    <div class="{{c.title}}{{c.id}}{{c.title}} btn-close test2">閉じる<span>×</span></div>
                 </div>
               </div>
             </div>
@@ -84,7 +84,7 @@
   $(".{{c.title}}{{c.title}}{{c.id}}").toggleClass("visible");});
 </script>
 <script>
-  $(".{{c.title}}{{c.id}}").click(function(){
+  $(".{{c.title}}{{c.id}}{{c.title}}").click(function(){
   $(".{{c.title}}{{c.title}}{{c.id}}").toggleClass("visible");});
 </script>
 {% endfor %}
