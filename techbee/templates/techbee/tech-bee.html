@@ -37,7 +37,7 @@
                   <p class="test3">「<span>{{c.co3}}</span>」</p>
                 </div>
                 <div class="textboard">
-                    <div class="btn-close test2 closelabel">閉じる<span>×</span></div>
+                    <div class="btn-close test2 {{c.title}}{{c.id}}">閉じる<span>×</span></div>
                 </div>
               </div>
             </div>
@@ -55,7 +55,7 @@
 
       <!--繰り返し-->
       {% for c in ccc %}
-      <div class="card1 card poplabel" style="left: {{forloop.counter0|keito}}vw;">
+      <div class="card1 card {{c.title}}" style="left: {{forloop.counter0|keito}}vw;">
         <img src={{ c.image.url}}>
         <div class="card-txt">
           <p class="test1">{{forloop.counter}}</p>
@@ -74,11 +74,11 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 {% for c in ccc %}
 <script>
-  $(".poplabel").click(function(){
+  $(".{{c.title}}").click(function(){
   $(".{{c.title}}").toggleClass("visible");});
 </script>
 <script>
-  $(".closelabel").click(function(){
+  $(".c{{c.title}}{{c.id}}").click(function(){
   $(".{{c.title}}").toggleClass("visible");});
 </script>
 {% endfor %}
