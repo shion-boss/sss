@@ -305,21 +305,18 @@ a {
   width: 29vw !important;
   height: 43.5vw;
   padding-top: 10px;
+}
+
+.slide a {
   position: relative;
+  width: 20vw;
+  height: 35vw;
   margin-left: auto;
   margin-right: auto;
   padding: 0px;
   background-color: rgb(253, 253, 253);
   color: rgb(80, 80,80);
   display: block;
-}
-
-.slide a {
-  position: absolute;
-  top:0;
-  height: 100%;
-  width: 100%;
-  z-index: 100;
 }
 
 
@@ -390,7 +387,7 @@ a {
 
 }
 
-.slide p {
+.slide a p {
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
