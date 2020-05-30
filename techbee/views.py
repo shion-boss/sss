@@ -352,10 +352,12 @@ def userregi_view(request,introducer):
 
 def paypal_view(request):
     user=request.user
-    if user.user_meta.position=='member':
+    meta=user_meta.objects.get(user=user)
+    if meta.position=='member':
         return render(request,'techbee/paypal.html')
-    elif user.user_meta.position=='':
-        introducer=user.afirieito_model.introducer
+    elif meta.position=='':
+        afi=afirieito_model.objects.get(user=user)
+        introducer=afi.introducer
         return redirect('userregi',introducer)
     else:
         return render(request,'techbee/paypal2.html')
