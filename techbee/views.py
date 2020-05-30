@@ -353,6 +353,7 @@ def userregi_view(request,introducer):
 @login_required
 def paypal_view(request):
     user=request.user
+    return render(request,'techbee/paypal2.html')
     try:
         user.user_meta.username
     except:
