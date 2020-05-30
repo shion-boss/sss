@@ -327,45 +327,7 @@ def userregi_view(request,introducer):
             username=request.POST['username']
         except:
             username=user.user_meta.username
-            customer = payjp.Customer.retrieve(username)
-            for a in customer.cards.all()['data']:
-                card_d=a['id']
-            try:
-                card = customer.cards.retrieve(card_d)
-                card.delete()
-            except:
-                customer.card=request.POST['payjp-token']
-                customer.save()
-            else:
-                customer.card=request.POST['payjp-token']
-                customer.save()
-        else:
-            try:
-                payjp.Customer.create(
-                    id= username,
-                    card=request.POST['payjp-token']
-                    )
-            except:
-                params={
-                    'introducer':introducer,
-                }
-                return render(request,'techbee/errorpayjp.html',params)
-        customer = payjp.Customer.retrieve(username)
-        try:
-            user.user_meta.position
-        except:
-            payjp.Subscription.create(
-                plan= position,
-                customer= username
-                )
-        else:
-            sub=customer.subscriptions.all(limit=1)
-            subscription = payjp.Subscription.retrieve(sub['data'][0]['id'])
-            subscription.delete()
-            payjp.Subscription.create(
-                plan= position,
-                customer= username
-                )
+
         try:
             meta=user_meta.objects.get(user=user)
         except:
@@ -373,7 +335,9 @@ def userregi_view(request,introducer):
         else:
             meta.position=position
             meta.save()
-        return redirect(to='loginselect')
+
+        return redirect('paypal')
+
     try:
         user.user_meta
     except:
@@ -385,6 +349,16 @@ def userregi_view(request,introducer):
         'm':m,
     }
     return render(request,'techbee/userregi.html',params)
+
+def paypal_view(request):
+    user=request.user
+    if user.user_meta.position==member:
+        return render(request,'techbee/paypal.html')
+    elif user.user_meta.position=='':
+        introducer=user.afirieito_model.introducer
+        return redirect('userregi',introducer)
+    else:
+        return render(request,'techbee/paypal2.html')
 
 from operator import itemgetter
 @login_required
