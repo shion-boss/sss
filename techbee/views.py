@@ -357,12 +357,6 @@ def paypal_view(request):
         user.user_meta.username
     except:
         return redirect(to='loginselect')
-    if status_veri(user)==True:
-        a=afirieito_model.objects.get(user=user)
-        params={
-            'a':a,
-        }
-        return render(request,'techbee/statusveri.html',params)
     login_bonus(user)
     meta=user_meta.objects.get(user=user)
     if meta.position=='member':
