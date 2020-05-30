@@ -336,7 +336,7 @@ def userregi_view(request,introducer):
             meta.position=position
             meta.save()
 
-        return redirect('paypal')
+        return redirect(to='paypal')
 
     try:
         user.user_meta
@@ -352,7 +352,7 @@ def userregi_view(request,introducer):
 
 def paypal_view(request):
     user=request.user
-    if user.user_meta.position==member:
+    if user.user_meta.position=='member':
         return render(request,'techbee/paypal.html')
     elif user.user_meta.position=='':
         introducer=user.afirieito_model.introducer
