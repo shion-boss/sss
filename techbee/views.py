@@ -336,14 +336,9 @@ def paypal_view(request):
         user.user_meta.username
     except:
         return redirect(to='loginselect')
-    login_bonus(user)
     meta=user_meta.objects.get(user=user)
     if meta.position=='member':
         return render(request,'techbee/paypal.html')
-    elif meta.position=='':
-        afi=afirieito_model.objects.get(user=user)
-        introducer=afi.introducer
-        return redirect('userregi',introducer)
     else:
         return render(request,'techbee/paypal2.html')
 
