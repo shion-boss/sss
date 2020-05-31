@@ -110,7 +110,7 @@
           <div class="tb-contents">
             <!--繰り返しここから-->
             {% for b in bbb %}
-            <a href="#">
+            <a href="{% url 'tb' b.category %}">
               <div class="tb-con">
                 <div class="tb-c-t">
                   <img src="{{ b.image.url }}" alt="">
