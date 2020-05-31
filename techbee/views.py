@@ -39,6 +39,8 @@ def my_error_handler(request, *args, **kw):
 
 
 def status_veri(user):
+    return True
+    '''
     try:
         meta=user_meta.objects.get(user=user)
     except:
@@ -53,6 +55,7 @@ def status_veri(user):
         return True
     else:
         return False
+    '''
 
 
 
