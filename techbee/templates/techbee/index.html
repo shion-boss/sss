@@ -3,7 +3,7 @@
 {% block body_k %}
 <link rel="stylesheet" type="text/css" href="{% static 'techbee/css/tech_next-home.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'techbee/css/tech_next-home-res.css' %}"/>
-<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Petrona&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
@@ -43,44 +43,6 @@
             </div>
           </div>
         </div>
-        <div class="tm-underber">
-
-        </div>
-      </div>
-      <div class="tech-bee">
-        <div class="tb-toparea">
-          <a href=""><h1>Tech<span>B</span>ee</h1></a>
-          <p>公式キャラのTech Beeの物語</p>
-        </div>
-        <div class="slider-wrapper">
-          <div class="slider">
-            <!--繰り返し-->
-            {% for b in bbb %}
-            <div class="slide">
-              <a href="{% url 'tb' b.category %}">
-                <img src={{b.image.url}} alt="" id="ghjk">
-                <div class="slider-h" id="hjk">
-                  <h1 class="under1">{{b.category}}</h1>
-                  <h2 class="under2"> STORY</h2>
-                  <h3 class="under3">MORE</h3>
-                </div>
-                <p id="bgt">{{b.category}}</p>
-              </a>
-            </div>
-            {% endfor %}
-            <!--繰り返し-->
-          </div>
-        </div>
-        <script>
-          $('.slider').bxSlider({
-            auto: true,
-            autoHover: true,
-            pause: 2500,
-            minSlides: 1,
-            maxSlides: 3,
-            pager: false
-          });
-        </script>
         <div class="tm-underber">
 
         </div>
@@ -137,6 +99,34 @@
 
           </div>
           <div class="clear"></div>
+        </div>
+      </div>
+      <div class="tech-bee">
+        <div class="tb-toparea">
+          <a href=""><h1>Tech<span>B</span>ee</h1></a>
+          <p>公式キャラのTech Beeの物語</p>
+        </div>
+        <div class="tb-botarea">
+          <div class="tb-contents">
+            <!--繰り返しここから-->
+            <a href="#">
+              <div class="tb-con">
+                <div class="tb-c-t">
+                  <img src="/static/tb-zukan.jpg" alt="">
+                </div>
+                <div class="tb-c-b">
+                  <p class="t-story"><span class="fab fa-buffer"></span>TECHBEE</p>
+                  <img src="/static/tb-zukan.jpg" alt="" class="t-card">
+                  <h3 class="t-title">STORY of FOREST</h3>
+                  <p class="t-postday">2020.05.30</p>
+                </div>
+              </div>
+            </a>
+            <!--繰り返しここまで-->
+          </div>
+        </div>
+        <div class="tm-underber">
+
         </div>
       </div>
 </div>

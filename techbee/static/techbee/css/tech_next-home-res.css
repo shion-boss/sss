@@ -3,14 +3,30 @@
 
   .top-wrapper {
     padding: 0;
+<<<<<<< HEAD
     background-image: url("https://res.cloudinary.com/hm9k6tunn/image/upload/v1589620537/uchuu-ddg_xvz90b.png");
+=======
+<<<<<<< HEAD
+    background-image: url("https://res.cloudinary.com/hm9k6tunn/image/upload/v1589620537/uchuu-ddg_xvz90b.png");
+=======
+    background-image: url(uchuu-ddg.png);
+>>>>>>> a3a3df531d7e2466352ed85cad556db871626739
+>>>>>>> 74838862440cc69f4c59643b406148e528b69db7
     background-position: center;
 
   }
 
   #bg-video {
     display: none;
+<<<<<<< HEAD
+    background: url("https://res.cloudinary.com/hm9k6tunn/image/upload/v1589620537/uchuu-ddg_xvz90b.png") no-repeat;
+=======
+<<<<<<< HEAD
     background: url('https://res.cloudinary.com/hm9k6tunn/image/upload/v1589620537/uchuu-ddg_xvz90b.png') no-repeat;
+=======
+    background: url('uchuu-ddg.png') no-repeat;
+>>>>>>> a3a3df531d7e2466352ed85cad556db871626739
+>>>>>>> 74838862440cc69f4c59643b406148e528b69db7
   }
 
   .tw-mes h1 {
@@ -142,6 +158,14 @@
 
 }
 
+@media screen and (max-width: 850px) {
+  .tb-con {
+    width: 50%;
+  }
+
+
+}
+
 
 
 @media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
@@ -151,7 +175,11 @@
 
   .top-wrapper {
     padding: 0;
+<<<<<<< HEAD
     background-image: url("https://res.cloudinary.com/hm9k6tunn/image/upload/v1589620537/uchuu-ddg_xvz90b.png");
+=======
+    background-image: url(uchuu-ddg.png);
+>>>>>>> a3a3df531d7e2466352ed85cad556db871626739
     background-position: center;
 
   }
@@ -167,6 +195,10 @@
 
   .tw-mes p {
     font-size: 1rem;
+  }
+
+  .fot {
+    width: 100%;
   }
 
   .tech-movie {
@@ -278,6 +310,14 @@
     height: auto;
     position: static;
     transform: none;
+  }
+
+  .tech-bee {
+    padding: 1rem;
+  }
+
+  .tb-con {
+    width: 100%;
   }
 
 

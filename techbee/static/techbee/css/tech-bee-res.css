@@ -13,6 +13,10 @@
 
   .body-tb-main {
     margin: 0 auto;
+<<<<<<< HEAD
+  }
+
+=======
     width: 95vw;
   }
 
@@ -22,6 +26,7 @@
 
 
 
+>>>>>>> upstream/master
   .textboard {
     font-size: 1.3rem !important;
   }
@@ -29,10 +34,13 @@
   .test3 {
     font-size: 0.8rem !important;
   }
+<<<<<<< HEAD
+=======
 
   .test3-5 {
     font-size: 0.8rem;
   }
+>>>>>>> upstream/master
 }
 
 @media screen and (max-width: 768px) {
@@ -52,6 +60,23 @@
 
 @media screen and (max-width: 425px) {
 
+<<<<<<< HEAD
+  .body-tb-main {
+    height: 500px;
+  }
+
+
+
+  .popup {
+    width: 70% !important;
+    height: 70% !important;
+    top: 15%;
+  }
+
+  .popup-content {
+    margin: 10px auto 40px auto !important;
+    position: relative;
+=======
 
   .body-tb-main {
     width: 90vw;
@@ -73,6 +98,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+>>>>>>> upstream/master
   }
 
   .pop-card {
@@ -82,6 +108,126 @@
     -webkit-perspective: 150rem;
   }
 
+<<<<<<< HEAD
+  #pop-check1 {
+    display: none;
+  }
+
+  #pop-check1:checked ~ div .pop-left {
+    transform: rotateY(180deg);
+  }
+
+  #pop-check1:checked ~ div .pop-back {
+    transform: rotateY(360deg);
+  }
+
+  #pop-check2 {
+    display: none;
+  }
+
+  #pop-check2:checked ~ div .pop-left {
+    transform: rotateY(180deg);
+  }
+
+  #pop-check2:checked ~ div .pop-back {
+    transform: rotateY(360deg);
+  }
+
+  #pop-check3 {
+    display: none;
+  }
+
+  #pop-check3:checked ~ div .pop-left {
+    transform: rotateY(180deg);
+  }
+
+  #pop-check3:checked ~ div .pop-back {
+    transform: rotateY(360deg);
+  }
+
+  #pop-check4 {
+    display: none;
+  }
+
+  #pop-check4:checked ~ div .pop-left {
+    transform: rotateY(180deg);
+  }
+
+  #pop-check4:checked ~ div .pop-back {
+    transform: rotateY(360deg);
+  }
+
+  #pop-check5 {
+    display: none;
+  }
+
+  #pop-check5:checked ~ div .pop-left {
+    transform: rotateY(180deg);
+  }
+
+  #pop-check5:checked ~ div .pop-back {
+    transform: rotateY(360deg);
+  }
+
+  #pop-check6 {
+    display: none;
+  }
+
+  #pop-check6:checked ~ div .pop-left {
+    transform: rotateY(180deg);
+  }
+
+  #pop-check6:checked ~ div .pop-back {
+    transform: rotateY(360deg);
+  }
+
+  #pop-check7 {
+    display: none;
+  }
+
+  #pop-check7:checked ~ div .pop-left {
+    transform: rotateY(180deg);
+  }
+
+  #pop-check7:checked ~ div .pop-back {
+    transform: rotateY(360deg);
+  }
+
+  #pop-check8 {
+    display: none;
+  }
+
+  #pop-check8:checked ~ div .pop-left {
+    transform: rotateY(180deg);
+  }
+
+  #pop-check8:checked ~ div .pop-back {
+    transform: rotateY(360deg);
+  }
+
+  #pop-check9 {
+    display: none;
+  }
+
+  #pop-check9:checked ~ div .pop-left {
+    transform: rotateY(180deg);
+  }
+
+  #pop-check9:checked ~ div .pop-back {
+    transform: rotateY(360deg);
+  }
+
+  #pop-check10 {
+    display: none;
+  }
+
+  #pop-check10:checked ~ div .pop-left {
+    transform: rotateY(180deg);
+  }
+
+  #pop-check10:checked ~ div .pop-back {
+    transform: rotateY(360deg);
+=======
   .test1 {
     font-size: 1.2rem;
     line-height: 10vw;
@@ -118,6 +264,7 @@
     height: 80%;
     width: 90vw;
 
+>>>>>>> upstream/master
   }
 
   .pop-back {
@@ -128,8 +275,11 @@
     top: 0;
     left: 0;
     backface-visibility: hidden;
+<<<<<<< HEAD
+=======
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
+>>>>>>> upstream/master
   }
 
   .pop-left {
@@ -142,8 +292,11 @@
     top: 0;
     left: 0;
     backface-visibility: hidden;
+<<<<<<< HEAD
+=======
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
+>>>>>>> upstream/master
   }
 
   .pop-right {
@@ -177,6 +330,40 @@
     left: 20vw !important;
   }
 
+<<<<<<< HEAD
+  .card3 {
+    left: 40vw !important;
+  }
+
+  .card4 {
+    left: 60vw !important;
+  }
+
+  .card5 {
+    left: 80vw !important;
+  }
+
+  .card6 {
+    left: 100vw !important;
+  }
+
+  .card7 {
+    left: 120vw !important;
+  }
+
+  .card8 {
+    left: 140vw !important;
+  }
+
+  .card9 {
+    left: 160vw !important;
+  }
+
+  .card10 {
+    left: 180vw !important;
+  }
+=======
+>>>>>>> upstream/master
 
 
 }
