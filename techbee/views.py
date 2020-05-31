@@ -368,6 +368,20 @@ def paypal_view(request):
     else:
         return render(request,'techbee/paypal2.html')
 
+
+def paypal_complete_view(request):
+    user=request.user
+    try:
+        meta=user_meta.objects.get(user=user)
+        meta.username
+    except:
+        return redirect('technext')
+    else:
+        meta.position = 'paypal'
+        meta.save()
+        return redirect('index')
+
+
 from operator import itemgetter
 @login_required
 def parts_search_view(request,search_kind):
