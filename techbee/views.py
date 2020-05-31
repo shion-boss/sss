@@ -42,24 +42,15 @@ def status_veri(user):
     try:
         meta=user_meta.objects.get(user=user)
     except:
+        global meta_veri
         meta_veri=True
-    try:
-        meta.username
-    except:
-        name_veri=True
-    try:
+    else:
         if meta.position != 'paypal':
+            global posi_veri
             posi_veri=True
 
-    if meta_veri:
+    if meta_veri or posi_veri ==True:
         return True
-    elif name_veri:
-        return True
-    elif posi_veri:
-        return True
-    else:
-        return False
-
 
 
 
