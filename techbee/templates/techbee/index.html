@@ -109,17 +109,17 @@
         <div class="tb-botarea">
           <div class="tb-contents">
             <!--繰り返しここから-->
-            {% for c in ccc %}
+            {% for b in bbb %}
             <a href="#">
               <div class="tb-con">
                 <div class="tb-c-t">
-                  <img src="{{ c.category.image.url }}" alt="">
+                  <img src="{{ b.image.url }}" alt="">
                 </div>
                 <div class="tb-c-b">
                   <p class="t-story"><span class="fab fa-buffer"></span>TECHBEE</p>
-                  <img src="{{ c.category.image.url }}" alt="" class="t-card">
-                  <h3 class="t-title">STORY of {{c.category.category}}</h3>
-                  <p class="t-postday">{{c.post_time}}</p>
+                  <img src="{{ b.image.url }}" alt="" class="t-card">
+                  <h3 class="t-title">STORY of {{b.category}}</h3>
+                  <p class="t-postday">999999999999</p>
                 </div>
               </div>
             </a>
