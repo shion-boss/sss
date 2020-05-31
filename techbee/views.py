@@ -70,7 +70,11 @@ def login_bonus(user):
         meta.last_login=datetime.date.today()
         meta.like_point += 33
         afi=afirieito_model.objects.filter(introducer=user.user_meta.username)
-        afi_list +=1
+        afi_list=0
+        for i in afi:
+            u_meta=user_meta.objects.get(user=i.user)
+            if u_meta.position =='paypal':
+                afi_list +=1
         afi_len=int(afi_list)*33
         meta.point += afi_len
         meta.save()
