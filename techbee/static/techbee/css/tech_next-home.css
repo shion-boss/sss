@@ -290,6 +290,13 @@ a {
   background-color: rgb(56, 56, 56);/*線の色*/
 }
 
+.tb-botarea {
+  width: 100%;
+  margin: 50px 0;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
 .tb-contents {
   padding: 20px;
 
