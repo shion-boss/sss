@@ -54,7 +54,7 @@ def status_veri(user):
         else:
             return True
     '''
-    return True
+    return False
 
 
 
@@ -269,13 +269,17 @@ def login_select_view(request):
     if status_veri(user)==True:
         try:
             a=afirieito_model.objects.get(user=user)
-            params={
-            'a':a,
-            }
         except:
             return redirect('userregi','techbee')
         else:
-            return render(request,'techbee/statusveri.html',params)
+            if a.introducer != '':
+                params={
+                'a':a,
+                }
+                return render(request,'techbee/statusveri.html',params)
+            else:
+                return redirect('userregi','techbee')
+
     login_bonus(user)
     try:
         user.user_meta.username
