@@ -330,11 +330,20 @@ def userregi_view(request,introducer):
         user.user_meta
     except:
         m=False
+
     else:
         m=True
+        if user.user_meta.position=='paypal':
+            username=user.user_meta.username
+            message=username+'は、既にメンバー登録が完了しています。'
+            s=False
+        else:
+            s=True
     params={
+        'message':message,
         'introducer':introducer,
         'm':m,
+        's':s,
     }
     return render(request,'techbee/userregi.html',params)
 

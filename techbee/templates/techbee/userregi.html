@@ -20,6 +20,8 @@
           <p class='username_p'>username</p>
         </label>
         <input type="text" placeholder="半角英数字と＿(アンダースコア)のみ使用可能" name="username" required pattern="^[0-9A-Za-z-_]+$" value="" id='u_input'>
+        {% endif %}
+        {% if s %}
         <div class="radio_box radmar">
           <input type='radio' name="position" value="member" id='member' checked>
           <label for="member">member ¥5,000/month</label>
@@ -34,7 +36,10 @@
           <button type="submit" name="button">メンバーになる！</button>
         </div>
         <input type="text" name="dummy" style="display:none;">
+        {% endif %}
       </form>
+      {% if s == False %}
+      <a href="{% url 'index' %}">homeに戻る</a>
       {% endif %}
     </div>
   </body>
