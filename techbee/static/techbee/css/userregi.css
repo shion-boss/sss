@@ -153,16 +153,19 @@ label{
   margin-bottom: 3rem;
   display: flex;
   justify-content: center;
+  align-items: flex-end;
 }
 .pay2_button button{
   width: 100%;
   line-height: 10vh;
   font-size: 25px;
+  cursor: pointer;
 }
 
 #u_input:valid~#pay_button{
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: flex-end;
   visibility: visible;
 }
 
