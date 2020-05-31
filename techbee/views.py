@@ -353,7 +353,7 @@ def paypal_complete_view(request):
     else:
         meta.position = 'paypal'
         meta.save()
-        return redirect('index')
+        return redirect(to='index')
 
 
 from operator import itemgetter
