@@ -102,24 +102,18 @@ import datetime
 
 @login_required
 def index(request):
-    payjp.api_key ='sk_test_f0d6fe8a9725200cda316d56'
     user=request.user
     try:
         user.user_meta.username
     except:
         return redirect(to='loginselect')
     login_bonus(user)
-    customer = payjp.Customer.retrieve(user.user_meta.username)
-    card = customer.cards.all(limit=3, offset=10)
     b_cate=bee_cate_model.objects.all()
     params={
         'index_current':request.path,
         'aaa':'',
         'bbb':b_cate,
         }
-    for a in customer.cards.all()['data']:
-        params['aaa']=a['id']
-
     return render(request,'techbee/index.html',params)
 
 @login_required
