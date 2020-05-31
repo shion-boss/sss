@@ -41,10 +41,11 @@ def my_error_handler(request, *args, **kw):
 def status_veri(user):
     try:
         meta=user_meta.objects.get(user=user)
-        return False
     except:
-        meta_veri=True
-        posi_veri=False
+        return True
+    try:
+        posi=meta.position
+    except:
         return True
 
 
