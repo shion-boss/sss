@@ -169,6 +169,10 @@ label{
   visibility: visible;
 }
 
+#u_input:valid~#pay_button{
+  opacity: 0.8;
+}
+
 .not_input{
   display: none;
 }
