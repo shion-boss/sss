@@ -51,6 +51,8 @@ def status_veri(user):
 
     if meta_veri or posi_veri ==True:
         return True
+    else:
+        return False
 
 
 
