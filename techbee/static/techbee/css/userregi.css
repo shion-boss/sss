@@ -165,7 +165,7 @@ label{
   cursor: pointer;
 }
 
-.pay2_button button{
+.pay_button button{
   width: 100%;
   line-height: 10vh;
   font-size: 25px;
