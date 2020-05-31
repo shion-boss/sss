@@ -39,23 +39,27 @@ def my_error_handler(request, *args, **kw):
 
 
 def status_veri(user):
-    return True
-    '''
     try:
         meta=user_meta.objects.get(user=user)
+        posi=meta.position
     except:
         global meta_veri
         meta_veri=True
     else:
-        if meta.position != 'paypal':
-            global posi_veri
-            posi_veri=True
+        global meta_veri
+        meta_veri=False
+
+    if posi == 'paypal':
+        global posi_veri
+        posi_veri=False
+    else:
+        global posi_veri
+        posi_veri=True
 
     if meta_veri or posi_veri ==True:
         return True
     else:
         return False
-    '''
 
 
 
