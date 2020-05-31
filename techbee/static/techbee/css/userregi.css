@@ -179,10 +179,13 @@ label{
 
 .paypal_button{
   grid-column: 2;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
 }
 
 .paypal_button .img{
-  width: 50%;
+  width: 40%;
   margin: 0 auto;
 
 }
