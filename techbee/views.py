@@ -58,10 +58,7 @@ def status_veri(user):
             global posi_veri
             posi_veri=True
 
-    if posi_veri ==True:
-        return True
-    else:
-        return False
+    return False
 
 
 
