@@ -262,18 +262,11 @@ def tech_series_view(request,category,num):
 def login_select_view(request):
     user = request.user
     if status_veri(user)==True:
-        try:
-            a=afirieito_model.objects.get(user=user)
-        except:
-            return redirect('userregi','techbee')
-        else:
-            if a.introducer != '':
-                params={
-                'a':a,
-                }
-                return render(request,'techbee/statusveri.html',params)
-            else:
-                return redirect('userregi','techbee')
+        a=afirieito_model.objects.get(user=user)
+        params={
+            'a':a,
+        }
+        return render(request,'techbee/statusveri.html',params)
 
     login_bonus(user)
     try:
