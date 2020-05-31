@@ -334,7 +334,8 @@ def userregi_view(request,introducer):
 
     else:
         m=True
-        if user.user_meta.position=='paypal':
+        meta=user_meta.objects.get(user=user)
+        if meta.position=='paypal':
             username=user.user_meta.username
             message=username+'は、既にメンバー登録が完了しています。'
             s=False
