@@ -152,9 +152,12 @@ label{
   visibility: visible;
   margin-bottom: 3rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
+.pay2_button button{
+  width: 100%;
 
+}
 
 #u_input:valid~#pay_button{
   display: flex;
