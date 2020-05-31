@@ -328,13 +328,11 @@ def userregi_view(request,introducer):
         return redirect(to='paypal')
 
     try:
-        user.user_meta
+        meta=user_meta.objects.get(user=user)
     except:
         m=False
-
     else:
         m=True
-        meta=user_meta.objects.get(user=user)
         if meta.position=='paypal':
             username=meta.username
             message=username+'は、既にメンバー登録が完了しています。'
