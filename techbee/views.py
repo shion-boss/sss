@@ -44,14 +44,14 @@ def status_veri(user):
     except:
         return True
     try:
-        global posi
         posi=meta.position
     except:
         return True
-    if posi == 'paypal':
-        return False
     else:
-        return True
+        if posi == 'paypal':
+            return False
+        else:
+            return True
 
 
 
