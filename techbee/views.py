@@ -308,7 +308,7 @@ def userregi_view(request,introducer):
             for usermeta in usermeta_list:
                 if username == usermeta.username:
                     m=False
-                    message=username+'は、既に使われています。/nもう一度入力してください。'
+                    message=username+'は、既に他のユーザーが使用されています。もう一度入力してください。'
                     params={
                         'message':message,
                         'introducer':introducer,

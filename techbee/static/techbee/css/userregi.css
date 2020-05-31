@@ -145,6 +145,9 @@ label{
   width: 100%;
   visibility: hidden;
   margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .pay2_button{
@@ -155,6 +158,13 @@ label{
   justify-content: center;
   align-items: flex-end;
 }
+.pay2_button button{
+  width: 100%;
+  line-height: 10vh;
+  font-size: 25px;
+  cursor: pointer;
+}
+
 .pay2_button button{
   width: 100%;
   line-height: 10vh;
