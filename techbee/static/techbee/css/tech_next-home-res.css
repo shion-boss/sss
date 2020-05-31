@@ -142,6 +142,14 @@
 
 }
 
+@media screen and (max-width: 850px) {
+  .tb-con {
+    width: 50%;
+  }
+
+
+}
+
 
 
 @media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
@@ -167,6 +175,10 @@
 
   .tw-mes p {
     font-size: 1rem;
+  }
+
+  .fot {
+    width: 100%;
   }
 
   .tech-movie {
@@ -278,6 +290,14 @@
     height: auto;
     position: static;
     transform: none;
+  }
+
+  .tech-bee {
+    padding: 1rem;
+  }
+
+  .tb-con {
+    width: 100%;
   }
 
 
