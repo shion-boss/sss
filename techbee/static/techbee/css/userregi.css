@@ -177,6 +177,14 @@ label{
   display: none;
 }
 
+.paypal_button{
+  grid-column: 2;
+}
+
+.paypal_button img{
+  width:100%;
+
+}
 
 @media screen and (max-width:768px){
   /*画面幅が768以下の時*/
