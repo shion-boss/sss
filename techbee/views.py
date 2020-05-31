@@ -47,6 +47,11 @@ def status_veri(user):
         posi=meta.position
     except:
         return True
+    else:
+        if posi == 'paypal':
+            return False
+        else:
+            return True
 
 
 
