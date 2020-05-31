@@ -349,7 +349,10 @@ def paypal_complete_view(request):
     else:
         meta.position = 'paypal'
         meta.save()
-        return redirect(to='index')
+        return redirect(to='after')
+
+def paypal_after_view(request):
+    return render(request,'techbee/after.html')
 
 
 from operator import itemgetter

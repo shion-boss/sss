@@ -28,6 +28,7 @@ urlpatterns = [
     path('',views.technext_view,name='technext'),
     path('paypal/',views.paypal_view,name='paypal'),
     path('complete/',views.paypal_complete_view,name='paypal_complete'),
+    path('next/',views.paypal_after_view,name='after'),
     path('story/<str:cate>/',views.tb_view,name='tb'),
     path("ajax/", views.like_ajax_response,name='ajax'),
     path("ajaxf/",views.favorite_ajax_view,name='ajaxf'),
