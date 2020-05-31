@@ -303,6 +303,18 @@ def userregi_view(request,introducer):
             username=request.POST['username']
         except:
             username=user.user_meta.username
+        else:
+            usermeta_list=user_meta.objects.all()
+            for usermeta in usermeta_list:
+                if username == usermeta.username:
+                    m=False
+                    message=username+'は、既に使われています。/nもう一度入力してください。'
+                    params={
+                        'message':message,
+                        'introducer':introducer,
+                        'm':m,
+                    }
+                    return render(request,'techbee/userregi.html',params)
 
         try:
             meta=user_meta.objects.get(user=user)
