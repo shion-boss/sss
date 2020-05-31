@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -442,3 +443,112 @@
     </div>
   </body>
 </html>
+=======
+{% extends 'base.html' %}
+{% load bee_tag %}
+{% load static %}
+{% block body_k %}
+<link rel="stylesheet" type="text/css" href="{% static 'techbee/css/tech-bee.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'techbee/css/tech-bee-res.css' %}"/>
+<meta name="viewport" content="width=360,initial-scale=1">
+<div class="body-tb">
+
+  <h1>{{ cate }}</h1>
+  <div class="body-tb-main">
+    <!--繰り返し-->
+    {% for c in ccc %}
+    <input type="checkbox" id={{c.category.category}} class="popup-ons">
+    <div class="pop-box {{c.category.category}}{{c.category.category}}{{c.id}}">
+      <div class="popup">
+        <div class="popup-content">
+          <!-- ポップアップの中身 -->
+          <div class="pop-card">
+            <div class="pop-left">
+              <img src={{ c.image.url }}>
+            </div>
+            <div class="pop-back">
+              <div class="pop-right">
+                <div class="textboard">
+                  <p class="test2-1">Story▶<span>{{ c.category.category}}</span></p>
+                  <p class="test2-2">Episode▶<span>{{ forloop.counter }}</span></p>
+                  <p class="test2-3">Title▶<span>{{c.title}}</span></p>
+                </div>
+                <div class="textboard">
+                  <div class="testkai">
+                    <p class="test3">{{c.name1}}</p>
+                    <p class="test3-5">「<span>{{c.co1}}</span>」</p>
+                  </div>
+                  <div class="testkai">
+                    <p class="test3">{{c.name2}}</p>
+                    <p class="test3-5">「<span>{{c.co2}}</span>」</p>
+                  </div>
+                  <div class="testkai">
+                    <p class="test3">{{c.name3}}</p>
+                    <p class="test3-5">「<span>{{c.co3}}</span>」</p>
+                  </div>
+                </div>
+                <div class="textboard">
+                    <div class="{{c.category.category}}{{c.id}}{{c.category.category}} btn-close test2">閉じる<span>×</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <!-- ./ポップアップの中身　ここまで -->
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <!--繰り返し-->
+
+
+    <div class="body-tb-main-cons">
+
+      <!--繰り返し-->
+      {% for c in ccc %}
+      <div class="card1 card {{c.category.category}}{{c.id}}" style="left: {{forloop.counter0|keito}}vw;">
+        <img src={{ c.image.url}}>
+        <div class="card-txt">
+          <p class="test1">{{forloop.counter}}</p>
+        </div>
+      </div>
+      <div class="clear"></div>
+      {% endfor %}
+      <!--繰り返し-->
+    </div>
+  </div>
+  <a href="#"><h2>TechBee...</h2></a>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+{% for c in ccc %}
+<script>
+  $(".{{c.category.category}}{{c.id}}").click(function(){
+  $(".{{c.category.category}}{{c.category.category}}{{c.id}}").toggleClass("visible");});
+</script>
+<script>
+  $(".{{c.category.category}}{{c.id}}{{c.category.category}}").click(function(){
+  $(".{{c.category.category}}{{c.category.category}}{{c.id}}").toggleClass("visible");});
+</script>
+{% endfor %}
+<script>
+  $(".pop-left").click(function(){
+  $('.pop-left').toggleClass("front");});
+</script>
+<script>
+  $(".pop-left").click(function(){
+  $('.pop-back').toggleClass("back");});
+</script>
+<script>
+  $(".pop-back").click(function(){
+  $('.pop-left').toggleClass("front");});
+</script>
+<script>
+  $(".pop-back").click(function(){
+  $('.pop-back').toggleClass("back");});
+</script>
+
+{% endblock %}
+>>>>>>> upstream/master

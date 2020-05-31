@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from .forms import user_meta_form,card_form,meta_form
 from django.contrib.auth import authenticate
-from .models import user_meta,parts_model,categories_model,like_model,favorite_model,channel_model,afirieito_model,event_model,event_img_model,footer_cat_model,footer_model,tech_tube_model,tube_movie_model,tech_teaching_model,teaching_movie_model,tech_bee_model,bee_model
+from .models import user_meta,parts_model,categories_model,like_model,favorite_model,channel_model,afirieito_model,event_model,event_img_model,footer_cat_model,footer_model,tech_tube_model,tube_movie_model,tech_teaching_model,teaching_movie_model,bee_cate_model,bee_story_model
 import requests
 from django.contrib.auth.decorators import login_required
 import os
@@ -39,37 +39,23 @@ def my_error_handler(request, *args, **kw):
 
 
 def status_veri(user):
-    payjp.api_key ='sk_test_f0d6fe8a9725200cda316d56'
     try:
-        user.user_meta.username
-        customer = payjp.Customer.retrieve(user.user_meta.username)
+        meta=user_meta.objects.get(user=user)
     except:
-        metameta=True
-        stasta=True
-    else:
-        metameta=False
-        try:
-            if customer["subscriptions"]["data"][0]['status'] == 'trial':
-                stasta=False
-            elif customer["subscriptions"]["data"][0]['status'] == 'active':
-                stasta=False
-            else:
-                stasta=True
-        except:
-            stasta=True
-        else:
-            stasta=False
-
-
-    if metameta==False and stasta==False:
-        return False
-    else:
         return True
+    try:
+        posi=meta.position
+    except:
+        return True
+    else:
+        if posi == 'paypal':
+            return False
+        else:
+            return True
 
 
 
 def login_bonus(user):
-    payjp.api_key ='sk_test_f0d6fe8a9725200cda316d56'
     login_date=user.user_meta.last_login
     login_month=login_date.month
     login_day=login_date.day
@@ -81,13 +67,7 @@ def login_bonus(user):
         meta.last_login=datetime.date.today()
         meta.like_point += 33
         afi=afirieito_model.objects.filter(introducer=user.user_meta.username)
-        afi_list=0
-        for a in afi:
-            customer=payjp.Subscription.all(plan='member',customer=a.user.user_meta.username)
-            if int(customer['count']) != 0:
-                m=customer['data'][0]['status']
-                if m == 'active':
-                    afi_list +=1
+        afi_list +=1
         afi_len=int(afi_list)*33
         meta.point += afi_len
         meta.save()
@@ -128,15 +108,33 @@ def index(request):
     login_bonus(user)
     customer = payjp.Customer.retrieve(user.user_meta.username)
     card = customer.cards.all(limit=3, offset=10)
+    b_cate=bee_cate_model.objects.all()
     params={
         'index_current':request.path,
         'aaa':'',
+        'bbb':b_cate,
         }
     for a in customer.cards.all()['data']:
         params['aaa']=a['id']
 
     return render(request,'techbee/index.html',params)
 
+@login_required
+def tb_view(request,cate):
+    payjp.api_key ='sk_test_f0d6fe8a9725200cda316d56'
+    user=request.user
+    try:
+        user.user_meta.username
+    except:
+        return redirect(to='loginselect')
+    login_bonus(user)
+    b_cate=bee_cate_model.objects.get(category=cate)
+    b_story=bee_story_model.objects.filter(category=b_cate)
+    params={
+        'cate':cate,
+        'ccc':b_story,
+    }
+    return render(request,'techbee/tech-bee.html',params)
 
 @login_required
 def tech_view(request,category,w,num):
@@ -309,45 +307,7 @@ def userregi_view(request,introducer):
             username=request.POST['username']
         except:
             username=user.user_meta.username
-            customer = payjp.Customer.retrieve(username)
-            for a in customer.cards.all()['data']:
-                card_d=a['id']
-            try:
-                card = customer.cards.retrieve(card_d)
-                card.delete()
-            except:
-                customer.card=request.POST['payjp-token']
-                customer.save()
-            else:
-                customer.card=request.POST['payjp-token']
-                customer.save()
-        else:
-            try:
-                payjp.Customer.create(
-                    id= username,
-                    card=request.POST['payjp-token']
-                    )
-            except:
-                params={
-                    'introducer':introducer,
-                }
-                return render(request,'techbee/errorpayjp.html',params)
-        customer = payjp.Customer.retrieve(username)
-        try:
-            user.user_meta.position
-        except:
-            payjp.Subscription.create(
-                plan= position,
-                customer= username
-                )
-        else:
-            sub=customer.subscriptions.all(limit=1)
-            subscription = payjp.Subscription.retrieve(sub['data'][0]['id'])
-            subscription.delete()
-            payjp.Subscription.create(
-                plan= position,
-                customer= username
-                )
+
         try:
             meta=user_meta.objects.get(user=user)
         except:
@@ -355,7 +315,9 @@ def userregi_view(request,introducer):
         else:
             meta.position=position
             meta.save()
-        return redirect(to='loginselect')
+
+        return redirect(to='paypal')
+
     try:
         user.user_meta
     except:
@@ -367,6 +329,33 @@ def userregi_view(request,introducer):
         'm':m,
     }
     return render(request,'techbee/userregi.html',params)
+
+@login_required
+def paypal_view(request):
+    user=request.user
+    try:
+        user.user_meta.username
+    except:
+        return redirect(to='loginselect')
+    meta=user_meta.objects.get(user=user)
+    if meta.position=='member':
+        return render(request,'techbee/paypal.html')
+    else:
+        return render(request,'techbee/paypal2.html')
+
+
+def paypal_complete_view(request):
+    user=request.user
+    try:
+        meta=user_meta.objects.get(user=user)
+        meta.username
+    except:
+        return redirect('technext')
+    else:
+        meta.position = 'paypal'
+        meta.save()
+        return redirect(to='index')
+
 
 from operator import itemgetter
 @login_required

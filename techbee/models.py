@@ -123,22 +123,29 @@ class teaching_movie_model(models.Model):
     def __str__(self):
         return self.title
 
-class tech_bee_model(models.Model):
-    category=models.CharField(max_length=30)
+
+class bee_cate_model(models.Model):
+    category=models.CharField(max_length=6)
     image = CloudinaryField('image', null=True, blank=True)
 
     def __str__(self):
         return self.category
 
-class bee_model(models.Model):
-    category=models.ForeignKey(tech_bee_model,on_delete=models.SET_NULL,blank=True,null=True)
-    title=models.CharField(max_length=30)
-    image =CloudinaryField('image', null=True, blank=True)
-    text=models.TextField(max_length=2000)
+class bee_story_model(models.Model):
+    category=models.ForeignKey(bee_cate_model,on_delete=models.CASCADE)
+    title=models.CharField(max_length=12)
+    image = CloudinaryField('image', null=True, blank=True)
+    name1=models.CharField(max_length=20)
+    co1=models.TextField(max_length=30)
+    name2=models.CharField(max_length=20)
+    co2=models.TextField(max_length=30)
+    name3=models.CharField(max_length=20)
+    co3=models.TextField(max_length=30)
     post_time=models.DateTimeField(default=timezone.datetime.now)
 
     def __str__(self):
         return self.title
+
 
 
 ###################receiver################################

@@ -20,7 +20,7 @@
 =======
 >>>>>>> a3a3df531d7e2466352ed85cad556db871626739
           <h1>Tech<span>N</span>ext</h1>
-          <p>Hello Another Way</p>
+          <p>Hello Ttakahashi</p>
         </div>
       </div>
       <div class="tech-movie">
@@ -63,6 +63,7 @@
         </div>
         <div class="slider-wrapper">
           <div class="slider">
+<<<<<<< HEAD
             <div class="slider-1 slide">
               <a href="#">
 
@@ -147,14 +148,23 @@
 =======
                 <img src="/techbee/tb-moon.jpg" alt="" id="ghjk">
 >>>>>>> a3a3df531d7e2466352ed85cad556db871626739
+=======
+            <!--繰り返し-->
+            {% for b in bbb %}
+            <div class="slide">
+              <a href="{% url 'tb' b.category %}">
+                <img src={{b.image.url}} alt="" id="ghjk">
+>>>>>>> upstream/master
                 <div class="slider-h" id="hjk">
-                  <h1 class="under1">ZUKAN</h1>
+                  <h1 class="under1">{{b.category}}</h1>
                   <h2 class="under2"> STORY</h2>
                   <h3 class="under3">MORE</h3>
                 </div>
-                <p id="bgt">ZUKAN</p>
+                <p id="bgt">{{b.category}}</p>
               </a>
             </div>
+            {% endfor %}
+            <!--繰り返し-->
           </div>
         </div>
         <script>

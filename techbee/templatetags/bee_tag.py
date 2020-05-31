@@ -10,3 +10,7 @@ def multiplie(value, args):
 @register.filter
 def hiki(value,args):
     return value - args
+
+@register.filter
+def keito(value):
+    return value*12+2

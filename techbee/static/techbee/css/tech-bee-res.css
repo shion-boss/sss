@@ -13,8 +13,20 @@
 
   .body-tb-main {
     margin: 0 auto;
+<<<<<<< HEAD
   }
 
+=======
+    width: 95vw;
+  }
+
+  .pop-box {
+    width: 95vw;
+  }
+
+
+
+>>>>>>> upstream/master
   .textboard {
     font-size: 1.3rem !important;
   }
@@ -22,6 +34,13 @@
   .test3 {
     font-size: 0.8rem !important;
   }
+<<<<<<< HEAD
+=======
+
+  .test3-5 {
+    font-size: 0.8rem;
+  }
+>>>>>>> upstream/master
 }
 
 @media screen and (max-width: 768px) {
@@ -41,6 +60,7 @@
 
 @media screen and (max-width: 425px) {
 
+<<<<<<< HEAD
   .body-tb-main {
     height: 500px;
   }
@@ -56,6 +76,29 @@
   .popup-content {
     margin: 10px auto 40px auto !important;
     position: relative;
+=======
+
+  .body-tb-main {
+    width: 90vw;
+  }
+
+  .popup {
+    width: 85% !important;
+    overflow-y: inherit;
+    padding: 1rem 0.5rem;
+  }
+
+  .popup-content {
+    margin: 10px auto 20px auto !important;
+    position: relative;
+    padding: 0;
+  }
+
+  .pop-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+>>>>>>> upstream/master
   }
 
   .pop-card {
@@ -65,6 +108,7 @@
     -webkit-perspective: 150rem;
   }
 
+<<<<<<< HEAD
   #pop-check1 {
     display: none;
   }
@@ -183,6 +227,44 @@
 
   #pop-check10:checked ~ div .pop-back {
     transform: rotateY(360deg);
+=======
+  .test1 {
+    font-size: 1.2rem;
+    line-height: 10vw;
+  }
+
+  .textboard {
+    font-size: 1.1rem !important;
+    padding: 0;
+    width: 100%;
+  }
+
+
+  .pop-checks {
+    display: none;
+  }
+
+  .pop-checks:checked ~ div .pop-left {
+    transform: rotateY(180deg);
+  }
+
+  .pop-checks:checked ~ div .pop-back {
+    transform: rotateY(360deg);
+  }
+
+  .front {
+    transform: rotateY(180deg) !important;
+  }
+
+  .back{
+    transform: rotateY(360deg) !important;
+  }
+
+  .pop-box {
+    height: 80%;
+    width: 90vw;
+
+>>>>>>> upstream/master
   }
 
   .pop-back {
@@ -193,6 +275,11 @@
     top: 0;
     left: 0;
     backface-visibility: hidden;
+<<<<<<< HEAD
+=======
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+>>>>>>> upstream/master
   }
 
   .pop-left {
@@ -205,6 +292,11 @@
     top: 0;
     left: 0;
     backface-visibility: hidden;
+<<<<<<< HEAD
+=======
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+>>>>>>> upstream/master
   }
 
   .pop-right {
@@ -238,6 +330,7 @@
     left: 20vw !important;
   }
 
+<<<<<<< HEAD
   .card3 {
     left: 40vw !important;
   }
@@ -269,6 +362,8 @@
   .card10 {
     left: 180vw !important;
   }
+=======
+>>>>>>> upstream/master
 
 
 }

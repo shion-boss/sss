@@ -17,21 +17,37 @@
 .event_box{
   width: 100%;
 }
+
+
 .event{
   width: 100%;
   margin-top: 1rem;
   border-top: solid 1px #808080;
   border-bottom: solid 1px #808080;
   display: grid;
-  grid-template-columns: 300px 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   padding: 2rem 1rem 5px 1rem;
   box-sizing: border-box;
 }
 
+.in_box {
+  grid-column: 1;
+  grid-row: 1;
+  height: 15vw;
+  width: 25vw;
+  overflow: hidden;
+  background-color: rgb(0,0,0);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem auto;
+}
+
 
 .event_img{
-  height: 20vw;
+  height: 15vw;
   margin: 0 auto;
 }
 
@@ -152,7 +168,7 @@ p{
 }
 
 .edit_img{
-  height: 20vw;
+  height: 100px;
 }
 
 #com_check{
@@ -274,14 +290,14 @@ p{
 .ch_box{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 20vw;
+  grid-template-rows: auto;
   overflow-y: scroll;
   height: 400px;
 }
 
 .edit_border{
   position: relative;
-  height: 20vw;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -299,7 +315,7 @@ p{
   left: 50%;
   transform: translate(-50%,-50%);
   width:100%;
-  height: 100px;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -691,7 +707,7 @@ p{
   .ch_box {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px;
+    grid-template-rows: auto;
     overflow-y: scroll;
     height: 400px;
   }
@@ -713,10 +729,29 @@ p{
     border-top: solid 1px #808080;
     border-bottom: solid 1px #808080;
     display: grid;
-    grid-template-columns: 1fr 300px 300px 1fr;
+    grid-template-columns: 1fr 45vw 45vw 1fr;
     grid-template-rows: auto;
     padding: 1rem;
     box-sizing: border-box;
+  }
+  .in_box {
+    grid-column: 2;
+    grid-row: 1;
+    height: 25vw;
+    width: 40vw;
+    overflow: hidden;
+    background-color: rgb(0,0,0);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1rem auto;
+  }
+
+
+  .event_img{
+    height: 25vw;
+    margin: 0 auto;
   }
 
   .grid_e_box{
@@ -896,7 +931,7 @@ p{
   .ch_box {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px;
+    grid-template-rows: auto;
     overflow-y: scroll;
     height: 400px;
   }
@@ -922,6 +957,25 @@ p{
     grid-template-rows: auto;
     padding: 1rem;
     box-sizing: border-box;
+  }
+  .in_box {
+    grid-column: 1;
+    grid-row: 1;
+    height: 55vw;
+    width: 90vw;
+    overflow: hidden;
+    background-color: rgb(0,0,0);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1rem auto;
+  }
+
+
+  .event_img{
+    height: 55vw;
+    margin: 0 auto;
   }
 
   .grid_e_box {
@@ -1115,7 +1169,7 @@ p{
   .ch_box {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100px;
+    grid-template-rows: auto;
     overflow-y: scroll;
     height: 400px;
   }
