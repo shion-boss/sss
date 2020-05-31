@@ -110,10 +110,16 @@ def index(request):
         return redirect(to='loginselect')
     login_bonus(user)
     b_cate=bee_cate_model.objects.all()
+    time_list=[]
+    for t in b_cate:
+        bee=bee_story_model.objects.get(category=t).latest('post_time')
+        time_list.appned(bee)
+
     params={
         'index_current':request.path,
         'aaa':'',
         'bbb':b_cate,
+        'ccc':time_list,
         }
     return render(request,'techbee/index.html',params)
 
