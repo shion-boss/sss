@@ -313,6 +313,7 @@ def userregi_view(request,introducer):
                         'message':message,
                         'introducer':introducer,
                         'm':m,
+                        's':True,
                     }
                     return render(request,'techbee/userregi.html',params)
 
