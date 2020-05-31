@@ -39,37 +39,31 @@ def my_error_handler(request, *args, **kw):
 
 
 def status_veri(user):
-    payjp.api_key ='sk_test_f0d6fe8a9725200cda316d56'
     try:
-        user.user_meta.username
-        customer = payjp.Customer.retrieve(user.user_meta.username)
+        meta=user_meta.objects.get(user=user)
     except:
-        metameta=True
-        stasta=True
+        meta_veri=True
     else:
-        metameta=False
         try:
-            if customer["subscriptions"]["data"][0]['status'] == 'trial':
-                stasta=False
-            elif customer["subscriptions"]["data"][0]['status'] == 'active':
-                stasta=False
-            else:
-                stasta=True
+            meta.username
         except:
-            stasta=True
-        else:
-            stasta=False
+            name_veri=True
+        if meta.position != 'paypal':
+            posi_veri=True
 
-
-    if metameta==False and stasta==False:
-        return False
-    else:
+    if meta_veri:
         return True
+    elif name_veri:
+        return True
+    elif posi_veri:
+        return True
+    else:
+        return False
+
 
 
 
 def login_bonus(user):
-    payjp.api_key ='sk_test_f0d6fe8a9725200cda316d56'
     login_date=user.user_meta.last_login
     login_month=login_date.month
     login_day=login_date.day
@@ -81,13 +75,7 @@ def login_bonus(user):
         meta.last_login=datetime.date.today()
         meta.like_point += 33
         afi=afirieito_model.objects.filter(introducer=user.user_meta.username)
-        afi_list=0
-        for a in afi:
-            customer=payjp.Subscription.all(plan='member',customer=a.user.user_meta.username)
-            if int(customer['count']) != 0:
-                m=customer['data'][0]['status']
-                if m == 'active':
-                    afi_list +=1
+        afi_list +=1
         afi_len=int(afi_list)*33
         meta.point += afi_len
         meta.save()
