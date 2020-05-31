@@ -48,15 +48,6 @@ def status_veri(user):
         meta_veri=True
         global posi_veri
         posi_veri=False
-    else:
-        global meta_veri
-        meta_veri=False
-        if posi == 'paypal':
-            global posi_veri
-            posi_veri=False
-        else:
-            global posi_veri
-            posi_veri=True
 
     return False
 
