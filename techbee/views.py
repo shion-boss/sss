@@ -696,22 +696,15 @@ def community_view(request):
     catelist=categories_model.objects.filter(user=user)
     event=event_model.objects.all().order_by('-set_event')
     page_obj = paginate_query(request, event, 10)
-    payjp.api_key ='sk_test_f0d6fe8a9725200cda316d56'
-    customer = payjp.Customer.retrieve(user.user_meta.username)
 
-    if status_veri(user)==True:
-        params={
-            'p':customer["subscriptions"]["data"][0]['status'],
-        }
-        return render(request,'techbee/statusveri.html',params)
-    else:
-        params={
-            'eee':event,
-            'rrr':catelist,
-            'page_obj':page_obj,
-            'site_name':settings.SITE_NAME,
-        }
-        return render(request,'techbee/community.html',params)
+    params={
+        'eee':event,
+        'rrr':catelist,
+        'page_obj':page_obj,
+        'site_name':settings.SITE_NAME,
+    }
+    return render(request,'techbee/community.html',params)
+    
 @login_required
 def community2_view(request,id):
     user = request.user
