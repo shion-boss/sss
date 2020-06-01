@@ -120,7 +120,6 @@ def index(request):
 
 @login_required
 def tb_view(request,cate):
-    payjp.api_key ='sk_test_f0d6fe8a9725200cda316d56'
     user=request.user
     try:
         user.user_meta.username
@@ -278,11 +277,8 @@ def login_select_view(request):
         }
         return render(request,'techbee/userregi.html',params)
     else:
-        payjp.api_key ='sk_test_f0d6fe8a9725200cda316d56'
-        customer = payjp.Customer.retrieve(user.user_meta.username)
-        user_status=customer["subscriptions"]["data"][0]['status']
         params={
-        'aaa':user_status,
+        'aaa':'',
         'index_current':request.path,
         }
         if status_veri(user)==True:
@@ -296,7 +292,6 @@ def userregi_view(request,introducer):
         afirieito_model.objects.get(user=user)
     except:
         afirieito_model(user=user,introducer=introducer).save()
-    payjp.api_key ='sk_test_f0d6fe8a9725200cda316d56'
     if request.method=='POST':
         position=request.POST['position']
         try:
@@ -704,7 +699,7 @@ def community_view(request):
         'site_name':settings.SITE_NAME,
     }
     return render(request,'techbee/community.html',params)
-    
+
 @login_required
 def community2_view(request,id):
     user = request.user
@@ -721,26 +716,18 @@ def community2_view(request,id):
     login_bonus(user)
     catelist=categories_model.objects.filter(user=user)
     event=event_model.objects.get(id=id)
-    payjp.api_key ='sk_test_f0d6fe8a9725200cda316d56'
-    customer = payjp.Customer.retrieve(user.user_meta.username)
     img=event_img_model.objects.filter(event=event).order_by('-img')
     page_obj = paginate_query(request, img, settings.PAGE_PER_ITEM)
     user_img=event_img_model.objects.filter(user=user,event=event)
-    if status_veri(user)==True:
-        params={
-            'p':customer["subscriptions"]["data"][0]['status'],
-        }
-        return render(request,'techbee/statusveri.html',params)
-    else:
-        params={
-            'e':event,
-            'page_obj':page_obj,
-            'site_name':settings.SITE_NAME,
-            'aaa':user_img,
-            'rrr':catelist,
+    params={
+        'e':event,
+        'page_obj':page_obj,
+        'site_name':settings.SITE_NAME,
+        'aaa':user_img,
+        'rrr':catelist,
 
-        }
-        return render(request,'techbee/community2.html',params)
+    }
+    return render(request,'techbee/community2.html',params)
 
 
 def footer_view(request,category):
