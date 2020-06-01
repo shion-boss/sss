@@ -333,12 +333,15 @@ def userregi_view(request,introducer):
         m=False
     else:
         m=True
+        '''
         if meta.position=='paypal':
             username=meta.username
             message=username+'は、既にメンバー登録が完了しています。'
             s=False
         else:
             s=True
+            '''
+        s=True
     params={
         'message':message,
         'introducer':introducer,
