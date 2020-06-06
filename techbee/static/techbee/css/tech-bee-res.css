@@ -13,10 +13,6 @@
 
   .body-tb-main {
     margin: 0 auto;
-<<<<<<< HEAD
-  }
-
-=======
     width: 95vw;
   }
 
@@ -25,8 +21,6 @@
   }
 
 
-
->>>>>>> upstream/master
   .textboard {
     font-size: 1.3rem !important;
   }
@@ -34,13 +28,10 @@
   .test3 {
     font-size: 0.8rem !important;
   }
-<<<<<<< HEAD
-=======
 
   .test3-5 {
     font-size: 0.8rem;
   }
->>>>>>> upstream/master
 }
 
 @media screen and (max-width: 768px) {
@@ -60,23 +51,6 @@
 
 @media screen and (max-width: 425px) {
 
-<<<<<<< HEAD
-  .body-tb-main {
-    height: 500px;
-  }
-
-
-
-  .popup {
-    width: 70% !important;
-    height: 70% !important;
-    top: 15%;
-  }
-
-  .popup-content {
-    margin: 10px auto 40px auto !important;
-    position: relative;
-=======
 
   .body-tb-main {
     width: 90vw;
@@ -98,7 +72,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
->>>>>>> upstream/master
+
   }
 
   .pop-card {
